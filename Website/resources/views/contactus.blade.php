@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 @extends('layouts.header')
+@section('body')
+
 
 <html>
     <head>
@@ -10,3 +12,5 @@
 
     
 </html>
+
+@endsection

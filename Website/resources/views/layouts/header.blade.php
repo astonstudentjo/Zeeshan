@@ -17,4 +17,7 @@
             <a href = "/login">Login</a>
         </div>
     </div>
+    <body>
+        @yield('body')
+    </body>
 </html>
