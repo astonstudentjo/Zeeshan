@@ -17,3 +17,4 @@ run the command php artisan migrate
 run the command php artisan serve
 Copy the url presented
 Paste the url into your browser and you should see the site.
+you can delete the "test" laravel project now that you have the vendor folder and .env file.
