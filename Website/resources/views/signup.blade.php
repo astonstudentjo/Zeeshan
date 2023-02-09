@@ -11,8 +11,8 @@
             @csrf
             @error('name')
             {{$message}}
-            @enderror
             <br>
+            @enderror
 
             <label for = "name" > Full Name: </label>
             <input type  = "text" placeholder = "Full name" name = "name">
@@ -21,8 +21,9 @@
             @csrf
             @error('email')
             {{$message}}
-            @enderror
             <br>
+            @enderror
+
             <label for = "email"> Email: </label>
             <input type = "text" placeholder = "Email" name = "email">
             <br><br>
@@ -30,8 +31,9 @@
             @csrf
             @error('password')
             {{$message}}
-            @enderror
             <br>
+             @enderror
+         
             <label for  = "password"> Password: </label>
             <input type = "password" placeholder =  "Password" name = "password">
             <br><br>
