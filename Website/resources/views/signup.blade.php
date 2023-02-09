@@ -8,20 +8,35 @@
 
     <div>
         <form action = "/signup" method = "post">
+            @csrf
+            @error('name')
+            {{$message}}
+            @enderror
+            <br>
+
             <label for = "name" > Full Name: </label>
             <input type  = "text" placeholder = "Full name" name = "name">
             <br><br>
 
+            @csrf
+            @error('email')
+            {{$message}}
+            @enderror
+            <br>
             <label for = "email"> Email: </label>
             <input type = "text" placeholder = "Email" name = "email">
             <br><br>
 
-
+            @csrf
+            @error('password')
+            {{$message}}
+            @enderror
+            <br>
             <label for  = "password"> Password: </label>
             <input type = "password" placeholder =  "Password" name = "password">
             <br><br>
 
-
+          
             <label for = "password_confirmation"> Password Confirmation: </label>
             <input type = "password" placeholder = "Password Again" name = "password_confirmation">
             <br><br>
