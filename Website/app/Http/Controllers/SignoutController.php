@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class SignoutController extends Controller
 {
-    public function SignOut(){
+    public function signout(){
         auth()->logout();
 
         return redirect('login');
