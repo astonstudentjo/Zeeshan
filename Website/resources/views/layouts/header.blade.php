@@ -26,8 +26,15 @@
         @auth
             
         <div class = "right-header">
-            <a>{{auth()->user()->name}}</a>
-            <a href = >Logout</a>
+           
+           
+            <div>
+            <form action = "/signout" method = "post">
+                @csrf
+                <a>{{auth()->user()->name}}</a>
+                <button type = "submit" >Sign Out</button>
+            </form>
+            </div>
         </div>
 
         @endauth

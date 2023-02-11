@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SignoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::get('/contactus', function(){
 });
 
 
+Route::post('/signout', [SignoutController::class, 'signout']);
 
 Route::get('/login', [LoginController::class, 'show']);
 
