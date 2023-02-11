@@ -18,7 +18,7 @@
             <input type  = "text" placeholder = "Full name" name = "name">
             <br><br>
 
-            @csrf
+         
             @error('email')
             {{$message}}
             <br>
@@ -28,7 +28,7 @@
             <input type = "text" placeholder = "Email" name = "email">
             <br><br>
 
-            @csrf
+           
             @error('password')
             {{$message}}
             <br>
