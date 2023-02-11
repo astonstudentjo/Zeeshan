@@ -12,10 +12,25 @@
         <a href = "/contactus">Contact Us</a>
         </div>
 
+       @guest
+           
+       
+
         <div class = "right-header">
             <a href = "/signup">Sign Up</a>
             <a href = "/login">Login</a>
         </div>
+
+        @endguest
+
+        @auth
+            
+        <div class = "right-header">
+            <a>{{auth()->user()->name}}</a>
+            <a href = >Logout</a>
+        </div>
+
+        @endauth
     </div>
     <body>
         @yield('body')

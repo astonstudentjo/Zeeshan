@@ -12,7 +12,20 @@
     <div>
         <form action = "/login" method = "post">
 
+        <div>
             @csrf
+
+            @if(session('status'))
+
+            {{session('status')}}
+            <br><br>
+
+            @endif
+
+            
+        </div>
+            
+
             @error('email')
             {{$message}}
             <br>
