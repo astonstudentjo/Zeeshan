@@ -10,7 +10,18 @@
     </head>
 
 
-    
+    <div>
+        @foreach($products as $product)
+
+            <div>
+                <a href = "/products/{{$product->id}}">
+                <img src = "/productImages/{{$product->img}}"></div>
+                <h4> {{$product->category}}</h4>
+                <h1>{{$product->artist}}</h1>
+                </a>
+            </div>
+        @endforeach
+    </div>
 </html>
 
 @endsection
