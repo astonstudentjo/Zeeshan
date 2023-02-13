@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2023 at 05:29 PM
+-- Generation Time: Feb 13, 2023 at 05:36 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -62,6 +62,21 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `ID` bigint(10) NOT NULL,
+  `status` varchar(100) DEFAULT 'PENDING',
+  `userID` bigint(10) DEFAULT NULL,
+  `productID` bigint(10) DEFAULT NULL,
+  `orderID` bigint(10) DEFAULT NULL,
+  `time` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `password_resets`
 --
 
@@ -93,6 +108,24 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT 'Null',
+  `description` varchar(1000) DEFAULT 'Null',
+  `img` varchar(45) DEFAULT 'Null',
+  `price` decimal(10,2) DEFAULT 0.00,
+  `stock` int(11) DEFAULT NULL,
+  `sales` int(11) DEFAULT NULL,
+  `category` varchar(45) DEFAULT NULL,
+  `artist` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -113,7 +146,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Muniib Ali', '200103424@aston.ac.uk', NULL, '$2y$10$hw0g6WofWIuFP6hESZK/KOY9ZLmG39ih3G.MLNlHcXIfY/zyOKmKe', NULL, '2023-02-09 16:06:03', '2023-02-09 16:06:03'),
-(2, 'testaccount', 'testaccount@gmail.com', NULL, '$2y$10$OMwa82kvxRB92IicWtRU6.srbZJwiXK8NAK6mehqW/m5TkMxIQx3G', NULL, '2023-02-09 16:09:15', '2023-02-09 16:09:15');
+(2, 'testaccount', 'testaccount@gmail.com', NULL, '$2y$10$OMwa82kvxRB92IicWtRU6.srbZJwiXK8NAK6mehqW/m5TkMxIQx3G', NULL, '2023-02-09 16:09:15', '2023-02-09 16:09:15'),
+(3, 'John Doe', 'johndoe@gmail.com', NULL, '$2y$10$ZpkLHCygJ6lqs2LLCx0.o.CSj31TraCvkXLPxTs0ZYIyx1nijX1fe', NULL, '2023-02-11 12:48:06', '2023-02-11 12:48:06'),
+(4, 'testaccount', 'alimuniib@gmail.com', NULL, '$2y$10$8tItx5WDh/p5amJXHnJm7Oxd1Iif2fwVAtpdg5XsaIWnSrVcxJoZ2', NULL, '2023-02-11 12:52:57', '2023-02-11 12:52:57');
 
 --
 -- Indexes for dumped tables
@@ -133,6 +168,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -145,6 +186,12 @@ ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -176,10 +223,16 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
