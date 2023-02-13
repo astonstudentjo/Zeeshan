@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/products', function(){
-    return view('products');
-});
+
 
 Route::get('/aboutus', function(){
     return view('aboutus');
@@ -32,6 +31,7 @@ Route::get('/contactus', function(){
     return view('contactus');
 });
 
+Route::get('/products', [ProductsController::class, 'show']);
 
 Route::post('/signout', [SignoutController::class, 'signout']);
 
