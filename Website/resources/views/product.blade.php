@@ -19,6 +19,7 @@
         <h4> {{$concert->name}}</h4>
         <h4> {{$concert->category}}</h4>
         <p>{{$concert->descriptiton}}</p>
+        <p>£{{$concert->price}}</p>
         
 
             
