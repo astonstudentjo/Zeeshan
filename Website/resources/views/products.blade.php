@@ -18,6 +18,7 @@
                 <img src = "/productImages/{{$product->img}}"></div>
                 <h4> {{$product->category}}</h4>
                 <h1>{{$product->artist}}</h1>
+                <h4> {{$product->name}}</h4>
                 </a>
             </div>
         @endforeach

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BasketController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
@@ -35,6 +36,12 @@ Route::get('/contactus', function(){
 Route::get('/products/{id}',[ProductController::class, 'show']);
 
 Route::get('/products', [ProductsController::class, 'show']);
+
+Route::get('/basket', [BasketController::class, 'show']);
+
+Route::post('/basket', [BasketController::class, 'addBasket']);
+
+Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
 
 Route::post('/signout', [SignoutController::class, 'signout']);
 
