@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
@@ -30,6 +31,8 @@ Route::get('/aboutus', function(){
 Route::get('/contactus', function(){
     return view('contactus');
 });
+
+Route::get('/products/{id}',[ProductController::class, 'show']);
 
 Route::get('/products', [ProductsController::class, 'show']);
 
