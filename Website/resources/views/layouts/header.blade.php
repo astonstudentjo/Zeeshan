@@ -17,6 +17,7 @@
        
 
         <div class = "right-header">
+            <a href = "/basket">Basket</a>
             <a href = "/signup">Sign Up</a>
             <a href = "/login">Login</a>
         </div>
@@ -29,6 +30,8 @@
            
            
             <div>
+            <a href = "/basket">Basket</a>
+
             <form action = "/signout" method = "post">
                 @csrf
                 <a>{{auth()->user()->name}}</a>
