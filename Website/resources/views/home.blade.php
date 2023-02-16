@@ -9,12 +9,13 @@
         <title>Home</title>
     </head>
 
+    <br>
     <div>
-    <a href = '/products/pop'>Pop</a>
-    <a href = '/products/pop'>Metal</a>
-    <a href = '/products/pop'>Rap</a>
-    <a href = '/products/pop'>Rock</a>
-    <a href = '/products/pop'>Country</a>
+    <a href = '/products/category/pop'>Pop</a>
+    <a href = '/products/category/metal'>Metal</a>
+    <a href = '/products/category/rap'>Rap</a>
+    <a href = '/products/category/rock'>Rock</a>
+    <a href = '/products/category/country'>Country</a>
     </div>
 
 

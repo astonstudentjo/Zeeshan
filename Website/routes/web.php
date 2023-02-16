@@ -35,6 +35,8 @@ Route::get('/contactus', function(){
 
 Route::get('/products/{id}',[ProductController::class, 'show']);
 
+Route::get('/products/category/{category}',[ProductsController::class, 'showCategory']);
+
 Route::get('/products', [ProductsController::class, 'show']);
 
 Route::get('/basket', [BasketController::class, 'show']);
@@ -52,5 +54,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/signup', [RegistrationController::class, 'show']);
 
 Route::post('/signup', [RegistrationController::class, 'create']);
+
+
 
 
