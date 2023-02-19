@@ -2,18 +2,25 @@
 
 @section('body')
 
+<span class="image-container">
+    <img src="../css/Registration/welcome.jpg alt="image" width="550" height="115">
+</span>
 <div>
-<br>
 
+<span class="Title">
+         <p> Register an account!</p>
+</span>
 
+<link rel="stylesheet" href="../css/signup.css">
     <div>
         <form action = "/signup" method = "post">
-            @csrf
+           
+           @csrf
             @error('name')
             {{$message}}
             <br>
-            @enderror
-
+            @enderror 
+           
             <label for = "name" > Full Name: </label>
             <input type  = "text" placeholder = "Full name" name = "name">
             <br><br>
@@ -22,7 +29,7 @@
             @error('email')
             {{$message}}
             <br>
-            @enderror
+            @enderror 
 
             <label for = "email"> Email: </label>
             <input type = "text" placeholder = "Email" name = "email">
@@ -32,7 +39,7 @@
             @error('password')
             {{$message}}
             <br>
-             @enderror
+             @enderror 
          
             <label for  = "password"> Password: </label>
             <input type = "password" placeholder =  "Password" name = "password">
@@ -44,7 +51,18 @@
             <br><br>
 
             <button type = "submit">Sign Up </button>
-
+            <br>
+            <span class="description">
+                <p>By continuing past this page, you agree to the <u>Terms of Use</u> Purchase Policy and understand that 
+                    information will be used as described in our <u>Privacy Policy.</u></p>
+                </span>
+                
+                <span class="description2">
+                   <p> Need helping logging in, contact us: <br> 
+                    <br>
+                   <u> +44 7508156819</u> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <u>200060828@aston.ac.uk </u>
+                    </p>
+                </span>
         </form>
 
 
