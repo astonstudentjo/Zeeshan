@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
@@ -44,6 +45,15 @@ Route::get('/products', [ProductsController::class, 'show']);
 Route::get('/basket', [BasketController::class, 'show']);
 
 Route::post('/basket', [BasketController::class, 'addBasket']);
+
+// Route::get('/checkout', [CheckoutController::class, 'show']);
+
+// Route::post('/checkout', [CheckoutController::class, 'checkout']);
+
+Route::prefix('checkout')->group(function () {
+    Route::get('/', [CheckoutController::class, 'show'])->name('checkout.show');
+    Route::post('/', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+});
 
 Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
 
