@@ -54,6 +54,10 @@
                     <td>£{{ number_format($total, 2) }}</td>
                 </tr>
             </table>
+
+            <div>
+                <p>Total items: {{ $totalItems }}</p>
+            </div>
             <button type="submit">Update Basket</button>
         </form>
         @endif
@@ -61,6 +65,14 @@
         <form action="/basket/clear" method="POST">
             @csrf
             <button type="submit">Clear Basket</button>
+        </form>
+    </div>
+
+
+    <br>
+    <div>
+        <form action="/checkout" method="GET">
+            <button type="submit">Checkout</button>
         </form>
     </div>
 </div>

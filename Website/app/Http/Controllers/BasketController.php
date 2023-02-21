@@ -5,41 +5,58 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use App\Models\Basket; 
+use App\Models\Basket;
 
 class BasketController extends Controller
 {
-    public function show(){
-        Session::start();
-        $basket = Session::get('basket');
-        if($basket == null){
-            $basket = [];
-        }
-        $product = [];
-        foreach($basket as $id){
-            $product[] = Products::find($id);
-        }
-        return view('basket', ['product' => $product]);
-    }
-
-
-    // public function addBasket(Request $request){
+    // public function show()
+    // {
     //     Session::start();
     //     $basket = Session::get('basket');
-    //     $basket[] = $request->input('product_id');
-    //     Session::put('basket', $basket);
-    //     return redirect('basket');
+    //     if ($basket == null) {
+    //         $basket = [];
+    //     }
+    //     $product = [];
+    //     foreach ($basket as $id) {
+    //         $product[] = Products::find($id);
+    //     }
+    //     return view('basket', ['product' => $product]);
     // }
 
-    public function addBasket(Request $request){
+    public function show()
+    {
         Session::start();
-        $productId = $request->input('product_id');
         $basket = Session::get('basket');
-    
         if ($basket == null) {
             $basket = [];
         }
-    
+        $product = [];
+        $totalItems = 0;
+        $basketQuantities = Session::get('basketQuantities', []);
+        foreach ($basket as $id) {
+            $product[] = Products::find($id);
+            $totalItems += $basketQuantities[$id] ?? 0;
+        }
+        return view('basket', [
+            'product' => $product,
+            'totalItems' => $totalItems
+        ]);
+    }
+
+
+
+
+
+    public function addBasket(Request $request)
+    {
+        Session::start();
+        $productId = $request->input('product_id');
+        $basket = Session::get('basket');
+
+        if ($basket == null) {
+            $basket = [];
+        }
+
         // check if the product already exists in the basket
         $existingProductIndex = array_search($productId, $basket);
         if ($existingProductIndex !== false) {
@@ -56,14 +73,15 @@ class BasketController extends Controller
             $basketQuantities[$productId] = 1;
             Session::put('basketQuantities', $basketQuantities);
         }
-    
+
         Session::put('basket', $basket);
         return redirect('basket');
     }
 
 
     // clear the basket
-    public function clearBasket(){
+    public function clearBasket()
+    {
         Session::start();
         Session::forget('basket');
         return redirect('basket');
@@ -71,20 +89,17 @@ class BasketController extends Controller
 
 
     public function update(Request $request)
-{
-    $quantities = $request->input('quantity', []);
+    {
+        $quantities = $request->input('quantity', []);
 
-    foreach ($quantities as $productId => $quantity) {
-        $basket = Basket::where('product_id', $productId)->first();
+        $basketQuantities = Session::get('basketQuantities', []);
 
-        if ($basket) {
-            $basket->quantity = $quantity;
-            $basket->save();
+        foreach ($quantities as $productId => $quantity) {
+            $basketQuantities[$productId] = $quantity;
         }
+
+        Session::put('basketQuantities', $basketQuantities);
+
+        return redirect('basket');
     }
-
-    return redirect('basket');
 }
-
-}
-
