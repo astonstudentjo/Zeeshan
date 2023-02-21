@@ -48,8 +48,8 @@ public String getImgPath() {
     return img.getUrl();
 }
 
-public void setImg (String img) {
-    this.img = img;
+public void setImg (String artist) {
+    this.img = new Image(artist);
 }
 
 public float getPrice() {
