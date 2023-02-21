@@ -1,15 +1,21 @@
 package com.example.demoo.model;
 public class Image 
 {
-    public static void ImagePath(Artist a)
+    private String url;
+    public Image(String artistName)
     {
-        String URL = "";
-        String[] name = a.getArtistName().split(" ");
+        url = "";
+        String[] name = artistName.split(" ");
         for (String s: name)
         {
-            URL.concat(s);
-            URL.concat("-");
+            url.concat(s);
+            url.concat("-");
         }
-       URL.concat("1");
+       url.concat("1");
+    }
+
+    public string getUrl()
+    {
+        return url;
     }
 }

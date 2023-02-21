@@ -7,7 +7,7 @@ public class Products {
     private int id;
     private String name;
     private String description;
-    private String img; 
+    private Image img; 
     private float price;
     private int stock;
     private int sales;
@@ -44,8 +44,8 @@ public void setDescription(String description) {
 }
 
 
-public String getImg() {
-    return img;
+public String getImgPath() {
+    return img.getUrl();
 }
 
 public void setImg (String img) {
