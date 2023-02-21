@@ -13,35 +13,50 @@
     <div>
         <h1>My Basket</h1>
 
-
         @if (count($product) == 0)
         <p>Your basket is empty</p>
         @else
-
-        <table>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <!-- <th>Quantity</th> -->
-                <th>Total</th>
-            </tr>
-            @foreach ($product as $item)
-            @if ($item != null)
-
-            
+        <form action="/basket/update" method="POST">
+            @csrf
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                @php
+                $total = 0;
+                $productQuantities = Session::get('basketQuantities', []);
+                @endphp
+                @foreach ($product as $item)
+                @php
+                $itemId = $item->id;
+                $quantity = $productQuantities[$itemId] ?? 0;
+                $total += $item->price * $quantity;
+                @endphp
+                @if ($quantity > 0)
                 <tr>
                     <td>{{ $item->name }}</td>
                     <td>£{{ number_format($item->price, 2) }}</td>
-                    <td>{{ $item->stock }}</td>
-                    <td>£{{ number_format($item->price * $item->stock, 2) }}</td>
+                    <td>
+                        <select name="quantity[{{ $itemId }}]">
+                            @for ($i = 1; $i <= 10; $i++) <option value="{{ $i }}" {{ $i == $quantity ? 'selected' : '' }}>{{ $i }}</option>
+                                @endfor
+                        </select>
+                    </td>
+                    <td>£{{ number_format($item->price * $quantity, 2) }}</td>
                 </tr>
-            @endif
-        @endforeach
-        </table>
-        <p>There are {{ count($product) }} items in your basket</p>
-
+                @endif
+                @endforeach
+                <tr>
+                    <td colspan="3"></td>
+                    <td>£{{ number_format($total, 2) }}</td>
+                </tr>
+            </table>
+            <button type="submit">Update Basket</button>
+        </form>
         @endif
-
 
         <form action="/basket/clear" method="POST">
             @csrf

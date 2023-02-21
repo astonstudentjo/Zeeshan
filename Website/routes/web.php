@@ -45,6 +45,8 @@ Route::post('/basket', [BasketController::class, 'addBasket']);
 
 Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
 
+Route::post('/basket/update', [BasketController::class, 'update']);
+
 Route::post('/signout', [SignoutController::class, 'signout']);
 
 Route::get('/login', [LoginController::class, 'show']);
