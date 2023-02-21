@@ -34,6 +34,7 @@
                 <h1> {{$product->name}}</h1>
                 <h1>{{$product->artist}}</h1>
                 <h4> {{$product->category}}</h4>
+                <h4> £{{$product->price}}</h4>
 
 
                 </a>

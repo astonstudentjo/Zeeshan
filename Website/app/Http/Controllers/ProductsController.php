@@ -17,11 +17,14 @@ class ProductsController extends Controller
 
         if($category == 'price_ascending'){
             $products = Products::all()
-            ->sortBy('price');
-
-        return view('products', ['products' => $products]);
+                ->sortBy('price');
+            return view('products', ['products' => $products]);
 
         } elseif($category == 'price_descending'){
+            $products = Products::all()
+                ->sortByDesc('price');
+            return view('products', ['products' => $products]);
+
 
         } else {
         $products = Products::all()
