@@ -37,6 +37,8 @@ Route::get('/products/{id}',[ProductController::class, 'show']);
 
 Route::get('/products/category/{category}',[ProductsController::class, 'showCategory']);
 
+
+
 Route::get('/products', [ProductsController::class, 'show']);
 
 Route::get('/basket', [BasketController::class, 'show']);

@@ -9,7 +9,17 @@
         <title>Products</title>
     </head>
 
+    <div>
+        <a href = '/products/category/price_ascending'>Price-Low to High</a>
+        <a href = '/products/category/price_descending'>Price-High to Low</a>
+        <a href = '/products/category/pop'>Pop</a>
+        <a href = '/products/category/metal'>Metal</a>
+        <a href = '/products/category/rap'>Rap</a>
+        <a href = '/products/category/rock'>Rock</a>
+        <a href = '/products/category/country'>Country</a>
 
+
+    </div>
     <div>
         @foreach($products as $product)
 
