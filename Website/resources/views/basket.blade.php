@@ -58,6 +58,10 @@
             <div>
                 <p>Total items: {{ $totalItems }}</p>
             </div>
+
+            @if (session('error'))
+            <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
             <button type="submit">Update Basket</button>
         </form>
         @endif

@@ -68,13 +68,25 @@ class CheckoutController extends Controller
         // Check if there is enough stock for each product in the basket
         $basket = Session::get('basket');
         $basketQuantities = Session::get('basketQuantities', []);
+        $hasError = false;
+        $errorProduct = '';
         foreach ($basket as $productId) {
             $product = Products::find($productId);
             if (!$product || $basketQuantities[$productId] > $product->stock) {
-                // Redirect the user back to the basket page
-                return redirect('basket');
+                $hasError = true;
+                if ($product) {
+                    $errorProduct .= $product->name . ' (only ' . $product->stock . ' left), ';
+                } else {
+                    $errorProduct .= 'product (ID: ' . $productId . ') not found, ';
+                }
             }
         }
+        if ($hasError) {
+            $errorProduct = rtrim($errorProduct, ', ');
+            $errorMessage = 'There is not enough stock for one or more products in your basket: ' . $errorProduct;
+            return redirect('basket')->with('error', $errorMessage);
+        }
+
 
         // Create a new order in the database
         $order = new Order;
@@ -87,6 +99,7 @@ class CheckoutController extends Controller
             $product = Products::find($productId);
             $quantity = $basketQuantities[$productId] ?? 0;
             $product->stock -= $quantity;
+            $product->sales += $quantity;
             $product->save();
         }
 
