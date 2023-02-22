@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2023 at 12:32 PM
+-- Generation Time: Feb 22, 2023 at 06:58 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -66,21 +66,20 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `orders` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) unsigned NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
   `total_price` decimal(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'pending',
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+  `status` varchar(255) NOT NULL DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `orders`
+--
 
-
-
-
+INSERT INTO `orders` (`id`, `user_id`, `total_price`, `created_at`, `updated_at`, `status`) VALUES
+(1, 1, 70.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31', 'pending');
 
 -- --------------------------------------------------------
 
@@ -89,21 +88,22 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `order_items` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `order_id` bigint(20) unsigned NOT NULL,
-  `product_id` bigint(20) unsigned NOT NULL,
-  `quantity` int(10) unsigned NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `order_id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `quantity` int(10) UNSIGNED NOT NULL,
   `price` decimal(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `order_id` (`order_id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `order_items`
+--
 
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 20.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31'),
+(2, 1, 7, 1, 50.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31');
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,7 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `products` (
-  `id` bigint(20) unsigned NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(45) DEFAULT 'Null',
   `description` varchar(1000) DEFAULT 'Null',
   `img` varchar(45) DEFAULT 'Null',
@@ -151,23 +151,21 @@ CREATE TABLE `products` (
   `stock` int(11) DEFAULT NULL,
   `sales` int(11) DEFAULT NULL,
   `category` varchar(45) DEFAULT NULL,
-  `artist` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `artist` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `img`, `price`, `stock`, `sales`, `category`, `artist`) VALUES
-(1, 'Adriana Grande Live Performance!', 'Ariana Grande is set to take the stage on her tour with a mesmerizing collection of hit songs that will leave audiences spellbound. Her powerhouse vocals and dynamic range will shine on tracks like \"7 Rings\", the irresistible ode to self-empowerment and materialism. The crowd will be swaying and singing along to the catchy chorus of \"Thank U, Next\", a heartfelt expression of gratitude for past relationships. \"Into You\" will bring the heat with its sultry beats and seductive lyrics, while \"God is a Woman\" will be a fierce declaration of female strength and sexuality. Other tour highlights include the pop bop \"Side to Side\" featuring Nicki Minaj, and the soulful ballad \"Love Me Harder\". Get ready to experience the magic of Ariana Grande\'s music, live and in person!', 'Ariana-Grande-2.png', 20.00, 200, 5, 'pop', 'Ariana Grande'),
+(1, 'Adriana Grande Live Performance!', 'Ariana Grande is set to take the stage on her tour with a mesmerizing collection of hit songs that will leave audiences spellbound. Her powerhouse vocals and dynamic range will shine on tracks like \"7 Rings\", the irresistible ode to self-empowerment and materialism. The crowd will be swaying and singing along to the catchy chorus of \"Thank U, Next\", a heartfelt expression of gratitude for past relationships. \"Into You\" will bring the heat with its sultry beats and seductive lyrics, while \"God is a Woman\" will be a fierce declaration of female strength and sexuality. Other tour highlights include the pop bop \"Side to Side\" featuring Nicki Minaj, and the soulful ballad \"Love Me Harder\". Get ready to experience the magic of Ariana Grande\'s music, live and in person!', 'Ariana-Grande-2.png', 20.00, 192, 13, 'pop', 'Ariana Grande'),
 (2, 'Justin Bieber\'s Live Show!', 'Justin Bieber is a pop sensation known for his smooth vocals and catchy tunes. Some of his biggest hits include \"Baby\", \"Sorry\", \"Love Yourself\", and \"What Do You Mean?\". With a blend of R&B, pop, and hip-hop influences, Justin\'s music will get you dancing and singing along. He continues to captivate audiences worldwide with his electrifying live performances.', 'Justin-Bieber-2.png', 20.00, 200, 10, 'pop', 'Justin Bieber'),
 (3, 'Dua Lipa on tour!', 'Dua Lipa is a British pop star known for her electrifying vocals and bold fashion sense. Her discography includes chart-topping hits like \"New Rules,\" \"Levitating,\" and \"Don\'t Start Now.\" These empowering anthems, infused with Dua\'s unique blend of pop, R&B, and dance music, are sure to have fans grooving in their seats during her electrifying performances. Whether she\'s singing about self-love and independence or belting out catchy pop hooks, Dua\'s energy and confidence shine through in every note.\r\n', 'Dua-Lipa-2.png', 50.00, 50, 4, 'pop', 'Dua Lipa'),
 (4, 'Billie Eilish to the moon!', 'Billie Eilish is a Grammy-winning singer and songwriter known for her unique, haunting voice and introspective lyrics. She burst onto the music scene with her hit single \"Ocean Eyes\" and has since become one of the biggest names in pop music. Some of her top songs include \"Bad Guy,\" \"When The Party\'s Over,\" and \"Bury A Friend.\" Eilish\'s music is characterized by its ethereal, atmospheric soundscapes and introspective themes that explore the complexities of youth, mental health, and relationships. With her captivating stage presence and powerful performances, Eilish promises to deliver an unforgettable live experience to fans on her upcoming tour.', 'Billie-Eilish-1.png', 200.00, 200, 2, 'pop', 'Billie Eillish'),
 (5, 'Ed\'s Finale ', 'Ed Sheeran is a pop sensation known for his smooth vocals and catchy tunes. Some of his biggest hits include \"Shape of You\", \"Perfect\", \"Thinking Out Loud\", and \"Photograph\". With a blend of R&B, pop, and hip-hop influences, Ed\'s music will get you dancing and singing along. He continues to captivate audiences worldwide with his electrifying live performances.', 'Ed-Sheeran-1.png', 20.00, 200, 10, 'pop', 'Ed Sheeran'),
-(6, 'Metallica\'s Bang', 'Metallica is an American heavy metal band formed in 1981. With their hard-hitting and heavy sound, they have been one of the most influential bands in the genre, paving the way for countless other metal acts. Some of their most popular tracks include \"Enter Sandman,\" \"The Unforgiven,\" \"Master of Puppets,\" and \"Nothing Else Matters.\" When they perform live, they bring their iconic sound and high-energy stage presence, delivering a show that is sure to leave fans headbanging and screaming for more.', 'Metallica-1.png', 50.00, 123, 3, 'metal', 'Metallica'),
-(7, 'To The Iron Side?', 'Iron Maiden is a legendary heavy metal band hailing from England, formed in 1975. With their unique blend of metal, punk, and classical music, they have become one of the most iconic bands in metal history. Their extensive discography includes some of the genre\'s most famous tracks, including \"Hallowed Be Thy Name,\" \"The Trooper,\" and \"Fear of the Dark.\" Iron Maiden is known for their high-energy live shows and iconic stage presence, featuring vocalist Bruce Dickinson\'s powerful voice and guitarist Dave Murray\'s virtuosic playing. If you\'re a fan of metal, Iron Maiden is a must-see live experience.', 'Iron-Maiden-2.png', 50.00, 213, 2, 'metal', 'Iron Maiden'),
+(6, 'Metallica\'s Bang', 'Metallica is an American heavy metal band formed in 1981. With their hard-hitting and heavy sound, they have been one of the most influential bands in the genre, paving the way for countless other metal acts. Some of their most popular tracks include \"Enter Sandman,\" \"The Unforgiven,\" \"Master of Puppets,\" and \"Nothing Else Matters.\" When they perform live, they bring their iconic sound and high-energy stage presence, delivering a show that is sure to leave fans headbanging and screaming for more.', 'Metallica-1.png', 50.00, 121, 5, 'metal', 'Metallica'),
+(7, 'To The Iron Side?', 'Iron Maiden is a legendary heavy metal band hailing from England, formed in 1975. With their unique blend of metal, punk, and classical music, they have become one of the most iconic bands in metal history. Their extensive discography includes some of the genre\'s most famous tracks, including \"Hallowed Be Thy Name,\" \"The Trooper,\" and \"Fear of the Dark.\" Iron Maiden is known for their high-energy live shows and iconic stage presence, featuring vocalist Bruce Dickinson\'s powerful voice and guitarist Dave Murray\'s virtuosic playing. If you\'re a fan of metal, Iron Maiden is a must-see live experience.', 'Iron-Maiden-2.png', 50.00, 210, 5, 'metal', 'Iron Maiden'),
 (8, 'Sabbath Days', 'Black Sabbath, one of the pioneers of heavy metal, will surely unleash a thunderous performance of their iconic hits like \"Iron Man,\" \"Paranoid,\" and \"Black Sabbath.\" With their distinctive sound, Black Sabbath will have the crowd headbanging and singing along to classic metal anthems that have stood the test of time. Whether you\'re a longtime fan or a newcomer, a Black Sabbath concert is a must-see event for anyone who loves hard-hitting music with a powerful message.', 'Black-Sabbath-1.png', 10.00, 200, 2, 'metal', 'Black Sabbath'),
 (9, 'Slayer\'s Be Slayin!', 'Slayer is an American thrash metal band that formed in 1981. With their aggressive, fast-paced sound and powerful lyrics, they have become one of the most influential and successful bands in the heavy metal genre. Some of their top tracks include \"Angel of Death,\" \"Raining Blood,\" and \"Seasons in the Abyss.\" The band\'s live shows are renowned for their high energy, and fans can expect to hear these classic tracks, along with others from their extensive catalog, when they perform on tour.', 'Slayer-2.png', 25.00, 200, 2, 'metal', 'Slayer'),
 (10, 'Judas Contract!', 'Judas Priest is an English heavy metal band formed in Birmingham, England in 1969. They are considered one of the pioneers of the heavy metal genre and have inspired countless musicians and bands over the years. The band is well-known for their powerful vocals, driving guitar riffs, and dynamic song structures. Some of their top picks include \"Breaking the Law,\" \"Painkiller,\" and \"You\'ve Got Another Thing Comin\'.\" Expect a high-energy performance full of headbanging and screaming guitar solos when seeing Judas Priest live.', 'Judas-Priest-2.png', 50.00, 100, 20, 'metal', 'Judas Priest'),
@@ -179,7 +177,7 @@ INSERT INTO `products` (`id`, `name`, `description`, `img`, `price`, `stock`, `s
 (16, 'The Beatles On Tour!', 'The Beatles are one of the most iconic and influential bands in the history of popular music. Formed in Liverpool, England in the early 1960s, The Beatles consists of John Lennon, Paul McCartney, George Harrison, and Ringo Starr. Their innovative music and iconic image helped usher in the \"British Invasion\" of the United States, and they remain one of the best-selling and most-loved bands of all time. Some of their most popular songs include \"Hey Jude,\" \"Let It Be,\" \"Yesterday,\" and \"A Hard Day\'s Night.\" The Beatles\' music continues to be a staple of popular culture, and their influence on the world of music can be seen in countless artists who have followed in their wake.', 'Beatles-1.png', 100.00, 200, 20, 'rock', 'The Beatles'),
 (17, 'Led Zeppelin Performance', 'Led Zeppelin is an English rock band formed in 1968 and is widely considered one of the most influential bands in the history of rock music. The band\'s unique blend of blues, folk, and Eastern music combined with powerful guitar riffs, creative drumming, and soaring vocals make their music instantly recognizable. Some of Led Zeppelin\'s most popular songs include \"Stairway to Heaven,\" \"Kashmir,\" \"Whole Lotta Love,\" and \"Black Dog.\" Their music continues to be a staple of rock radio and live performance, inspiring countless musicians and fans alike with its raw energy and innovative spirit.', 'Led-Zepplin-2.png', 100.00, 20, 2, 'rock', 'Led Zepplin'),
 (18, 'Pink Floyd tourin', 'Pink Floyd is a legendary British rock band, widely regarded as one of the greatest and most influential bands of all time. With a distinct psychedelic sound and thought-provoking lyrics, Pink Floyd redefined the boundaries of rock music and created a genre of their own. Some of their top tracks include \"Wish You Were Here,\" \"Another Brick in the Wall,\" \"Comfortably Numb,\" \"Money,\" and \"Time.\" The band\'s legendary live shows were a mesmerizing blend of music, light, and visuals, creating a unique experience for their fans. Pink Floyd\'s impact on rock music is immeasurable, and their music continues to be celebrated by fans of all ages around the world.', 'Pink-Floyd-2.png', 10.00, 20, 40, 'rock', 'Pink Floyd'),
-(19, 'The Rolling Stones Live Show!', 'The Rolling Stones are a legendary British rock band formed in London in 1962. Over the years, they have become one of the most influential and enduring rock bands of all time. Their music is characterized by blues-inspired rock and roll, and their live shows are known for their high energy and raw power. Some of their most famous songs include \"Satisfaction,\" \"Jumpin\' Jack Flash,\" \"Gimme Shelter,\" \"Brown Sugar,\" and \"Start Me Up.\" With a career that spans over five decades, the Rolling Stones continue to tour and perform, thrilling audiences all over the world with their iconic sound.', 'The-Rolling-Stones-1.png', 5.00, 100, 40, 'rock', 'The Rolling Stones'),
+(19, 'The Rolling Stones Live Show!', 'The Rolling Stones are a legendary British rock band formed in London in 1962. Over the years, they have become one of the most influential and enduring rock bands of all time. Their music is characterized by blues-inspired rock and roll, and their live shows are known for their high energy and raw power. Some of their most famous songs include \"Satisfaction,\" \"Jumpin\' Jack Flash,\" \"Gimme Shelter,\" \"Brown Sugar,\" and \"Start Me Up.\" With a career that spans over five decades, the Rolling Stones continue to tour and perform, thrilling audiences all over the world with their iconic sound.', 'The-Rolling-Stones-1.png', 5.00, 96, 44, 'rock', 'The Rolling Stones'),
 (20, 'Queen\'s Live Show', 'Queen is a legendary British rock band formed in London in 1970. The band consists of lead vocalist Freddie Mercury, guitarist Brian May, drummer Roger Taylor, and bassist John Deacon. Queen\'s music is known for its eclectic mix of hard rock, heavy metal, and progressive rock, and the band\'s live performances are renowned for their high energy and theatricality. Some of their most famous songs include \"Bohemian Rhapsody,\" \"We Will Rock You,\" \"We Are the Champions,\" \"Somebody to Love,\" \"Don\'t Stop Me Now,\" and \"Another One Bites the Dust.\" Queen\'s influence on the music industry continues to be felt today, and their music continues to be popular with fans of all ages.', 'Queen-2.png', 100.00, 200, 2, 'rock', 'Queen'),
 (21, 'Cash Live Now!', 'Johnny Cash, also known as the \"Man in Black,\" was an American singer-songwriter and actor. He is widely considered as one of the most influential musicians of the 20th century, and is remembered for his deep, distinctive voice and his pioneering role in the development of modern country music. Some of his top songs include \"I Walk the Line,\" \"Ring of Fire,\" and \"Folsom Prison Blues.\" His music continues to be widely loved and his influence on various genres, from rock and pop to hip-hop and folk, can still be felt today.', 'Johnny-Cash-1.png', 50.00, 200, 20, 'country', 'Johnny Cash'),
 (22, 'Dolly Parton\'s Show!', 'Dolly Parton is an American singer, songwriter, and actress known for her country music and her contributions to the entertainment industry. She has been active in the music industry since the 1960s and has released numerous albums throughout her career. Some of Dolly\'s top picks include \"Jolene\", \"I Will Always Love You\", and \"Coat of Many Colors\". She is known for her powerful voice, her ability to bring emotions to life through her music, and her cheerful personality. Her music is a mix of country, pop, and bluegrass, and she has been a major influence on many musicians throughout the years.', 'Dolly-Parton-1.png', 200.00, 20, 10, 'country', 'Dolly Parton'),
@@ -209,10 +207,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Muniib Ali', '200103424@aston.ac.uk', NULL, '$2y$10$hw0g6WofWIuFP6hESZK/KOY9ZLmG39ih3G.MLNlHcXIfY/zyOKmKe', NULL, '2023-02-09 16:06:03', '2023-02-09 16:06:03'),
-(2, 'testaccount', 'testaccount@gmail.com', NULL, '$2y$10$OMwa82kvxRB92IicWtRU6.srbZJwiXK8NAK6mehqW/m5TkMxIQx3G', NULL, '2023-02-09 16:09:15', '2023-02-09 16:09:15'),
-(3, 'John Doe', 'johndoe@gmail.com', NULL, '$2y$10$ZpkLHCygJ6lqs2LLCx0.o.CSj31TraCvkXLPxTs0ZYIyx1nijX1fe', NULL, '2023-02-11 12:48:06', '2023-02-11 12:48:06'),
-(4, 'testaccount', 'alimuniib@gmail.com', NULL, '$2y$10$8tItx5WDh/p5amJXHnJm7Oxd1Iif2fwVAtpdg5XsaIWnSrVcxJoZ2', NULL, '2023-02-11 12:52:57', '2023-02-11 12:52:57');
+(1, 'Muniib Ali', '200103424@aston.ac.uk', NULL, '$2y$10$IxgMxQwoDz2riK6uG6aQDex5fSgSHcqUNhDZlKCCWuMnsvY1jRGt2', NULL, '2023-02-22 17:49:56', '2023-02-22 17:49:56');
 
 --
 -- Indexes for dumped tables
@@ -235,7 +230,16 @@ ALTER TABLE `migrations`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `order_items`
+--
+ALTER TABLE `order_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `password_resets`
@@ -281,22 +285,45 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `order_items`
+--
+ALTER TABLE `order_items`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `order_items`
+--
+ALTER TABLE `order_items`
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
