@@ -15,12 +15,12 @@
 @if($confirmation->user_id == Auth::user()->id)
 
 <div>
-    <h1>Thank you for your order</h1>
+    <h1>Thank you for your order!</h1>
     <h2>Order number: {{$confirmation->id}}</h2>
     <h2>Order date: {{$confirmation->created_at}}</h2>
     <h2>Order total: £{{$confirmation->total_price}}</h2>
     <h2>Order status: {{$confirmation->status}}</h2>
-    <h2>Order items:</h2>
+    <h2>Tickets Ordered:</h2>
 </div>
 <div>
     <table>
@@ -48,6 +48,11 @@
             </tr>
         </tbody>
     </table>
+
+
+    <br>
+    <br>
+    <a href="/orders">View Orders</a>
 </div>
 @endif
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
 use App\Http\Controllers\ConfirmationController;
+use App\Http\Controllers\OrdersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +62,8 @@ Route::prefix('checkout')->group(function () {
 
 Route::get('/confirmation/{order}', [ConfirmationController::class, 'show'])->name('confirmation');
 
+// orders controller routes
+Route::get('/orders', [OrdersController::class, 'show'])->name('orders.show');
 
 
 Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
