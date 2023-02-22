@@ -28,6 +28,8 @@
 
     <form action="/checkout" method="POST">
         @csrf
+        <!-- post the totalprice -->
+        <input type="hidden" name="totalPrice" value="{{ $totalPrice }}">
         <button type="submit">Place Order</button>
     </form>
 @endsection

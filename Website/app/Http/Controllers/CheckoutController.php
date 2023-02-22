@@ -68,14 +68,15 @@ class CheckoutController extends Controller
         // Create a new order in the database
         $order = new Order;
         $order->user_id = $user->id;
-        $order->total_price = $request->input('total_price');
+        $order->total_price = $request->input('totalPrice');
         $order->save();
+
 
         // Add the products to the order
         $basket = Session::get('basket');
         $basketQuantities = Session::get('basketQuantities', []);
         foreach ($basket as $productId) {
-            $product = Product::find($productId);
+            $product = Products::find($productId);
             if ($product) {
                 $quantity = $basketQuantities[$productId] ?? 0;
                 $orderItem = new OrderItem;
