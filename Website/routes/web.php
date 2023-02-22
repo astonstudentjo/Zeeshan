@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
+use App\Http\Controllers\ConfirmationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,17 +27,17 @@ Route::get('/', function () {
 
 
 
-Route::get('/aboutus', function(){
+Route::get('/aboutus', function () {
     return view('aboutus');
 });
 
-Route::get('/contactus', function(){
+Route::get('/contactus', function () {
     return view('contactus');
 });
 
-Route::get('/products/{id}',[ProductController::class, 'show']);
+Route::get('/products/{id}', [ProductController::class, 'show']);
 
-Route::get('/products/category/{category}',[ProductsController::class, 'showCategory']);
+Route::get('/products/category/{category}', [ProductsController::class, 'showCategory']);
 
 
 
@@ -53,9 +54,14 @@ Route::post('/basket', [BasketController::class, 'addBasket']);
 Route::prefix('checkout')->group(function () {
     Route::get('/', [CheckoutController::class, 'show'])->name('checkout.show');
     Route::post('/', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
-
-    
 });
+
+
+// Route::get('/confirmation', [ConfirmationController::class, 'show']);
+
+Route::get('/confirmation/{order}', [ConfirmationController::class, 'show'])->name('confirmation');
+
+
 
 Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
 
@@ -70,7 +76,3 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/signup', [RegistrationController::class, 'show']);
 
 Route::post('/signup', [RegistrationController::class, 'create']);
-
-
-
-

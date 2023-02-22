@@ -120,6 +120,8 @@ class CheckoutController extends Controller
         Session::forget('basketQuantities');
 
         // Redirect the user to the order confirmation page
-        return redirect('confirmation');
+        // return redirect('confirmation');
+        return redirect()->route('confirmation', ['order' => $order]);
+
     }
 }

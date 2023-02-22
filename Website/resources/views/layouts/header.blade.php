@@ -31,6 +31,8 @@
            
             <div>
             <a href = "/basket">Basket</a>
+            <a href = "/orders">orders</a>
+
 
             <form action = "/signout" method = "post">
                 @csrf

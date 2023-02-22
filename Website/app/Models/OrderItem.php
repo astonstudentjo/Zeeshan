@@ -1,20 +1,15 @@
 <?php
 
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
 {
-    protected $table = 'order_items';
+    use HasFactory;
 
-    protected $fillable = [
-        'order_id',
-        'product_id',
-        'quantity',
-        'price'
-    ];
+    protected $fillable = ['order_id', 'product_id', 'quantity', 'price'];
 
     public function order()
     {
@@ -23,8 +18,12 @@ class OrderItem extends Model
 
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Products::class);
     }
+
+    public function products()
+{
+    return $this->belongsTo(Products::class);
 }
 
-?>
+}
