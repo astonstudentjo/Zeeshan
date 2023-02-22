@@ -53,6 +53,8 @@ Route::post('/basket', [BasketController::class, 'addBasket']);
 Route::prefix('checkout')->group(function () {
     Route::get('/', [CheckoutController::class, 'show'])->name('checkout.show');
     Route::post('/', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+
+    
 });
 
 Route::post('/basket/clear', [BasketController::class, 'clearBasket']);

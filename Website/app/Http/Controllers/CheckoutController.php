@@ -65,27 +65,41 @@ class CheckoutController extends Controller
         // Retrieve the user's details
         $user = Auth::user();
 
+        // Check if there is enough stock for each product in the basket
+        $basket = Session::get('basket');
+        $basketQuantities = Session::get('basketQuantities', []);
+        foreach ($basket as $productId) {
+            $product = Products::find($productId);
+            if (!$product || $basketQuantities[$productId] > $product->stock) {
+                // Redirect the user back to the basket page
+                return redirect('basket');
+            }
+        }
+
         // Create a new order in the database
         $order = new Order;
         $order->user_id = $user->id;
         $order->total_price = $request->input('totalPrice');
         $order->save();
 
-
-        // Add the products to the order
-        $basket = Session::get('basket');
-        $basketQuantities = Session::get('basketQuantities', []);
+        // Reduce the stock count for each product in the basket
         foreach ($basket as $productId) {
             $product = Products::find($productId);
-            if ($product) {
-                $quantity = $basketQuantities[$productId] ?? 0;
-                $orderItem = new OrderItem;
-                $orderItem->order_id = $order->id;
-                $orderItem->product_id = $product->id;
-                $orderItem->quantity = $quantity;
-                $orderItem->price = $product->price;
-                $orderItem->save();
-            }
+            $quantity = $basketQuantities[$productId] ?? 0;
+            $product->stock -= $quantity;
+            $product->save();
+        }
+
+        // Add the products to the order
+        foreach ($basket as $productId) {
+            $product = Products::find($productId);
+            $quantity = $basketQuantities[$productId] ?? 0;
+            $orderItem = new OrderItem;
+            $orderItem->order_id = $order->id;
+            $orderItem->product_id = $product->id;
+            $orderItem->quantity = $quantity;
+            $orderItem->price = $product->price;
+            $orderItem->save();
         }
 
         // Clear the user's basket and quantities
