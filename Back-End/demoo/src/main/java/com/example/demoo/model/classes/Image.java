@@ -1,4 +1,4 @@
-package com.example.demoo.model;
+package main.java.com.example.demoo.model.classes;
 public class Image 
 {
     private String url;

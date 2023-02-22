@@ -1,6 +1,9 @@
 package com.example.demoo.model;
 
+import java.util.Locale.Category;
+
 public class Products {
+    
     
 
     //fields
@@ -11,7 +14,7 @@ public class Products {
     private float price;
     private int stock;
     private int sales;
-    private String category;
+    private Catagory category;
     private String artist;
 //private blob img;  // we need to find out what type this is.
     //`id`,`name`,`description`,`img`,`price`,`stock`,`sales`,`category`,`artist`
@@ -19,7 +22,7 @@ public class Products {
 
 public int getId() {
     return id;
-}
+} 
 
 public void setId(int id) {
     this.id = id;
@@ -79,10 +82,10 @@ public void setsales(int sales) {
 }                       
     
 public String getcategory () {
-    return category;
+    return category.toString();
 } 
     
-public void setcategory(String category) {
+public void setcategory(Category category) {
     this.category= category;
 } 
     
