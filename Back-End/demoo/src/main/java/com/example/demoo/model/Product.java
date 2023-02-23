@@ -1,8 +1,12 @@
 package com.example.demoo.model;
 
+<<<<<<< Updated upstream
 import java.util.Locale.Category;
 
 public class Products {
+=======
+public class Product {
+>>>>>>> Stashed changes
     
     
 
