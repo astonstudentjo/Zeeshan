@@ -1,4 +1,4 @@
-package main.java.com.example.demoo.model.classes;
+package com.example.demoo.model.classes;
 public class Image 
 {
     private String url;
@@ -14,7 +14,7 @@ public class Image
        url.concat("1");
     }
 
-    public string getUrl()
+    public String getUrl()
     {
         return url;
     }
