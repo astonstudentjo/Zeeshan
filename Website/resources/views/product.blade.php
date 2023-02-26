@@ -21,11 +21,22 @@
         <p>{{$concert->description}}</p>
         <p>£{{$concert->price}}</p>
 
+
+        
+        @if ($concert->stock > 0)
         <form action="/basket" method="POST">
             @csrf
             <input type="hidden" name="product_id" value="{{$concert->id}}">
             <button type="submit">Add to Basket</button>
         </form>
+            
+        @else
+        <p>Out of stock</p>
+
+        @endif
+            
+        
+        
 
        
 
