@@ -24,17 +24,18 @@
         @foreach($products as $product)
 
             <div>
-                <a href = "/products/{{$product->id}}">
-                
-
-
+                <a href = "/products/{{$product->id}}">               
                 <img src="/productImages/{{ $product->img }}" width="300px">
-                
-            </div>
                 <h1> {{$product->name}}</h1>
                 <h1>{{$product->artist}}</h1>
                 <h4> {{$product->category}}</h4>
                 <h4> £{{$product->price}}</h4>
+                @if ($product->stock <= 0)
+
+                <h4>Out of Stock!</h4>
+                @elseif ($product-> stock< 20)
+                <h4>Only {{$product -> stock}} remaining buy now!!!</h4>  
+                @endif
 
 
                 </a>
