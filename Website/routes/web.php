@@ -79,3 +79,4 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/signup', [RegistrationController::class, 'show']);
 
 Route::post('/signup', [RegistrationController::class, 'create']);
+
