@@ -8,23 +8,6 @@
         <meta charset="utf-8">
         <title>Products</title>
         <style>
-        .products{
-            display: flex;
-            padding-top: 20px;
-            float:inline-end;
-            
-            
-        }
-
-        .product{
-            padding: 10px;
-        }
-
-        .categories{
-            display: flex;
-            padding: 10px;
-            justify-content: space-between;
-        }
 
         
         </style>

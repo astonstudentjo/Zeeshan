@@ -2,17 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-            <style>
-                .container {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 10px;
-                    background-color: lightblue;
-                }
+
+        <link rel="stylesheet" href="../css/header.css">
+
 
                 
-
-            </style>
     </head>
         
 
@@ -57,14 +51,6 @@
 
 
         </div>
-        
-
-       
-       
-
-       
-        
-
     <body>
         @yield('body')
     </body>

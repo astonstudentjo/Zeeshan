@@ -7,8 +7,8 @@
     <head>
         <meta charset="utf-8">
         <title>Login</title>
+        <link rel="stylesheet" href="../css/login.css">
     </head>
-
     <!-- placement for the image-->
 
     <div class="image-container">
