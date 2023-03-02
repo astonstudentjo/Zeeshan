@@ -3,20 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-
-    <!-- <link rel="stylesheet" href="../css/header.css"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
-
-
-
-    <style>
-        /* .container {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: lightblue;
-        } */
-    </style>
 
 
 
@@ -25,7 +12,7 @@
 
 <div class="container">
     <div class="left-header">
-        <a>EventTick</a>
+        <h2>EventTick</h2>
         <a href="/">Home</a>
         <a href="/products">Products</a>
         <a href="/aboutus">About Us</a>
