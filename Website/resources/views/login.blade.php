@@ -36,25 +36,25 @@
         </div>
 
 
-        @error('email')
-        {{$message}}
-        <br>
-        @enderror
 
         <label for="email"> Email: </label>
         <input type="text" placeholder="Email" name="email">
         <br><br>
 
-
-        @error('password')
+        @error('email')
         {{$message}}
         <br>
         @enderror
+
 
         <label for="password"> Password: </label>
         <input type="password" placeholder="Password" name="password">
         <br><br>
 
+        @error('password')
+        {{$message}}
+        <br>
+        @enderror
 
         <button type="submit">Login to view your account</button>
         <br>

@@ -15,18 +15,13 @@
     <div class="signup">
         <form action="/signup" method="post">
 
-            @csrf
-            @error('name')
-            {{$message}}
-            <br>
-            @enderror
-
+        
             <label for="name"> Full Name: </label>
             <input type="text" placeholder="Full name" name="name">
             <br><br>
 
-
-            @error('email')
+            @csrf
+            @error('name')
             {{$message}}
             <br>
             @enderror
@@ -35,15 +30,20 @@
             <input type="text" placeholder="Email" name="email">
             <br><br>
 
+            @error('email')
+            {{$message}}
+            <br>
+            @enderror
+
+
+            <label for="password"> Password: </label>
+            <input type="password" placeholder="Password" name="password">
+            <br><br>
 
             @error('password')
             {{$message}}
             <br>
             @enderror
-
-            <label for="password"> Password: </label>
-            <input type="password" placeholder="Password" name="password">
-            <br><br>
 
 
             <label for="password_confirmation"> Password Confirmation: </label>

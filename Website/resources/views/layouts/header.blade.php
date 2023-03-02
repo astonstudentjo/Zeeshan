@@ -44,7 +44,6 @@
             <a>{{auth()->user()->name}}</a>
             <button type="submit">Sign Out</button>
         </form>
-        <a href="/signout">
     </div>
 
     @endauth
