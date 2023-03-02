@@ -1,5 +1,5 @@
 @extends('layouts.header')
-
+<link rel="stylesheet" href="/Website/resources/css/signup.css">
 @section('body')
 
 <span class="image-container">
