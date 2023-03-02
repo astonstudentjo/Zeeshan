@@ -7,6 +7,7 @@
                     display: flex;
                     justify-content: space-between;
                     padding: 10px;
+                    background-color: lightblue;
                 }
 
                 
