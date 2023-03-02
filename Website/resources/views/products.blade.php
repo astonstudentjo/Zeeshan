@@ -7,9 +7,30 @@
     <head>
         <meta charset="utf-8">
         <title>Products</title>
+        <style>
+        .products{
+            display: flex;
+            padding-top: 20px;
+            float:inline-end;
+            
+            
+        }
+
+        .product{
+            padding: 10px;
+        }
+
+        .categories{
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+        }
+
+        
+        </style>
     </head>
 
-    <div>
+    <div class = "categories">
         <a href = '/products/category/price_ascending'>Price-Low to High</a>
         <a href = '/products/category/price_descending'>Price-High to Low</a>
         <a href = '/products/category/pop'>Pop</a>
@@ -20,10 +41,10 @@
 
 
     </div>
-    <div>
+    <div class = "products">
         @foreach($products as $product)
 
-            <div>
+            <div class = "product">
                 <a href = "/products/{{$product->id}}">               
                 <img src="/productImages/{{ $product->img }}" width="300px">
                 <h1> {{$product->name}}</h1>

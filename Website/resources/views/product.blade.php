@@ -7,10 +7,15 @@
     <head>
         <meta charset="utf-8">
         <title>Product</title>
+
+        <style>
+            
+
+        </style>
     </head>
 
 
-    <div>
+    
        
 
         
@@ -48,25 +53,10 @@
         <p>Out of stock</p>
 
         @endif
-            
-        
-        
-
-       
-
-
-
-
-
-
-
-
-        
-        
+      
 
             
-       
-    </div>
+    
 </html>
 
 @endsection
