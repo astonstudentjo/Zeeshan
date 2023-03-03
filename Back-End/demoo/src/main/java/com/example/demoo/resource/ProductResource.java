@@ -25,5 +25,22 @@ public class ProductResource {
     public List<Product> getAll() {
        return productMapper.findAll();
     }
- 
+
+    @GetMapping("/update")
+    public List<Product> update() {
+        Product product = new Product();
+        product.id;
+        product.name;
+        product.description;
+        product.price;
+        product.stock;
+        product.sales;
+        product.catergory;
+        product.artist;
+
+        ProductMapper.insert(product);
+
+        return productMapper.findAll();
+    }
+
 }
