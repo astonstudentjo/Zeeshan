@@ -70,7 +70,8 @@ Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
 
 Route::post('/basket/update', [BasketController::class, 'update']);
 
-Route::post('/signout', [SignoutController::class, 'signout']);
+//Routes that's only guests should be able to access
+Route::middleware(['GuestAuthentication'])->group(function(){
 
 Route::get('/login', [LoginController::class, 'show']);
 
@@ -79,3 +80,12 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/signup', [RegistrationController::class, 'show']);
 
 Route::post('/signup', [RegistrationController::class, 'create']);
+
+});
+
+//Routes that only signed in customers should be able to access
+Route::middleware(['CustomerAuthentication'])->group(function(){
+    Route::post('/signout', [SignoutController::class, 'signout']);
+
+
+});

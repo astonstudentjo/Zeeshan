@@ -22,7 +22,7 @@ li {
 </style>
 </head>
 
-<!-- header section starts-->
+<!-- header section starts
 <header>
 
 <ul>
@@ -36,7 +36,7 @@ li {
 </ul>
 
 </header>
-<!-- header section ends -->
+ header section ends -->
 
 <hr>
 <!-- about section starts  -->

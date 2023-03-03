@@ -51,6 +51,8 @@ class BasketController extends Controller
     {
         Session::start();
         $productId = $request->input('product_id');
+        $intialQuantity = $request->input('quantity');
+
         $basket = Session::get('basket');
 
         if ($basket == null) {
@@ -63,14 +65,21 @@ class BasketController extends Controller
             // if the product exists, increase its quantity
             $product = Products::find($productId);
             $basketQuantities = Session::get('basketQuantities', []);
-            $basketQuantities[$productId] += 1;
+
+            //Limits the quantity of a single product in bakset to 10
+            if(($basketQuantities[$productId] + $intialQuantity) <= 10){
+
+                $basketQuantities[$productId] += $intialQuantity;
+            } else {
+                $basketQuantities[$productId] = 10;
+            }
             Session::put('basketQuantities', $basketQuantities);
         } else {
             // if the product doesn't exist, add it to the basket
             $basket[] = $productId;
             $product = Products::find($productId);
             $basketQuantities = Session::get('basketQuantities', []);
-            $basketQuantities[$productId] = 1;
+            $basketQuantities[$productId] = $intialQuantity;
             Session::put('basketQuantities', $basketQuantities);
         }
 

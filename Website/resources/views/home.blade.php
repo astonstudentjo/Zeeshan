@@ -7,10 +7,22 @@
     <head>
         <meta charset="utf-8">
         <title>Home</title>
+
+        <style>
+            .categories{
+            
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            
+            
+            
+        }
+        </style>
     </head>
 
     <br>
-    <div>
+    <div class = "categories">
     <a href = '/products/category/pop'>Pop</a>
     <a href = '/products/category/metal'>Metal</a>
     <a href = '/products/category/rap'>Rap</a>
