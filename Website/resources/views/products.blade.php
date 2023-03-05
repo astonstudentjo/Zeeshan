@@ -117,7 +117,7 @@
 
                     <div class="icons">
                         <a href="/products/{{$product->id}}" class="cart-btn">View More!</a>
-                        <a href="#" class="fas fa-shopping-basket"></a>
+                        <!-- <a href="#" class="fas fa-shopping-basket"></a>     -->
 
                     </div>
                 </div>
