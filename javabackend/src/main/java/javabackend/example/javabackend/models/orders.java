@@ -1,8 +1,5 @@
 package javabackend.example.javabackend.models;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 
@@ -12,16 +9,23 @@ public class ordersModel {
     @GeneratedValue(strategy=GenerationType.AUTO)
 
 //    Variables from Orders Table
+    @Column(name = "id")
     private Integer id;
 
+    @Column(name = "user_id")
     private Integer user_id;
 
-    private double total_price;
+    @Column(name = "total_price")
+    private float total_price;
 
+    @Column(name = "created_at")
     private Timestamp created_at;
 
+    @Column(name = "updated_at")
     private Timestamp updated_at;
 
+
+    @Column(name = "status")
     private String status;
 
 //    Getters
@@ -60,7 +64,7 @@ public class ordersModel {
         this.user_id = user_id;
     }
 
-    public void setTotal_price(double total_price){
+    public void setTotal_price(float total_price){
         this.total_price = total_price;
     }
 
