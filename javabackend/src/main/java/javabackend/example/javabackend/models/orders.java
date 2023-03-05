@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-public class ordersModel {
+public class orders {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 

@@ -1,4 +1,4 @@
-package javabackend.example.javabackend;
+package javabackend.example.javabackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
