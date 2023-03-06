@@ -1,4 +1,4 @@
-package javabackend.example.javabackend;
+package javabackend.example.javabackend.models;
 
 
 
