@@ -6,5 +6,7 @@ import javabackend.example.javabackend.models.Products;
 
 public interface ProductsService {
     List<Products> getAllProducts();
+
+    Products saveProduct(Products product);
     
 }

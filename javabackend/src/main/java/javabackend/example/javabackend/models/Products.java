@@ -96,6 +96,14 @@ public class Products {
         return stock;
     }
 
+    public void setDescription(String description){
+        this.description = description;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
 
 
     
