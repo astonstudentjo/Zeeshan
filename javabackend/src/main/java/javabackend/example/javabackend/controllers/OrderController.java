@@ -17,13 +17,8 @@ public class OrderController {
 
 
     @GetMapping("/Orders")
-//    public String index() {
-//        return "This is a test";
-//    }
-
     public String getOrders(Model model) {
         List<orders> orders = ordersRepository.findAll();
-        System.out.println("Number of orders: " + orders.size());
         model.addAttribute("orders", orders);
         return "Orders-Page";
     }

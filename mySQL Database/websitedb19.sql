@@ -94,19 +94,17 @@ CREATE TABLE `order_items` (
   `product_id` bigint(20) UNSIGNED NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL,
   `price` decimal(8,2) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, 20.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31'),
-(2, 1, 7, 1, 50.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31'),
-(3, 2, 6, 7, 50.00, '2023-03-07 11:44:28', '2023-03-07 11:44:28'),
-(4, 2, 8, 6, 10.00, '2023-03-07 11:44:28', '2023-03-07 11:44:28');
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
+(1, 1, 1, 1, 20.00),
+(2, 1, 7, 1, 50.00),
+(3, 2, 6, 7, 50.00),
+(4, 2, 8, 6, 10.00);
 
 -- --------------------------------------------------------
 

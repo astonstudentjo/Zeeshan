@@ -64,7 +64,9 @@ public class ProductsController {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         products.setImg(fileName);
         Products savedProduct = productsService.saveProduct(products);
-        String uploadDirectory = "../Zeeshan/Website/public/productImages";
+//        String uploadDirectory = "../Zeeshan/Website/public/productImages";
+        String uploadDirectory = "../Website/public/productImages";
+
         Path uploadPath = Paths.get(uploadDirectory);
         if(!Files.exists(uploadPath)){
             Files.createDirectories(uploadPath);
