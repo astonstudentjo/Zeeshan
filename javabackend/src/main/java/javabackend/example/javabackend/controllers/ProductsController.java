@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javabackend.example.javabackend.repositories.ProductsRepository;
@@ -48,6 +49,13 @@ public class ProductsController {
     @PostMapping("/products")
     public String saveProduct(@ModelAttribute("products") Products products){
         productsService.saveProduct(products);
+        return "redirect:/products";
+
+    }
+
+    @GetMapping("/products/{id}")
+    public String deleteProduct(@PathVariable Integer id ){
+        productsService.deleteProductById(id);
         return "redirect:/products";
 
     }
