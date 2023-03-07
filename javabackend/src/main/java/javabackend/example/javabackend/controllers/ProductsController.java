@@ -94,5 +94,23 @@ public class ProductsController {
         
 
     }
+
+    @GetMapping("/products/edit/{id}")
+    public String editProductForm(@PathVariable Integer id, Model model){
+        model.addAttribute("products", productsService.getProductById(id));
+        return "Update-product";
+    }
+
+    @PostMapping("/products/{id}")
+    public String updateProduct(@PathVariable Integer id, @ModelAttribute("products") Products products, Model model){
+        Products preexistingProduct = productsService.getProductById(id);
+
+        preexistingProduct.setStock(products.getStock());
+
+        productsService.updateProduct(preexistingProduct);
+
+        return "redirect:/products";
+
+    }
     
 }

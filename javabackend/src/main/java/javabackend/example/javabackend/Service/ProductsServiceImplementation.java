@@ -34,5 +34,17 @@ public class ProductsServiceImplementation implements ProductsService {
         
     }
 
+    @Override
+    public Products getProductById(Integer id){
+        return productsRepository.findById(id).get();
+
+    }
+
+    @Override
+    public Products updateProduct(Products product){
+        return productsRepository.save(product);
+
+    }
+
     
 }
