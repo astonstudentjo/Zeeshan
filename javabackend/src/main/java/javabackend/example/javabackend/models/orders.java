@@ -37,7 +37,7 @@ public class orders {
         return user_id;
     }
 
-    public double getTotal_price(){
+    public float getTotal_price(){
         return total_price;
     }
 

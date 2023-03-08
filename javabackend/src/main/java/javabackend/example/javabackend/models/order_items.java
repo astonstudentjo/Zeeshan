@@ -4,64 +4,62 @@ import java.sql.Timestamp;
 
 
 @Entity
-public class ordersItem {
+public class order_items {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "id")
+    private int id;
 
     @Column(name = "order_id")
-    private Long order_id;
+    private int order_id;
 
     @Column(name = "product_id")
-    private Long product_id;
+    private int product_id;
 
     @Column(name = "quantity")
-    private Integer quantity;
+    private int quantity;
 
     @Column(name = "price")
-    private Long price;
+    private float price;
 
-//    getters
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public Long getOrder_id() {
-        return order_id;
-    }
-
-    public Long getProduct_id() {
-        return product_id;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public Long getPrice() {
-        return price;
-    }
-
-//    setters
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setOrder_id(Long order_id) {
+    public int getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(int order_id) {
         this.order_id = order_id;
     }
 
-    public void setProduct_id(Long product_id) {
+    public int getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(int product_id) {
         this.product_id = product_id;
     }
 
-    public void setQuantity(Integer quantity) {
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public void setPrice(Long price) {
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
         this.price = price;
     }
 }
+
