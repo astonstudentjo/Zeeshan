@@ -18,15 +18,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td th:text="${order_items.id}"></td>
-            <td th:text="${order_items.order_id}"></td>
-            <td th:text="${order_items.product_id}"></td>
-            <td th:text="${order_items.quantity}"></td>
-            <td th:text="${order_items.price}"></td>
+        <tr th:each="orderItem : ${order_items}">
+            <td th:text="${orderItem.id}"></td>
+            <td th:text="${orderItem.order_id}"></td>
+            <td th:text="${orderItem.product_id}"></td>
+            <td th:text="${orderItem.quantity}"></td>
+            <td th:text="${orderItem.price}"></td>
         </tr>
         </tbody>
     </table>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
