@@ -13,6 +13,7 @@ import javabackend.example.javabackend.repositories.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class OrderItemsController {
@@ -34,10 +35,30 @@ public class OrderItemsController {
     @GetMapping("/OrderedItems")
     public String getOrdersItems(Model model) {
         List<order_items> order_items = ordersItemRepository.findAll();
-        System.out.println("Number of order items: " + order_items.size()); // add this line to print the number of order items
+        System.out.println("Number of order items: " + order_items.size());
         model.addAttribute("order_items", order_items);
         return "Orders-Item";
     }
+//
+//    @GetMapping("/Orders/items/{id}")
+//    public String getSpecificItem(Model model){
+//
+//
+//
+//        return "Orders-Item";
+//    }
+
+
+    @GetMapping("/Orders/items/{id}")
+    public String getSpecificItem(@PathVariable("id") Integer orderId, Model model) {
+        List<order_items> orderItems = ordersItemRepository.findAll();
+        List<order_items> filteredItems = orderItems.stream()
+                .filter(item -> item.getOrder_id().equals(orderId))
+                .collect(Collectors.toList());
+        model.addAttribute("order_items", filteredItems);
+        return "Orders-Item";
+    }
+
 
 
 
