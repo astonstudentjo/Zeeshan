@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 
 @Entity
+@Table(name = "order_items")
 public class order_items {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -62,4 +63,5 @@ public class order_items {
         this.price = price;
     }
 }
+
 

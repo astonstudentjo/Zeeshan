@@ -6,7 +6,5 @@ import java.util.List;
 
 public interface OrderItemsService {
     List<order_items> getAllOrderItems();
-
-//    List<order_items> getOrderItemsByOrderId(int orderId);
-
+    order_items updateStatus(order_items orderItems);
 }

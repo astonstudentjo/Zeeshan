@@ -16,23 +16,39 @@ import java.util.List;
 @Controller
 public class OrderItemsController {
 
-//    @Autowired
-//    private OrderItemsService orderItemsService;
+    @Autowired
+    private OrderItemsService orderItemsService;
 
-    // get the order items based on the url id
-//    @GetMapping("/orderItems/{id}")
-//    public String getOrderItems(@PathVariable("id") int id, Model model) {
-//        List<order_items> orderItems = orderItemsService.getOrderItems(id);
-//        model.addAttribute("orderItems", orderItems);
-//        return "orderItems";
+    public OrderItemsController(OrderItemsService OrderItemsService) {
+        super();
+        this.orderItemsService = OrderItemsService;
+    }
+
+
+    @Autowired
+    private ordersItemRepository ordersItemRepository;
+
+//    // @GetMapping("/orders/{order_id}/order-items")
+//    // public String getOrderItemsByOrderId(@PathVariable("order_id") int orderId,
+//    // Model model) {
+//    // List<order_items> order_items = ordersItemRepository.findByOrder_Id(orderId);
+//    // model.addAttribute("order_items", order_items);
+//    // return "Order-Items";
+//    // }
+//
+//    @GetMapping("/test")
+//    public String test(Model model) {
+//        List<order_items> orderItems = orderItemsService.getAllOrderItems();
+//        model.addAttribute("order_items", orderItems);
+//        return "Orders-Items";
 //    }
 
+    @GetMapping("/items")
+    public String listItems(Model model) {
+        model.addAttribute("order-items", orderItemsService.getAllOrderItems());
+        return "Orders-Item";
+    }
 
-//    @GetMapping("/Orders")
-//    public String getOrders(Model model) {
-//        List<order_items> orders = ordersItemRepository.findAll();
-//        model.addAttribute("orders", orders);
-//        return "Orders-Page";
-//    }
+
 
 }
