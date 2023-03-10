@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2023 at 06:58 PM
+-- Generation Time: Mar 07, 2023 at 12:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -79,7 +79,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `total_price`, `created_at`, `updated_at`, `status`) VALUES
-(1, 1, 70.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31', 'pending');
+(1, 1, 70.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31', 'pending'),
+(2, 1, 410.00, '2023-03-07 11:44:28', '2023-03-07 11:44:28', 'pending');
 
 -- --------------------------------------------------------
 
@@ -93,17 +94,17 @@ CREATE TABLE `order_items` (
   `product_id` bigint(20) UNSIGNED NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL,
   `price` decimal(8,2) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, 20.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31'),
-(2, 1, 7, 1, 50.00, '2023-02-22 17:55:31', '2023-02-22 17:55:31');
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
+(1, 1, 1, 1, 20.00),
+(2, 1, 7, 1, 50.00),
+(3, 2, 6, 7, 50.00),
+(4, 2, 8, 6, 10.00);
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,7 @@ CREATE TABLE `products` (
   `img` varchar(45) DEFAULT 'Null',
   `price` decimal(10,2) DEFAULT 0.00,
   `stock` int(11) DEFAULT NULL,
-  `sales` int(11) DEFAULT NULL,
+  `sales` int(11) DEFAULT 0,
   `category` varchar(45) DEFAULT NULL,
   `artist` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -164,9 +165,9 @@ INSERT INTO `products` (`id`, `name`, `description`, `img`, `price`, `stock`, `s
 (3, 'Dua Lipa on tour!', 'Dua Lipa is a British pop star known for her electrifying vocals and bold fashion sense. Her discography includes chart-topping hits like \"New Rules,\" \"Levitating,\" and \"Don\'t Start Now.\" These empowering anthems, infused with Dua\'s unique blend of pop, R&B, and dance music, are sure to have fans grooving in their seats during her electrifying performances. Whether she\'s singing about self-love and independence or belting out catchy pop hooks, Dua\'s energy and confidence shine through in every note.\r\n', 'Dua-Lipa-2.png', 50.00, 50, 4, 'pop', 'Dua Lipa'),
 (4, 'Billie Eilish to the moon!', 'Billie Eilish is a Grammy-winning singer and songwriter known for her unique, haunting voice and introspective lyrics. She burst onto the music scene with her hit single \"Ocean Eyes\" and has since become one of the biggest names in pop music. Some of her top songs include \"Bad Guy,\" \"When The Party\'s Over,\" and \"Bury A Friend.\" Eilish\'s music is characterized by its ethereal, atmospheric soundscapes and introspective themes that explore the complexities of youth, mental health, and relationships. With her captivating stage presence and powerful performances, Eilish promises to deliver an unforgettable live experience to fans on her upcoming tour.', 'Billie-Eilish-1.png', 200.00, 200, 2, 'pop', 'Billie Eillish'),
 (5, 'Ed\'s Finale ', 'Ed Sheeran is a pop sensation known for his smooth vocals and catchy tunes. Some of his biggest hits include \"Shape of You\", \"Perfect\", \"Thinking Out Loud\", and \"Photograph\". With a blend of R&B, pop, and hip-hop influences, Ed\'s music will get you dancing and singing along. He continues to captivate audiences worldwide with his electrifying live performances.', 'Ed-Sheeran-1.png', 20.00, 200, 10, 'pop', 'Ed Sheeran'),
-(6, 'Metallica\'s Bang', 'Metallica is an American heavy metal band formed in 1981. With their hard-hitting and heavy sound, they have been one of the most influential bands in the genre, paving the way for countless other metal acts. Some of their most popular tracks include \"Enter Sandman,\" \"The Unforgiven,\" \"Master of Puppets,\" and \"Nothing Else Matters.\" When they perform live, they bring their iconic sound and high-energy stage presence, delivering a show that is sure to leave fans headbanging and screaming for more.', 'Metallica-1.png', 50.00, 121, 5, 'metal', 'Metallica'),
+(6, 'Metallica\'s Bang', 'Metallica is an American heavy metal band formed in 1981. With their hard-hitting and heavy sound, they have been one of the most influential bands in the genre, paving the way for countless other metal acts. Some of their most popular tracks include \"Enter Sandman,\" \"The Unforgiven,\" \"Master of Puppets,\" and \"Nothing Else Matters.\" When they perform live, they bring their iconic sound and high-energy stage presence, delivering a show that is sure to leave fans headbanging and screaming for more.', 'Metallica-1.png', 50.00, 114, 12, 'metal', 'Metallica'),
 (7, 'To The Iron Side?', 'Iron Maiden is a legendary heavy metal band hailing from England, formed in 1975. With their unique blend of metal, punk, and classical music, they have become one of the most iconic bands in metal history. Their extensive discography includes some of the genre\'s most famous tracks, including \"Hallowed Be Thy Name,\" \"The Trooper,\" and \"Fear of the Dark.\" Iron Maiden is known for their high-energy live shows and iconic stage presence, featuring vocalist Bruce Dickinson\'s powerful voice and guitarist Dave Murray\'s virtuosic playing. If you\'re a fan of metal, Iron Maiden is a must-see live experience.', 'Iron-Maiden-2.png', 50.00, 210, 5, 'metal', 'Iron Maiden'),
-(8, 'Sabbath Days', 'Black Sabbath, one of the pioneers of heavy metal, will surely unleash a thunderous performance of their iconic hits like \"Iron Man,\" \"Paranoid,\" and \"Black Sabbath.\" With their distinctive sound, Black Sabbath will have the crowd headbanging and singing along to classic metal anthems that have stood the test of time. Whether you\'re a longtime fan or a newcomer, a Black Sabbath concert is a must-see event for anyone who loves hard-hitting music with a powerful message.', 'Black-Sabbath-1.png', 10.00, 200, 2, 'metal', 'Black Sabbath'),
+(8, 'Sabbath Days', 'Black Sabbath, one of the pioneers of heavy metal, will surely unleash a thunderous performance of their iconic hits like \"Iron Man,\" \"Paranoid,\" and \"Black Sabbath.\" With their distinctive sound, Black Sabbath will have the crowd headbanging and singing along to classic metal anthems that have stood the test of time. Whether you\'re a longtime fan or a newcomer, a Black Sabbath concert is a must-see event for anyone who loves hard-hitting music with a powerful message.', 'Black-Sabbath-1.png', 10.00, 194, 8, 'metal', 'Black Sabbath'),
 (9, 'Slayer\'s Be Slayin!', 'Slayer is an American thrash metal band that formed in 1981. With their aggressive, fast-paced sound and powerful lyrics, they have become one of the most influential and successful bands in the heavy metal genre. Some of their top tracks include \"Angel of Death,\" \"Raining Blood,\" and \"Seasons in the Abyss.\" The band\'s live shows are renowned for their high energy, and fans can expect to hear these classic tracks, along with others from their extensive catalog, when they perform on tour.', 'Slayer-2.png', 25.00, 200, 2, 'metal', 'Slayer'),
 (10, 'Judas Contract!', 'Judas Priest is an English heavy metal band formed in Birmingham, England in 1969. They are considered one of the pioneers of the heavy metal genre and have inspired countless musicians and bands over the years. The band is well-known for their powerful vocals, driving guitar riffs, and dynamic song structures. Some of their top picks include \"Breaking the Law,\" \"Painkiller,\" and \"You\'ve Got Another Thing Comin\'.\" Expect a high-energy performance full of headbanging and screaming guitar solos when seeing Judas Priest live.', 'Judas-Priest-2.png', 50.00, 100, 20, 'metal', 'Judas Priest'),
 (11, 'Stormzy On Tour', 'Stormzy, also known as Michael Ebenazer Kwadjo Omari Owuo Jr., is a British grime and hip-hop artist known for his socially conscious lyrics and electrifying live performances. His top tracks include \"Shut Up,\" \"Vossi Bop,\" and \"Own It,\" which showcase his signature smooth flow and thought-provoking lyrics. With his powerful stage presence and politically charged music, Stormzy has become one of the UK\'s leading voices in hip-hop, and continues to inspire and captivate audiences around the world.', 'Stormzy-1.png', 50.00, 400, 80, 'rap', 'Stormzy'),
@@ -288,19 +289,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`

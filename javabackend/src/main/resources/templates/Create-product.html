@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <title>New product</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <br><br>
+    <div class = "container">
+        <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+          <h1 class = "text-center">Create New Product</h1>
+          <div class = "card-body">
+            <form th:action = "@{/products}" th:object="${products}" method = "POST" enctype="multipart/form-data">
+                <div class = "form-group">
+                    <label>Product Name</label>
+                    <input type = "text" name = "name" th:field = "*{name}" placeholder = "Enter Product Name" class = "form-control"/>
+
+                </div>
+
+
+                <div class = "form-group">
+
+                    <label>Product Description</label>
+                    <input type = "text" name = "description" th:field = "*{description}" placeholder = "Enter Product Description" class = "form-control"/>
+                </div>
+
+                
+                <div class = "form-group">
+
+                    <label>Product Image</label>
+                    <input type = "file" name = "imgUpload" accept = "img/png" class = "form-control"/>
+                </div>
+
+
+                <div class = "form-group">
+
+                    <label>Product Price</label>
+                    <input type = "text" name = "price" th:field = "*{price}" placeholder = "Enter Product Price" class = "form-control"/>
+                </div>
+
+
+                <div class = "form-group">
+
+                    <label>Product Stock</label>
+                    <input type = "text" name = "stock" th:field = "*{stock}" placeholder = "Enter Product Stock" class = "form-control"/>
+                </div>
+
+
+                <div class = "form-group">
+
+                    <label>Product Artist</label>
+                    <input type = "text" name = "artist" th:field = "*{artist}" placeholder = "Enter Product Artist" class = "form-control"/>
+                </div>
+
+                <div class = "form-group">
+
+                    <label for = "category">Product Category</label>
+                    <select id = "category" th:field = "*{category}" name = "category" class = "form-control">
+                        <option value="rap">Rap</option>
+                        <option value="rap">Pop</option>
+                        <option value="rap">Country</option>
+                        <option value="rap">Rock</option>
+                        <option value="rap">Metal</option>
+                    </select>
+                </div>
+
+                <div class = "footer-body">
+                    <button type = "submit" class = "btn btn-primary">Submit</button>
+                </div>
+
+            </form>
+
+
+          </div>
+        </div>
+    </div>
+
+</body>
+</html>
