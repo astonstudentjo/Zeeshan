@@ -16,7 +16,7 @@
                     <div class = "form-group">
                         <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red">Invalid name</span>
                     </div>
-                    <input type = "text" name = "name" th:field = "*{name}" placeholder = "Enter Product Name" class = "form-control"/>
+                    <input type = "text" name = "name" th:field = "*{name}" placeholder = "Enter Product Name" class = "form-control" required/>
 
                 </div>
 
@@ -29,14 +29,14 @@
                     <div class = "form-group">
                         <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color: red">Invalid description</span>
                     </div>
-                    <input type = "text" name = "description" th:field = "*{description}" placeholder = "Enter Product Description" class = "form-control"/>
+                    <input type = "text" name = "description" th:field = "*{description}" placeholder = "Enter Product Description" class = "form-control" required/>
                 </div>
 
                 
                 <div class = "form-group">
 
                     <label>Product Image</label>
-                    <input type = "file" name = "imgUpload" accept = "img" class = "form-control"/>
+                    <input type = "file" name = "imgUpload" accept = "img" class = "form-control" required/>
                 </div>
 
 
@@ -46,7 +46,7 @@
                     <div class = "form-group">
                         <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color: red">Invalid price</span>
                     </div>
-                    <input type = "text" name = "price" th:field = "*{price}" placeholder = "Enter Product Price" class = "form-control"/>
+                    <input type = "text" name = "price" th:field = "*{price}" placeholder = "Enter Product Price" class = "form-control" required/>
                 </div>
 
 
@@ -56,7 +56,7 @@
                     <div class = "form-group">
                         <span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}" style="color: red">Invalid stock</span>
                     </div>
-                    <input type = "text" name = "stock" th:field = "*{stock}" placeholder = "Enter Product Stock" class = "form-control"/>
+                    <input type = "text" name = "stock" th:field = "*{stock}" placeholder = "Enter Product Stock(Whole number)" class = "form-control" required/>
                 </div>
 
 
@@ -66,7 +66,7 @@
                     <div class = "form-group">
                         <span th:if="${#fields.hasErrors('artist')}" th:errors="*{artist}" style="color: red">Invalid artist</span>
                     </div>
-                    <input type = "text" name = "artist" th:field = "*{artist}" placeholder = "Enter Product Artist" class = "form-control"/>
+                    <input type = "text" name = "artist" th:field = "*{artist}" placeholder = "Enter Product Artist" class = "form-control" required/>
                 </div>
 
                 <div class = "form-group">
