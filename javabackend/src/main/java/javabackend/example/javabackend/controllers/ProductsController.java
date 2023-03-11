@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.validation.Valid;
 import javabackend.example.javabackend.repositories.ProductsRepository;
 import javabackend.example.javabackend.Service.ProductsService;
 import javabackend.example.javabackend.models.Products;
@@ -23,6 +24,8 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+
 
 @Controller
 public class ProductsController {
@@ -58,9 +61,12 @@ public class ProductsController {
    
 
     @PostMapping("/products")
-    public String saveProduct(@ModelAttribute(name = "products") Products products, @RequestParam("imgUpload") MultipartFile multipartFile) throws IOException{
+    public String saveProduct(@ModelAttribute(name = "products") @Valid Products products , BindingResult bindingResult , @RequestParam("imgUpload") MultipartFile multipartFile) throws IOException{
 
 
+        if(bindingResult.hasErrors()){
+            return "Create-product";
+        } else {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         products.setImg(fileName);
         Products savedProduct = productsService.saveProduct(products);
@@ -86,6 +92,7 @@ public class ProductsController {
         
         
         return "redirect:/products";
+        }
 
     }
 
