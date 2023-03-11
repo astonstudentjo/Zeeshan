@@ -25,6 +25,7 @@ import java.util.List;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 
 
 @Controller
@@ -112,6 +113,7 @@ public class ProductsController {
 
     @PostMapping("/products/{id}")
     public String updateProduct(@PathVariable Integer id, @ModelAttribute("products") Products products, Model model){
+
         Products preexistingProduct = productsService.getProductById(id);
 
         preexistingProduct.setStock(products.getStock());
@@ -119,7 +121,7 @@ public class ProductsController {
         productsService.updateProduct(preexistingProduct);
 
         return "redirect:/products";
-
+        
     }
     
 }

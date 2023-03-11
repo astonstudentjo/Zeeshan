@@ -19,7 +19,10 @@
                         <div class = "form-group">
         
                             <label>Product Stock</label>
-                            <input type = "text" name = "stock" th:field = "*{stock}" placeholder = "Enter Product Stock" class = "form-control"/>
+                            <div class = "form-group">
+                                <span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}" style="color: red">Invalid stock</span>
+                            </div>
+                            <input type = "text" name = "stock" th:field = "*{stock}" placeholder = "Enter Product Stock(Whole Number)" class = "form-control" required/>
                         </div>
 
 
