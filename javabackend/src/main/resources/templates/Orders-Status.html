@@ -12,6 +12,7 @@
     <form th:action="@{/Orders/status/{id}(id=${orderId})}" method="post">
         <div class="form-group">
             <label for="status">New Status:</label>
+<!--            <input type="hidden" name="id" th:value="${orderId}" />-->
             <select class="form-control" id="status" name="status">
                 <option value="Pending">Pending</option>
                 <option value="Processing">Processing</option>
