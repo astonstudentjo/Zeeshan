@@ -44,16 +44,23 @@ Route::get('/products/category/{category}', [ProductsController::class, 'showCat
 
 Route::get('/products', [ProductsController::class, 'show']);
 
+Route::get('/basket', [BasketController::class, 'show']);
+
+Route::post('/basket', [BasketController::class, 'addBasket']);
+
+Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
+
+Route::post('/basket/update', [BasketController::class, 'update']);
+
+Route::post('/basket/remove', [BasketController::class, 'remove']);
+
+
 
 
 Route::middleware(['CustomerAuthentication'])->group(function(){
 
     Route::post('/signout', [SignoutController::class, 'signout']);
 
-
-    Route::get('/basket', [BasketController::class, 'show']);
-
-    Route::post('/basket', [BasketController::class, 'addBasket']);
 
     // Route::get('/checkout', [CheckoutController::class, 'show']);
 
@@ -70,12 +77,6 @@ Route::middleware(['CustomerAuthentication'])->group(function(){
 
     // orders controller routes
     Route::get('/orders', [OrdersController::class, 'show'])->name('orders.show');
-
-    Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
-
-    Route::post('/basket/update', [BasketController::class, 'update']);
-
-    Route::post('/basket/remove', [BasketController::class, 'remove']);
 
 
 
