@@ -45,5 +45,14 @@ public class ProductsServiceImplementation implements ProductsService {
 
     }
 
-    
+    @Override
+    public Products generateStockReportPdf(List<Products> products) {
+        return null;
+
+
+
+
+    }
+
+
 }

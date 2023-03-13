@@ -39,15 +39,6 @@ public class OrderItemsController {
         model.addAttribute("order_items", order_items);
         return "Orders-Item";
     }
-//
-//    @GetMapping("/Orders/items/{id}")
-//    public String getSpecificItem(Model model){
-//
-//
-//
-//        return "Orders-Item";
-//    }
-
 
     @GetMapping("/Orders/items/{id}")
     public String getSpecificItem(@PathVariable("id") Integer orderId, Model model) {
