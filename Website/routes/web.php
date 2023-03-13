@@ -65,17 +65,19 @@ Route::middleware(['CustomerAuthentication'])->group(function(){
     });
 
 
-    // Route::get('/confirmation', [ConfirmationController::class, 'show']);
 
     Route::get('/confirmation/{order}', [ConfirmationController::class, 'show'])->name('confirmation');
 
     // orders controller routes
     Route::get('/orders', [OrdersController::class, 'show'])->name('orders.show');
 
-
     Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
 
     Route::post('/basket/update', [BasketController::class, 'update']);
+
+    Route::post('/basket/remove', [BasketController::class, 'remove']);
+
+
 
 });
 

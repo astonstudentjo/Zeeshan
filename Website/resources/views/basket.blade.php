@@ -24,6 +24,8 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
+                    <th>Remove</th>
+
                 </tr>
                 @php
                 $total = 0;
@@ -46,9 +48,27 @@
                         </select>
                     </td>
                     <td>£{{ number_format($item->price * $quantity, 2) }}</td>
+
+                    <td hidden>
+                        <form action="/basket/remove" method="POST" hidden>
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $itemId }}">
+                            <button type="submit" hidden>Remove</button>
+                        </form>
+                    </td>
+
+                    <!-- remove item for basket -->
+                    <td>
+                        <form action="/basket/remove" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $itemId }}">
+                            <button type="submit">Remove</button>
+                        </form>
+                    </td>
                 </tr>
                 @endif
                 @endforeach
+
                 <tr>
                     <td colspan="3"></td>
                     <td>£{{ number_format($total, 2) }}</td>
@@ -79,13 +99,13 @@
             <button type="submit">Checkout</button>
         </form>
     </div>
-</div>
 
-
-
-
-
-
+    <br>
+    <div>
+        <form action="/products" method="GET">
+            <button type="submit">Continue Shopping</button>
+        </form>
+    </div>
 
 
 
