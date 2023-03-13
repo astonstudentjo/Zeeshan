@@ -54,6 +54,7 @@
                 <th scope="col">Stock</th>
                 <th scope="col">Category</th>
                 <th scope="col">Artist</th>
+                <th scope = "col">Stock Alert</th>
                 <th scope="col">Actions</th>
 
 
@@ -68,6 +69,21 @@
                 <td th:text="${Product.stock}"></td>
                 <td th:text="${Product.category}"></td>
                 <td th:text="${Product.artist}"></td>
+                <td>
+                  <span style = "color: red;" th:if= "${Product.stock} <= 0" >Out of Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 1">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 2">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 3">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 4">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 5">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 6">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 7">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 8">Low Stock</span>
+                  <span style = "color: orange"th:if="${Product.stock} == 9">Low Stock</span>
+                  <span style = "color: green"th:if="${Product.stock} >= 10">Normal Stock Level</span>
+
+                </td>
+
                 <td>
                   <a th:href = "@{/products/edit/{id}(id=${Product.id})}" class = "btn btn-primary" >Update</a>
                   <a th:href = "@{/products/{id}(id=${Product.id})}" class = "btn btn-danger" >Delete</a>
