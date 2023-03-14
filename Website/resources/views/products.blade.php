@@ -129,7 +129,7 @@
                     <div class="price">£{{$product->price}}</div>
 
                     @if ($product->stock <= 0) <h4>Out of Stock!</h4>
-                        @elseif ($product-> stock< 20) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
+                        @elseif ($product-> stock< 10) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
                             @endif
                 </div>
             </div>

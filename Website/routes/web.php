@@ -54,6 +54,11 @@ Route::post('/basket/update', [BasketController::class, 'update']);
 
 Route::post('/basket/remove', [BasketController::class, 'remove']);
 
+Route::prefix('checkout')->group(function () {
+        Route::get('/', [CheckoutController::class, 'show'])->name('checkout.show');
+        Route::post('/', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+    });
+
 
 
 
@@ -66,10 +71,6 @@ Route::middleware(['CustomerAuthentication'])->group(function(){
 
     // Route::post('/checkout', [CheckoutController::class, 'checkout']);
 
-    Route::prefix('checkout')->group(function () {
-        Route::get('/', [CheckoutController::class, 'show'])->name('checkout.show');
-        Route::post('/', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
-    });
 
 
 
