@@ -13,19 +13,24 @@
 
 
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}">
 </head>
 
 
 
 
 
-
-<img src="/productImages/{{$concert->img}}"></div>
-<h1>{{$concert->artist}}</h1>
-<h4> {{$concert->name}}</h4>
-<h4> {{$concert->category}}</h4>
-<p>{{$concert->description}}</p>
-<p>£{{$concert->price}}</p>
+<div class = display>
+    <div class = "content">
+        <h1>{{$concert->artist}}</h1>
+        <h4> {{$concert->name}}</h4>
+        <img src="/productImages/{{$concert->img}}">
+    </div>
+    <div class = "content">
+        <h4> {{$concert->category}}</h4>
+        <p>{{$concert->description}}</p>
+        <h4>£{{$concert->price}}</h4>
 
 
 
@@ -54,15 +59,19 @@
 <p>Out of stock</p>
 
 @endif
-
+</div>
+</div>
 <br>
 <br>
 <!-- back -->
-<div>
+<div class = "info">
     <form action="/products" method="GET">
         <button type="submit">Back</button>
     </form>
 </div>
+
+    
+
 
 
 
