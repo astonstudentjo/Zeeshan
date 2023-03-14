@@ -59,6 +59,57 @@ public class OrderController {
         return "redirect:/Orders";
     }
 
+    @PostMapping("/Orders/filter")
+    public String filterOrders(@RequestParam("filter") String status, Model model) {
+        List<orders> orders = ordersRepository.findAll();
+        if (status.equals("all")) {
+            model.addAttribute("orders", orders);
+            return "Orders-Page";
+        }
+
+        if (status.equals("pending")) {
+            orders.removeIf(order -> !order.getStatus().equals("pending"));
+            model.addAttribute("orders", orders);
+            return "Orders-Page";
+        }
+
+
+        if (status.equals("Cancelled")) {
+            orders.removeIf(order -> !order.getStatus().equals("Cancelled"));
+            model.addAttribute("orders", orders);
+            return "Orders-Page";
+        }
+
+        if (status.equals("Processing")) {
+            orders.removeIf(order -> !order.getStatus().equals("Processing"));
+            model.addAttribute("orders", orders);
+            return "Orders-Page";
+        }
+
+//        shipped
+        if (status.equals("Shipped")) {
+            orders.removeIf(order -> !order.getStatus().equals("Shipped"));
+            model.addAttribute("orders", orders);
+            return "Orders-Page";
+        }
+
+
+
+
+
+
+//        for pending orders
+
+
+
+        orders.removeIf(order -> !order.getStatus().equals(status));
+
+
+        model.addAttribute("orders", orders);
+        return "Orders-Page";
+    }
+
+
 
 
 

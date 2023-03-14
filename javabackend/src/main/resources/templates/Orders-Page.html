@@ -32,6 +32,25 @@
 </nav>
 <div class="container mt-5">
     <h1 class="text-center mb-5">Orders</h1>
+
+    <!-- filters based on status -->
+    <form action="#" th:action="@{/Orders/filter}" method="post">
+        <div class="form-group">
+            <select class="form-control" id="filter" name="filter" onchange="this.form.submit()">
+                <option value="all">All</option>
+                <option value="pending">Pending</option>
+                <option value="Processing">Processing</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </div>
+    </form>
+
+
+
+
+
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
