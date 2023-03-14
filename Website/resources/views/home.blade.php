@@ -38,7 +38,7 @@
                 <p>Attention all music lovers! Get ready to experience the thrill of live music!</p>
                 <br>
                 <p>We are excited to announce that tickets to the event are now on sale! Don't miss the chance to see your favorite artists perform live on stage, jamming out to the tunes that have become the soundtrack of our lives. With a lineup of world-class musicians, this event is sure to be a night to remember. Whether you're a fan of rock, pop, hip-hop,</p>
-                <a href="#products" class="btn">buy now</a>
+                <a href="/products" class="btn">buy now</a>
             </div>
             <div class = "content">
                 <h3>Browse by genre</h3>
