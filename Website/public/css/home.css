@@ -75,9 +75,9 @@ font-size: 20px;
 }
 .content
 {
-    min-width: 350px;
-    max-width: 500px;
-    padding-left: 100px;
-    padding-right: 100px;
+    min-width: 33%;
+    max-width: 33%;
+    padding-left: 1%;
+    padding-right: 1%;
     text-align: center;
 }
