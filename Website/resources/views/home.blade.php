@@ -33,7 +33,7 @@
             <div class = "content">
                 <h2>EventTick</h2>
                 <br>
-                <h3>Learn more about us!</h3>
+                <h3>Buy Tickets</h3>
                 <span> Concerts & music events </span>
                 <p>Attention all music lovers! Get ready to experience the thrill of live music!</p>
                 <br>
@@ -41,20 +41,34 @@
                 <a href="#products" class="btn">buy now</a>
             </div>
             <div class = "content">
-            <h2> Spare Section Here COULD DO WITH CHANGING BACKGROUND IMAGE</h2>
+                <h3>Browse by genre</h3>
+            <a href='/products/category/price_ascending'>Price-Low to High</a>
+            <br>
+            <a href='/products/category/price_descending'>Price-High to Low</a>
+            <br>
+            <a href='/products/category/pop'>Pop</a>
+            <br>
+            <a href='/products/category/metal'>Metal</a>
+            <br>
+            <a href='/products/category/rap'>Rap</a>
+            <br>
+            <a href='/products/category/rock'>Rock</a>
+            <br>
+            <a href='/products/category/country'>Country</a>
             </div>
             <div class = "content">
                 <br>
                 <br>
-                <h3>Tickets Available!</h3>
+                <h3>Learn About Us!</h3>
                 <span></span>
                 <p>See our Vision</p>
                 <br>
                 <p>Learn more about our vission for the future of live music post pandemic and how we plan to keep the music industry going strong!</p>
                 <a href="/aboutus" class="btn">About Us</a>
             </div>
+            <div class = "content">
         </div>
-    
+        
     </body>
 
     

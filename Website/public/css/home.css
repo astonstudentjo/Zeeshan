@@ -37,12 +37,10 @@ font-size: 20px;
 
 .display
 {
-    
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    background: rgb(255, 51, 153, .05);
     background-image: url('../images/edited.jpg');
+    display: flex;
+    min-height:750px;
+    align-items: center;
 }
 .display p
 {
@@ -75,9 +73,14 @@ font-size: 20px;
 }
 .content
 {
+ 
     min-width: 33%;
     max-width: 33%;
     padding-left: 1%;
     padding-right: 1%;
     text-align: center;
+} 
+.content a{
+font-size: 30px;
+color: #fff;
 }
