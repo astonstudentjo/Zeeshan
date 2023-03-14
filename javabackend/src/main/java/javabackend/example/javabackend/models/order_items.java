@@ -1,5 +1,7 @@
 package javabackend.example.javabackend.models;
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+
 import java.sql.Timestamp;
 
 
@@ -22,6 +24,10 @@ public class order_items {
 
     @Column(name = "price")
     private float price;
+
+
+
+
 
     public Integer getId() {
         return id;

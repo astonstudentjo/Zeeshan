@@ -9,6 +9,4 @@ import java.util.List;
 public interface ordersItemRepository extends JpaRepository<order_items, Integer> {
     List<order_items> findAll();
 
-//        List<order_items> findByOrder_Id(int order_id);
-
 }
