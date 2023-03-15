@@ -46,7 +46,6 @@ public class OrderController {
             model.addAttribute("currentStatus", currentStatus);
             return "Orders-Status";
         } else {
-            // handle case when order is not found
             return "Error-Page";
         }
     }
@@ -86,20 +85,11 @@ public class OrderController {
             return "Orders-Page";
         }
 
-//        shipped
         if (status.equals("Shipped")) {
             orders.removeIf(order -> !order.getStatus().equals("Shipped"));
             model.addAttribute("orders", orders);
             return "Orders-Page";
         }
-
-
-
-
-
-
-//        for pending orders
-
 
 
         orders.removeIf(order -> !order.getStatus().equals(status));
@@ -108,6 +98,17 @@ public class OrderController {
         model.addAttribute("orders", orders);
         return "Orders-Page";
     }
+
+
+//    for searching the orders
+    @PostMapping("/Orders/search")
+    public String searchOrders(@RequestParam("search") String search, Model model) {
+        List<orders> orders = ordersRepository.findAll();
+        orders.removeIf(order -> !order.getId().toString().equals(search) && !order.getUser_id().toString().equals(search));
+        model.addAttribute("orders", orders);
+        return "Orders-Page";
+    }
+
 
 
 

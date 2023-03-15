@@ -30,9 +30,35 @@
         </div>
       </nav>
 
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        .form-img input{
+            padding-bottom: 35px;
+        }
+    </style>
+
     <br><br>
     <div class = "container">
         <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <br>
           <h1 class = "text-center">Create New Product</h1>
           <div class = "card-body">
             <form th:action = "@{/products}" th:object="${products}" method = "POST" enctype="multipart/form-data">
@@ -58,8 +84,7 @@
                 </div>
 
                 
-                <div class = "form-group">
-
+                <div class = "form-group form-img">
                     <label>Product Image</label>
                     <input type = "file" name = "imgUpload" accept = "img" class = "form-control" required/>
                 </div>
@@ -116,6 +141,8 @@
           </div>
         </div>
     </div>
+
+    <br><br>
 
 </body>
 </html>
