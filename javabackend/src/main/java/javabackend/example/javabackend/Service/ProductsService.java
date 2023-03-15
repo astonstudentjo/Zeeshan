@@ -16,5 +16,6 @@ public interface ProductsService {
     Products updateProduct(Products product);
 
     Products generateStockReportPdf(List<Products> products);
-    
+
+    List<Products> findByKeyword(String keyword);
 }
