@@ -42,7 +42,9 @@
                     <td>{{ $item->name }}</td>
                     <td>£{{ number_format($item->price, 2) }}</td>
                     <td>
-                        <select name="quantity[{{ $itemId }}]">
+                        <!-- auto update without pressing submit button -->
+                        
+                        <select name="quantity[{{ $itemId }}]" >
                             @for ($i = 1; $i <= 10; $i++) <option value="{{ $i }}" {{ $i == $quantity ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                         </select>
