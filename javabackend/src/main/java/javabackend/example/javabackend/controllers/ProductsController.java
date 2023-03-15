@@ -1,6 +1,7 @@
 package javabackend.example.javabackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -122,6 +123,14 @@ public class ProductsController {
 
         return "redirect:/products";
         
+    }
+
+    @PostMapping("/products/filter")
+    public String searchForProducts(Model model, @Param("keyword") String keyword){
+
+        List<Products>  listOfProducts = productsService.findByKeyword(keyword);
+        model.addAttribute("products", listOfProducts);
+        return "Products-page";
     }
     
 }

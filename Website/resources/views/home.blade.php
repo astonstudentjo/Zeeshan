@@ -28,8 +28,7 @@
     </head>
     <body>
         <br>
-    
-        <div class = "display">
+        <section class = "display">
             <div class = "content">
                 <h2>EventTick</h2>
                 <br>
@@ -40,22 +39,7 @@
                 <p>We are excited to announce that tickets to the event are now on sale! Don't miss the chance to see your favorite artists perform live on stage, jamming out to the tunes that have become the soundtrack of our lives. With a lineup of world-class musicians, this event is sure to be a night to remember. Whether you're a fan of rock, pop, hip-hop,</p>
                 <a href="/products" class="btn">buy now</a>
             </div>
-            <div class = "content">
-                <h3>Browse by genre</h3>
-            <a href='/products/category/price_ascending'>Price-Low to High</a>
-            <br>
-            <a href='/products/category/price_descending'>Price-High to Low</a>
-            <br>
-            <a href='/products/category/pop'>Pop</a>
-            <br>
-            <a href='/products/category/metal'>Metal</a>
-            <br>
-            <a href='/products/category/rap'>Rap</a>
-            <br>
-            <a href='/products/category/rock'>Rock</a>
-            <br>
-            <a href='/products/category/country'>Country</a>
-            </div>
+            <div class = "content"> </div>
             <div class = "content">
                 <br>
                 <br>
@@ -66,11 +50,24 @@
                 <p>Learn more about our vission for the future of live music post pandemic and how we plan to keep the music industry going strong!</p>
                 <a href="/aboutus" class="btn">About Us</a>
             </div>
-            <div class = "content">
+    </section>
+   <section class="Catergory">
+        <h1 class="heading"> Catergories </h1>
+        <div class="categories">
+            <a href='/products/category/price_ascending'>Price-Low to High</a>
+            <a href='/products/category/price_descending'>Price-High to Low</a>
+            <a href='/products/category/pop'>Pop</a>
+            <a href='/products/category/metal'>Metal</a>
+            <a href='/products/category/rap'>Rap</a>
+            <a href='/products/category/rock'>Rock</a>
+            <a href='/products/category/country'>Country</a>
         </div>
-        
-    </body>
 
+
+
+
+
+    </section>
     
 </html>
 @endsection
