@@ -12,6 +12,7 @@
     text-decoration: none;
     text-transform: capitalize;
     transition: .2s linear;
+    max-width: 100%;
 }
 .categories {
 font-size: 20px;
@@ -39,7 +40,7 @@ font-size: 20px;
 {
     background-image: url('../images/edited.jpg');
     display: flex;
-    min-height:750px;
+    min-height: 50rem;
     align-items: center;
 }
 .display p
@@ -83,4 +84,40 @@ font-size: 20px;
 .content a{
 font-size: 30px;
 color: #fff;
+}
+
+.categories {
+    width: 100%;
+    /* center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories a {
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 25px;
+    line-height: 21px;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.categories h1{
+text-align: center;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(255, 51, 153, .05);
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153, .05);
+    color: #25459b;
 }
