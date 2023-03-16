@@ -68,6 +68,6 @@
 
 
     </section>
-    
+    @include ('layouts.footer')
 </html>
 @endsection

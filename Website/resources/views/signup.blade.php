@@ -70,7 +70,7 @@
 
 
 
-
+    @include ('layouts.footer')
 
 </div>
 @endsection

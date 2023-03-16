@@ -130,6 +130,6 @@
     <!-- prodcuts section ends -->
 
 </body>
-
+@include ('layouts.footer')
 </html>
 @endsection
