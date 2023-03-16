@@ -62,6 +62,7 @@ public class OrderController {
     public String filterOrders(@RequestParam("filter") String status, Model model) {
         List<orders> orders = ordersRepository.findAll();
         if (status.equals("all")) {
+            orders = ordersRepository.findAll();
             model.addAttribute("orders", orders);
             return "Orders-Page";
         }
