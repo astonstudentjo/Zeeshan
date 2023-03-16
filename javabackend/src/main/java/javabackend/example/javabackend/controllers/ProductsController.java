@@ -1,6 +1,7 @@
 package javabackend.example.javabackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.validation.Valid;
 import javabackend.example.javabackend.repositories.ProductsRepository;
 import javabackend.example.javabackend.Service.ProductsService;
 import javabackend.example.javabackend.models.Products;
@@ -23,6 +25,9 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+
 
 @Controller
 public class ProductsController {
@@ -58,9 +63,12 @@ public class ProductsController {
    
 
     @PostMapping("/products")
-    public String saveProduct(@ModelAttribute(name = "products") Products products, @RequestParam("imgUpload") MultipartFile multipartFile) throws IOException{
+    public String saveProduct(@ModelAttribute(name = "products") @Valid Products products , BindingResult bindingResult , @RequestParam("imgUpload") MultipartFile multipartFile) throws IOException{
 
 
+        if(bindingResult.hasErrors()){
+            return "Create-product";
+        } else {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         products.setImg(fileName);
         Products savedProduct = productsService.saveProduct(products);
@@ -86,6 +94,7 @@ public class ProductsController {
         
         
         return "redirect:/products";
+        }
 
     }
 
@@ -105,6 +114,7 @@ public class ProductsController {
 
     @PostMapping("/products/{id}")
     public String updateProduct(@PathVariable Integer id, @ModelAttribute("products") Products products, Model model){
+
         Products preexistingProduct = productsService.getProductById(id);
 
         preexistingProduct.setStock(products.getStock());
@@ -112,7 +122,15 @@ public class ProductsController {
         productsService.updateProduct(preexistingProduct);
 
         return "redirect:/products";
+        
+    }
 
+    @PostMapping("/products/filter")
+    public String searchForProducts(Model model, @Param("keyword") String keyword){
+
+        List<Products>  listOfProducts = productsService.findByKeyword(keyword);
+        model.addAttribute("products", listOfProducts);
+        return "Products-page";
     }
     
 }
