@@ -89,7 +89,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr th:each="Product: ${products}">
+      <tr th:each="Product: ${products}" th:class="${Product.stock &lt; 1} ? 'table-danger' : ''">
         <td th:text="${Product.id}"></td>
         <td th:text="${Product.name}"></td>
         <td th:text="${Product.img}"></td>
