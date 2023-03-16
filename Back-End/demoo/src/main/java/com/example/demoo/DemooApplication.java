@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.demoo.model.Product;
 
 @MappedTypes(Product.class)
-@MapperScan("com.example.demoo.resource")
+@MapperScan("com.example.demoo.DemooApplication")
 @SpringBootApplication
 public class DemooApplication {
 
