@@ -15,11 +15,10 @@
 
             <div class="box">
                 <h3>quick links</h3>
-                <a href="#">home</a>
-                <a href="#">about</a>
-                <a href="#">products</a>
-                <a href="#">review</a>
-                <a href="#">contact</a>
+                <a href="/">Home</a>
+                <a href="/products">Products</a>
+                <a href="/aboutus">About Us</a>
+                <a href="/contactus">Contact Us</a>
             </div>
 
             <div class="box">
