@@ -20,7 +20,7 @@
 
 
 
-
+<section id="product">
 <div class = display>
     <div class = "content">
         <h1>{{$concert->artist}}</h1>
@@ -63,12 +63,15 @@
 </div>
 <br>
 <br>
+</section>
 <!-- back -->
+<section id="back">
 <div class = "info">
     <form action="/products" method="GET">
         <button type="submit">Back</button>
     </form>
 </div>
+</section>
 
     
 

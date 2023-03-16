@@ -1,4 +1,5 @@
 
+
 .heading {
     text-align: center;
     font-size: 4rem;
@@ -53,3 +54,7 @@
     padding-bottom: 1.25rem;
     margin-top: 1.5rem;
 }
+section {
+    padding: 2rem 9%;
+}
+
