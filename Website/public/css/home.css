@@ -38,7 +38,7 @@ font-size: 20px;
 
 .display
 {
-    background-image: url('../images/edited.jpg');
+    background-image: url('../images/background.png');
     display: flex;
     min-height: 50rem;
     align-items: center;
@@ -54,7 +54,7 @@ font-size: 20px;
     
     font-size: 55px;
     font-weight: bolder;
-    color: #25459b;
+    color: black;
     margin-left: 1%;
     
 }
@@ -63,13 +63,13 @@ font-size: 20px;
     
     font-size: 30px;
     font-weight: bolder;
-    color: #25459b;
+    color: black;
     margin-left: 1%;
     
 }
 .display span
 {
-    color: #25459b; 
+    color: white; 
     font-size: 25px;
 }
 .content
@@ -117,5 +117,5 @@ text-align: center;
     padding: 1rem;
     margin: 2rem 0;
     background: rgba(255, 51, 153, .05);
-    color: #25459b;
+    color: black;
 }
