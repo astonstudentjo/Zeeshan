@@ -75,7 +75,9 @@ public class orders {
         this.updated_at = updated_at;
     }
 
-    public void setStatus(String status){ this.status = status; }
+
+
+
 
 }
 

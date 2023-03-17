@@ -5,118 +5,51 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand">EventTick Database Management</a>
-      
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" th:href="@{/products}">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" th:href="@{/Orders}">Orders</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/Report}">Generate Reports</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-    <style>
-        .form-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-
-        .card-body {
-            padding: 2rem;
-        }
-
-        .btn {
-            width: 100%;
-        }
-
-        .form-img input{
-            padding-bottom: 35px;
-        }
-    </style>
-
     <br><br>
     <div class = "container">
         <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <br>
           <h1 class = "text-center">Create New Product</h1>
           <div class = "card-body">
             <form th:action = "@{/products}" th:object="${products}" method = "POST" enctype="multipart/form-data">
                 <div class = "form-group">
                     <label>Product Name</label>
-                    <div class = "form-group">
-                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red">Invalid name</span>
-                    </div>
-                    <input type = "text" name = "name" th:field = "*{name}" placeholder = "Enter Product Name" class = "form-control" required/>
+                    <input type = "text" name = "name" th:field = "*{name}" placeholder = "Enter Product Name" class = "form-control"/>
 
                 </div>
-
-
 
 
                 <div class = "form-group">
 
                     <label>Product Description</label>
-                    <div class = "form-group">
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color: red">Invalid description</span>
-                    </div>
-                    <input type = "text" name = "description" th:field = "*{description}" placeholder = "Enter Product Description" class = "form-control" required/>
+                    <input type = "text" name = "description" th:field = "*{description}" placeholder = "Enter Product Description" class = "form-control"/>
                 </div>
 
                 
-                <div class = "form-group form-img">
+                <div class = "form-group">
+
                     <label>Product Image</label>
-                    <input type = "file" name = "imgUpload" accept = "image/jpeg, image/png" class = "form-control" required/>
+                    <input type = "file" name = "imgUpload" accept = "img/png" class = "form-control"/>
                 </div>
 
 
                 <div class = "form-group">
 
                     <label>Product Price</label>
-                    <div class = "form-group">
-                        <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color: red">Invalid price</span>
-                    </div>
-                    <input type = "text" name = "price" th:field = "*{price}" placeholder = "Enter Product Price" class = "form-control" required/>
+                    <input type = "text" name = "price" th:field = "*{price}" placeholder = "Enter Product Price" class = "form-control"/>
                 </div>
 
 
                 <div class = "form-group">
 
                     <label>Product Stock</label>
-                    <div class = "form-group">
-                        <span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}" style="color: red">Invalid stock</span>
-                    </div>
-                    <input type = "number" name = "stock" th:field = "*{stock}" placeholder = "Enter Product Stock(Whole number)" class = "form-control" required/>
+                    <input type = "text" name = "stock" th:field = "*{stock}" placeholder = "Enter Product Stock" class = "form-control"/>
                 </div>
 
 
                 <div class = "form-group">
 
                     <label>Product Artist</label>
-                    <div class = "form-group">
-                        <span th:if="${#fields.hasErrors('artist')}" th:errors="*{artist}" style="color: red">Invalid artist</span>
-                    </div>
-                    <input type = "text" name = "artist" th:field = "*{artist}" placeholder = "Enter Product Artist" class = "form-control" required/>
+                    <input type = "text" name = "artist" th:field = "*{artist}" placeholder = "Enter Product Artist" class = "form-control"/>
                 </div>
 
                 <div class = "form-group">
@@ -141,8 +74,6 @@
           </div>
         </div>
     </div>
-
-    <br><br>
 
 </body>
 </html>

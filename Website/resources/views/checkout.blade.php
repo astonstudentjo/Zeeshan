@@ -37,5 +37,5 @@
     <button type="submit">Place Order</button>
 </form>
 
-@include ('layouts.footer')
+
 @endsection

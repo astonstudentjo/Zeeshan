@@ -1,7 +1,5 @@
 package javabackend.example.javabackend.models;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
-
 import java.sql.Timestamp;
 
 
@@ -11,53 +9,49 @@ public class order_items {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private int id;
 
     @Column(name = "order_id")
-    private Integer order_id;
+    private int order_id;
 
     @Column(name = "product_id")
-    private Integer product_id;
+    private int product_id;
 
     @Column(name = "quantity")
-    private Integer quantity;
+    private int quantity;
 
     @Column(name = "price")
     private float price;
 
-
-
-
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getOrder_id() {
+    public int getOrder_id() {
         return order_id;
     }
 
-    public void setOrder_id(Integer order_id) {
+    public void setOrder_id(int order_id) {
         this.order_id = order_id;
     }
 
-    public Integer getProduct_id() {
+    public int getProduct_id() {
         return product_id;
     }
 
-    public void setProduct_id(Integer product_id) {
+    public void setProduct_id(int product_id) {
         this.product_id = product_id;
     }
 
-    public Integer getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

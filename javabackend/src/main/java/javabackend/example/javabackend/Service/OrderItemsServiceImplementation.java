@@ -1,9 +1,6 @@
 package javabackend.example.javabackend.Service;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
-import javabackend.example.javabackend.models.orders;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import javabackend.example.javabackend.models.order_items;
@@ -29,15 +26,4 @@ public class OrderItemsServiceImplementation implements OrderItemsService {
     public order_items updateStatus(order_items orderItems) {
         return ordersItemRepository.save(orderItems);
     }
-
-//    @Override
-//    public List<order_items> getOrderItems(Long orderId) {
-//        Optional<order_items> orderOptional = orderRepository.findById(orderId);
-//        if (orderOptional.isPresent()) {
-//            orders order = orderOptional.get();
-//            return order.getOrderItems();
-//        }
-//        return Collections.emptyList();
-//    }
-
 }

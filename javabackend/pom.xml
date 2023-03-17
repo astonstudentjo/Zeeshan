@@ -40,6 +40,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -86,6 +87,8 @@
 		</dependency>
 
 
+=======
+>>>>>>> parent of aff6a55 (Merge branch 'main' of https://github.com/CS2TP-19/Zeeshan)
 	</dependencies>
 
 	<build>

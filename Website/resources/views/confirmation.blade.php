@@ -62,6 +62,6 @@
 
 
 
-@include ('layouts.footer')
+
 </html>
 @endsection

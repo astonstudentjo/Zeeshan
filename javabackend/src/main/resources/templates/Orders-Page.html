@@ -2,70 +2,11 @@
 <html>
 <head>
     <title>Orders</title>
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand">EventTick Database Management</a>
-
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/products}">Products</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/Orders}">Orders</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/Report}">Generate Reports</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 <div class="container mt-5">
     <h1 class="text-center mb-5">Orders</h1>
-
-    <form action="#" th:action="@{/Orders/search}" method="post" class="form-inline">
-        <div class="form-group col-md-9">
-            <input type="text" class="form-control w-100" id="search" name="search" placeholder="Search by ID or User ID">
-        </div>
-        <div class="form-group col-md-3">
-            <button type="submit" class="btn btn-primary w-100">Search</button>
-        </div>
-    </form>
-
-
-
-    <br>
-
-
-
-
-    <form action="#" th:action="@{/Orders/filter}" method="post" class="form-inline">
-        <div class="form-group col-md-9">
-            <select class="form-control w-100" id="filter" name="filter" onchange="this.form.submit()">
-                <option disabled selected value> -- select an option -- </option>
-                <option value="all">All</option>
-                <option value="pending">Pending</option>
-                <option value="Processing">Processing</option>
-                <option value="Shipped">Shipped</option>
-                <option value="Delivered">Delivered</option>
-                <option value="Cancelled">Cancelled</option>
-            </select>
-        </div>
-    </form>
-
-    <br>
-
-
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
@@ -75,7 +16,6 @@
             <th>Created At</th>
             <th>Updated At</th>
             <th>Status</th>
-            <th>Edit</th>
             <th>View More</th>
         </tr>
         </thead>
@@ -87,19 +27,13 @@
             <td th:text="${order.created_at}"></td>
             <td th:text="${order.updated_at}"></td>
             <td th:text="${order.status}"></td>
-            <td><a class="btn btn-success" th:href="@{/Orders/status/{id}(id=${order.id})}">Edit Status</a></td>
+<!--            <td><a class="btn btn-success" href="#">View More</a></td>-->
             <td><a class="btn btn-success" th:href="@{/Orders/items/{id}(id=${order.id})}">View More</a></td>
+        </tr>
         </tr>
         </tbody>
     </table>
-
-    <a class="btn btn-success" th:href="@{/OrderedItems}">See all Orders</a>
-
-    <br>
-
 </div>
-<br>
-<br>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

@@ -9,10 +9,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-
 
 @Entity
 @Table(name = "products")
@@ -22,26 +18,21 @@ public class Products {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty(message = "Product name should not be empty")
     @Column(name = "name")
     private String name;
 
-    @NotEmpty(message = "Product description should not be empty")
     @Column(name = "description")
     private String description;
 
     @Column (name = "img")
     private String img;
 
-    @NotNull(message = "Product price should not be empty")
     @Column(name = "price")
     private Float price;
 
-    @NotNull(message = "Product stock should not be empty")
     @Column(name = "stock")
     private Integer stock;
 
-    @NotEmpty(message = "Product artist should not be empty")
     @Column(name = "artist")
     private String artist;
 

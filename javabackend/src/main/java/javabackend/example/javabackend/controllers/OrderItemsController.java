@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javabackend.example.javabackend.models.order_items;
 import javabackend.example.javabackend.Service.OrderItemsService;
 import javabackend.example.javabackend.repositories.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 public class OrderItemsController {
@@ -26,33 +24,30 @@ public class OrderItemsController {
         this.orderItemsService = OrderItemsService;
     }
 
+
     @Autowired
     private ordersItemRepository ordersItemRepository;
 
+//    // @GetMapping("/orders/{order_id}/order-items")
+//    // public String getOrderItemsByOrderId(@PathVariable("order_id") int orderId,
+//    // Model model) {
+//    // List<order_items> order_items = ordersItemRepository.findByOrder_Id(orderId);
+//    // model.addAttribute("order_items", order_items);
+//    // return "Order-Items";
+//    // }
+//
+//    @GetMapping("/test")
+//    public String test(Model model) {
+//        List<order_items> orderItems = orderItemsService.getAllOrderItems();
+//        model.addAttribute("order_items", orderItems);
+//        return "Orders-Items";
+//    }
 
-
-
-    @GetMapping("/OrderedItems")
-    public String getOrdersItems(Model model) {
-        List<order_items> order_items = ordersItemRepository.findAll();
-        System.out.println("Number of order items: " + order_items.size());
-        model.addAttribute("order_items", order_items);
+    @GetMapping("/items")
+    public String listItems(Model model) {
+        model.addAttribute("order-items", orderItemsService.getAllOrderItems());
         return "Orders-Item";
     }
-
-    @GetMapping("/Orders/items/{id}")
-    public String getSpecificItem(@PathVariable("id") Integer orderId, Model model) {
-        List<order_items> orderItems = ordersItemRepository.findAll();
-        List<order_items> filteredItems = orderItems.stream()
-                .filter(item -> item.getOrder_id().equals(orderId))
-                .collect(Collectors.toList());
-        model.addAttribute("order_items", filteredItems);
-        return "Orders-Item";
-    }
-
-
-
-
 
 
 

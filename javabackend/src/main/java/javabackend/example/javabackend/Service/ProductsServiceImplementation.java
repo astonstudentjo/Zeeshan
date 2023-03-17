@@ -45,25 +45,5 @@ public class ProductsServiceImplementation implements ProductsService {
 
     }
 
-    @Override
-    public Products generateStockReportPdf(List<Products> products) {
-        return null;
-
-
-
-
-    }
-
-    @Override
-    public List<Products> findByKeyword(String keyword){
-        if(keyword != null){
-            return productsRepository.search(keyword);
-        }
-        return productsRepository.findAll();
-    }
-
     
-
-
-
 }

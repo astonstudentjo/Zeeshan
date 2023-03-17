@@ -20,7 +20,7 @@ class CustomerAuthentication
         /*Users that are not signed in(guests) will be redirected back if they try to access these pages */
         if(!auth()->check()){
 
-            return redirect('login');
+            return Redirect::back();
         }
 
         return $next($request);

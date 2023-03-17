@@ -93,7 +93,7 @@ CREATE TABLE `order_items` (
   `order_id` bigint(20) UNSIGNED NOT NULL,
   `product_id` bigint(20) UNSIGNED NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL,
-  `price` decimal(8,2) NOT NULL
+  `price` decimal(8,2) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

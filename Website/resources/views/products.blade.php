@@ -14,7 +14,18 @@
 
 <body>
 
-    
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>Tickets Available!</h3>
+            <span> Concerts & music events </span>
+            <p>Attention all music lovers! Get ready to experience the thrill of live music!</p>
+            <p>We are excited to announce that tickets to the event are now on sale! Don't miss the chance to see your favorite artists perform live on stage, jamming out to the tunes that have become the soundtrack of our lives.
+                With a lineup of world-class musicians, this event is sure to be a night to remember. Whether you're a fan of rock, pop, hip-hop,</p>
+            <a href="#products" class="btn">buy now</a>
+        </div>
+
+    </section>
 
     <!-- home section ends -->
 
@@ -118,7 +129,7 @@
                     <div class="price">£{{$product->price}}</div>
 
                     @if ($product->stock <= 0) <h4>Out of Stock!</h4>
-                        @elseif ($product-> stock< 10) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
+                        @elseif ($product-> stock< 20) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
                             @endif
                 </div>
             </div>
@@ -130,6 +141,6 @@
     <!-- prodcuts section ends -->
 
 </body>
-@include ('layouts.footer')
+
 </html>
 @endsection

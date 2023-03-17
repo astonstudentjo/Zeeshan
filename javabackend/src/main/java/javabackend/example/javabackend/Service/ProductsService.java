@@ -14,8 +14,5 @@ public interface ProductsService {
     Products getProductById(Integer id);
 
     Products updateProduct(Products product);
-
-    Products generateStockReportPdf(List<Products> products);
-
-    List<Products> findByKeyword(String keyword);
+    
 }
