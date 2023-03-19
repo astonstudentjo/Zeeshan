@@ -80,6 +80,7 @@ Route::middleware(['CustomerAuthentication'])->group(function(){
     Route::get('/orders', [OrdersController::class, 'show'])->name('orders.show');
 
 
+    
 
 });
 
