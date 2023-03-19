@@ -50,6 +50,36 @@ header section ends -->
 
     <h1 class="heading"> Contact us </h1>
 
+    <div>
+    <h class="heading"> Social media:</h>
+        <div>
+        <img src="./images/instagram.png">
+        <p class="socials"> @Eventick</p>
+        </div>
+        <div>
+        <img src="./images/facebook.png">
+        <p class="socials"> @Eventick</p>
+        </div>
+        <div>
+        <img src="./images/linkden.png">
+        <p class="socials"> @Eventick</p>
+        </div>
+        <div>
+        <img src="./images/twitter.png">
+        <p class="socials"> @Eventick</p>
+        </div>
+        <p class="text">If you have any queries or issues please drop us an email or give us a call using the following information:</p>
+    </div>
+<div> 
+    <div>
+    <img src="./images/phone.png" alt="phone">
+    <p>0121 465 298</p>
+    </div>
+    <div>
+    <img src="./images/email.png" alt="email">
+    <p>support@eventick.ac.uk</p>
+    </div>
+</div>
     <div class="row">
 
         <form action="">
@@ -69,6 +99,8 @@ header section ends -->
         </div>
 
     </div>
+
+   
 
 </section>
 @include ('layouts.footer')

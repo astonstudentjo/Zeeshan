@@ -58,3 +58,42 @@ body{
 section {
     padding: 2rem 9%;
 }
+
+.profile {
+
+    position: absolute;
+    width: 487px;
+    height: 105px;
+    left: 473px;
+    top: 1307px;
+
+}
+
+.socials{
+    position: absolute;
+width: 455px;
+height: 128px;
+
+font-family: 'Grenze';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 95px;
+
+color: #000000;
+}
+
+.text{
+    position: absolute;
+width: 1019px;
+height: 146px;
+
+font-family: 'Actor';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 130%;
+/* or 42px */
+
+color: #0C0000;
+}

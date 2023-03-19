@@ -1,0 +1,43 @@
+.info{
+    position: absolute;
+    width: 1256px;
+    height: 144px;
+    
+    font-family: 'Basic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    /* or 36px */
+    
+    color: #000000;
+
+}
+
+.heading{
+    position: absolute;
+width: 266px;
+height: 106px;
+
+font-family: 'Grenze';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 150%;
+/* or 96px */
+
+color: #000000;
+}
+
+.image{
+   
+position: absolute;
+width: 1403.46px;
+height: 680.02px;
+
+
+}
+
+.background{
+  
+}
