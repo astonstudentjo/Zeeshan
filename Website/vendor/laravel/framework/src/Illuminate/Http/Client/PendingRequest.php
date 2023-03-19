@@ -87,7 +87,7 @@ class PendingRequest
     /**
      * The transfer stats for the request.
      *
-     * @var \GuzzleHttp\TransferStats
+     * \GuzzleHttp\TransferStats
      */
     protected $transferStats;
 
@@ -104,13 +104,6 @@ class PendingRequest
      * @var \Closure
      */
     protected $throwCallback;
-
-    /**
-     * A callback to check if an exception should be thrown when a server or client error occurs.
-     *
-     * @var \Closure
-     */
-    protected $throwIfCallback;
 
     /**
      * The number of times to try the request.
@@ -606,17 +599,12 @@ class PendingRequest
     /**
      * Throw an exception if a server or client error occurred and the given condition evaluates to true.
      *
-     * @param  callable|bool  $condition
-     * @param  callable|null  $throwCallback
+     * @param  bool  $condition
      * @return $this
      */
     public function throwIf($condition)
     {
-        if (is_callable($condition)) {
-            $this->throwIfCallback = $condition;
-        }
-
-        return $condition ? $this->throw(func_get_args()[1] ?? null) : $this;
+        return $condition ? $this->throw() : $this;
     }
 
     /**
@@ -809,9 +797,7 @@ class PendingRequest
                             throw $exception;
                         }
 
-                        if ($this->throwCallback &&
-                            ($this->throwIfCallback === null ||
-                             call_user_func($this->throwIfCallback, $response))) {
+                        if ($this->throwCallback) {
                             $response->throw($this->throwCallback);
                         }
 
@@ -1176,7 +1162,7 @@ class PendingRequest
     /**
      * Replace the given options with the current request options.
      *
-     * @param  array  ...$options
+     * @param  array  $options
      * @return array
      */
     public function mergeOptions(...$options)
