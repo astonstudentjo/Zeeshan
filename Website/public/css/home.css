@@ -38,7 +38,7 @@ font-size: 20px;
 
 .display
 {
-    background-image: url('../images/edited.jpg');
+    background-image: url('../images/background.png');
     display: flex;
     min-height: 50rem;
     align-items: center;
