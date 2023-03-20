@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+  }
+  </style>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand">EventTick Database Management</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/products}">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/Orders}">Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/Report}">Generate Reports</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Orders Report</h1>
+    <br>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Order ID</th>
+            <th>Product Name(s)</th>
+            <th>Quantity</th>
+            <th>Date Created</th>
+            <th>Date Updated</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}"></td>
+            <td th:utext="${order.productName}"></td>
+            <td th:utext="${order.quantity}"></td>
+            <td th:text="${order.dateCreated}"></td>
+            <td th:text="${order.dateUpdated}"></td>
+            <td>
+                <span th:if="${order.status} == pending or ${order.status} == Processing">Incoming</span>
+                <span th:if="${order.status} == Shipped or ${order.status} == Delivered or ${order.status} == Cancelled">Outgoing</span>
+
+
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2">Total Orders</td>
+            <td th:text="${totalOrders}"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+
+        </tr>
+        </tfoot>
+    </table>
+
+
+    <hr>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <a th:href="@{${url}}" class="btn btn-primary btn-block">Download as PDF</a>
+
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+
+    <br>
+    <br>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
