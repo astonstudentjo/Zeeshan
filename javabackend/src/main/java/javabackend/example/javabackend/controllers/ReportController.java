@@ -109,6 +109,7 @@ public class ReportController {
         return "User-Report";
     }
 
+    // orders report
     @GetMapping("/Report/Orders")
     public String generateOrdersReport(Model model){
         List<orders> orders = orderRepository.findAll();

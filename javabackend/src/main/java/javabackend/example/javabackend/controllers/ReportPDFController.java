@@ -7,10 +7,7 @@ import javabackend.example.javabackend.repositories.*;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -308,6 +306,174 @@ public class ReportPDFController {
         }
         return userOrderData;
     }
+
+
+    // for the orders report
+    @GetMapping("/Report/Orders/pdf")
+    public ResponseEntity<byte[]> ordersReport() throws IOException {
+        List<orders> orders = orderRepository.findAll();
+        List<order_items> orderItems = orderItemRepository.findAll();
+        List<Products> products = productsRepository.findAll();
+
+        int totalOrders = 0;
+
+        List<orders> filteredOrders = new ArrayList<>();
+        for (orders order : orders) {
+            if (order.getStatus().equals("pending") || order.getStatus().equals("Processing") || order.getStatus().equals("Shipped") || order.getStatus().equals("Cancelled") || order.getStatus().equals("Delivered")) {
+                filteredOrders.add(order);
+            }
+        }
+
+        List<order_items> filteredOrderItems = new ArrayList<>();
+        for (order_items orderItem : orderItems) {
+            if (filteredOrders.stream().anyMatch(o -> o.getId() == orderItem.getOrder_id())) {
+                filteredOrderItems.add(orderItem);
+            }
+        }
+
+        List<Products> filteredProducts = new ArrayList<>();
+        for (Products product : products) {
+            if (filteredOrderItems.stream().anyMatch(o -> o.getProduct_id() == product.getId())) {
+                filteredProducts.add(product);
+            }
+        }
+
+        // build order data
+        List<Map<String, Object>> orderData = new ArrayList<>();
+        for (orders order : filteredOrders) {
+            Map<String, Object> orderItem = new HashMap<>();
+            orderItem.put("id", order.getId());
+            orderItem.put("dateCreated", order.getCreated_at());
+            orderItem.put("dateUpdated", order.getUpdated_at());
+            orderItem.put("status", order.getStatus());
+
+            List<String> productNames = new ArrayList<>();
+            List<Integer> quantities = new ArrayList<>();
+            for (order_items orderItem_item : filteredOrderItems) {
+                if (orderItem_item.getOrder_id() == order.getId()) {
+                    int productId = orderItem_item.getProduct_id();
+                    int quantity = orderItem_item.getQuantity();
+                    quantities.add(quantity);
+
+                    String productName = filteredProducts.stream()
+                            .filter(p -> p.getId() == productId)
+                            .findFirst()
+                            .orElseThrow(() -> new RuntimeException("Could not find product with id " + productId))
+                            .getName();
+                    productNames.add(productName);
+                }
+            }
+
+            orderItem.put("productName", String.join("<br>", productNames));
+            orderItem.put("quantity", quantities.stream().map(Object::toString).collect(Collectors.joining("<br>")));
+            orderData.add(orderItem);
+        }
+        String Title = "Orders Report";
+
+        // Create PDF document
+        PDDocument document = new PDDocument();
+        PDPage page = new PDPage();
+        document.addPage(page);
+
+        // Add content to the PDF
+        PDPageContentStream contentStream = new PDPageContentStream(document, page);
+        contentStream.beginText();
+        contentStream.setFont(PDType1Font.HELVETICA_BOLD, 16);
+        contentStream.newLineAtOffset(25, 750);
+        contentStream.showText(Title);
+        contentStream.endText();
+
+        contentStream.beginText();
+        contentStream.setFont(PDType1Font.HELVETICA, 12);
+        contentStream.newLineAtOffset(25, 725);
+        contentStream.showText("Date: " + java.time.LocalDate.now());
+        contentStream.newLineAtOffset(0, -20);
+        contentStream.showText("Time: " + java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss")));
+        contentStream.endText();
+
+        // Create table header
+        float tableTopY = 650;
+        float tableBottomY = 50;
+        float tableWidth = page.getMediaBox().getWidth() - (2 * 25);
+        float columnWidth = tableWidth / 5f;
+        float[] columnCoordinates = {25, 25 + columnWidth, 25 + (2 * columnWidth), 25 + (3 * columnWidth), 25 + (4 * columnWidth)};
+        contentStream.setLineWidth(0.5f);
+        contentStream.moveTo(25, tableTopY);
+        contentStream.lineTo(25 + tableWidth, tableTopY);
+        contentStream.stroke();
+        contentStream.beginText();
+        contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
+        contentStream.newLineAtOffset(columnCoordinates[0], tableTopY - 20);
+        contentStream.showText("Order ID");
+        contentStream.newLineAtOffset(columnWidth, 0);
+        contentStream.showText("Date Created");
+        contentStream.newLineAtOffset(columnWidth, 0);
+        contentStream.showText("Date Updated");
+        contentStream.newLineAtOffset(columnWidth, 0);
+        contentStream.showText("Status");
+        contentStream.newLineAtOffset(columnWidth, 0);
+        contentStream.showText("Product Name");
+        contentStream.newLineAtOffset(columnWidth, 0);
+        contentStream.showText("Quantity");
+        contentStream.endText();
+
+        // Fill table with data
+        contentStream.setFont(PDType1Font.HELVETICA, 12);
+        float currentY = tableTopY - 40;
+        for (Map<String, Object> item : orderData) {
+            contentStream.beginText();
+            contentStream.newLineAtOffset(columnCoordinates[0], currentY);
+            contentStream.showText(String.valueOf(item.get("id")));
+            contentStream.newLineAtOffset(columnWidth, 0);
+            contentStream.showText(String.valueOf(item.get("dateCreated")));
+            contentStream.newLineAtOffset(columnWidth, 0);
+            contentStream.showText(String.valueOf(item.get("dateUpdated")));
+            contentStream.newLineAtOffset(columnWidth, 0);
+            contentStream.showText(String.valueOf(item.get("status")));
+            contentStream.newLineAtOffset(columnWidth, 0);
+            contentStream.showText(String.valueOf(item.get("productName")));
+            contentStream.newLineAtOffset(columnWidth, 0);
+            contentStream.showText(String.valueOf(item.get("quantity")));
+            contentStream.endText();
+            currentY -= 20;
+            if (currentY < tableBottomY) {
+                // Start new page if table row would fall off current page
+                contentStream.close();
+                PDPage newPage = new PDPage(page.getMediaBox());
+                document.addPage(newPage);
+                contentStream = new PDPageContentStream(document, newPage);
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.HELVETICA_BOLD, 16);
+                contentStream.endText();
+                currentY = newPage.getMediaBox().getHeight() - 40;
+            }
+        }
+
+        // Create footer
+        contentStream.beginText();
+        contentStream.setFont(PDType1Font.HELVETICA, 12);
+        contentStream.newLineAtOffset(25, 40);
+        contentStream.showText("Total Orders: " + String.valueOf(filteredOrders.size()));
+        contentStream.endText();
+
+        contentStream.close();
+
+        // Write PDF to byte array
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        document.save(baos);
+        document.close();
+        byte[] bytes = baos.toByteArray();
+
+        // Send PDF as response
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDisposition(ContentDisposition.builder("inline").filename("orders.pdf").build());
+        return ResponseEntity.ok().headers(headers).body(bytes);
+
+
+
+    }
+
 
 
     //    for the todays sales report
