@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import javabackend.example.javabackend.repositories.*;
 import javabackend.example.javabackend.models.*;
+
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 import javabackend.example.javabackend.Service.OrdersService;
@@ -54,7 +56,10 @@ public class OrderController {
     public String updateStatus(@PathVariable Integer id, @ModelAttribute("orders") orders orders, Model model){
         orders preExistingOrder = ordersService.getOrdersById(id);
         preExistingOrder.setStatus(orders.getStatus());
+//        get current date and time and set it to the updated_at field
+        preExistingOrder.setUpdated_at(Timestamp.valueOf(java.time.LocalDateTime.now()));
         ordersService.updateOrders(preExistingOrder);
+
         return "redirect:/Orders";
     }
 
