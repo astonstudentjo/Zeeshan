@@ -11,6 +11,7 @@ import javabackend.example.javabackend.repositories.UsersRepository;
 import javabackend.example.javabackend.repositories.ordersRepository;
 import javabackend.example.javabackend.repositories.ordersItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,10 +21,8 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 public class ReportController {
@@ -41,6 +40,9 @@ public class ReportController {
     @Autowired
 
     private final ordersItemRepository orderItemRepository;
+
+    @Autowired
+    private ordersRepository ordersRepository;
 
 
 
@@ -107,9 +109,76 @@ public class ReportController {
         return "User-Report";
     }
 
+    @GetMapping("/Report/Orders")
+    public String generateOrdersReport(Model model){
+        List<orders> orders = orderRepository.findAll();
+        List<order_items> orderItems = orderItemRepository.findAll();
+        List<Products> products = productsRepository.findAll();
 
-    @Autowired
-    private ordersRepository ordersRepository;
+        int totalOrders = 0;
+
+        List<orders> filteredOrders = new ArrayList<>();
+        for (orders order : orders) {
+            if (order.getStatus().equals("pending") || order.getStatus().equals("Processing") || order.getStatus().equals("Shipped")) {
+                filteredOrders.add(order);
+            }
+        }
+
+        List<order_items> filteredOrderItems = new ArrayList<>();
+        for (order_items orderItem : orderItems) {
+            if (filteredOrders.stream().anyMatch(o -> o.getId() == orderItem.getOrder_id())) {
+                filteredOrderItems.add(orderItem);
+            }
+        }
+
+        List<Products> filteredProducts = new ArrayList<>();
+        for (Products product : products) {
+            if (filteredOrderItems.stream().anyMatch(o -> o.getProduct_id() == product.getId())) {
+                filteredProducts.add(product);
+            }
+        }
+
+        // build order data
+        List<Map<String, Object>> orderData = new ArrayList<>();
+        for (orders order : filteredOrders) {
+            Map<String, Object> orderItem = new HashMap<>();
+            orderItem.put("id", order.getId());
+            orderItem.put("dateCreated", order.getCreated_at());
+            orderItem.put("dateUpdated", order.getUpdated_at());
+            orderItem.put("status", order.getStatus());
+
+            List<String> productNames = new ArrayList<>();
+            List<Integer> quantities = new ArrayList<>();
+            for (order_items orderItem_item : filteredOrderItems) {
+                if (orderItem_item.getOrder_id() == order.getId()) {
+                    int productId = orderItem_item.getProduct_id();
+                    int quantity = orderItem_item.getQuantity();
+                    quantities.add(quantity);
+
+                    String productName = filteredProducts.stream()
+                            .filter(p -> p.getId() == productId)
+                            .findFirst()
+                            .orElseThrow(() -> new RuntimeException("Could not find product with id " + productId))
+                            .getName();
+                    productNames.add(productName);
+                }
+            }
+
+            orderItem.put("productName", String.join("<br>", productNames));
+            orderItem.put("quantity", quantities.stream().map(Object::toString).collect(Collectors.joining("<br>")));
+            orderData.add(orderItem);
+        }
+//        title
+        String Title = "Orders Report";
+        model.addAttribute("orders", orderData);
+        model.addAttribute("totalOrders", filteredOrders.size());
+        return "Orders-Report";
+    }
+
+
+
+
+
 
     //    this is for daily sales report
     @GetMapping("/Report/Sales/Today")
