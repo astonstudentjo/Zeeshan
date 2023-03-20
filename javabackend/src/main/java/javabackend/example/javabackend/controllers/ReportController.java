@@ -119,7 +119,7 @@ public class ReportController {
 
         List<orders> filteredOrders = new ArrayList<>();
         for (orders order : orders) {
-            if (order.getStatus().equals("pending") || order.getStatus().equals("Processing") || order.getStatus().equals("Shipped")) {
+            if (order.getStatus().equals("pending") || order.getStatus().equals("Processing") || order.getStatus().equals("Shipped") || order.getStatus().equals("Cancelled") || order.getStatus().equals("Delivered")) {
                 filteredOrders.add(order);
             }
         }

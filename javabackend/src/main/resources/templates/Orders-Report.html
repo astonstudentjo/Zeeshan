@@ -66,7 +66,12 @@
             <td th:utext="${order.quantity}"></td>
             <td th:text="${order.dateCreated}"></td>
             <td th:text="${order.dateUpdated}"></td>
-            <td th:text="${order.status}"></td>
+            <td>
+                <span th:if="${order.status} == pending or ${order.status} == Processing">Incoming</span>
+                <span th:if="${order.status} == Shipped or ${order.status} == Delivered or ${order.status} == Cancelled">Outgoing</span>
+
+
+            </td>
         </tr>
         </tbody>
         <tfoot>
