@@ -1,14 +1,14 @@
 .info{
     position: absolute;
-    width: 1256px;
-    height: 144px;
+    width: 875px;
+    height: 36px;
     
     font-family: 'Basic';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
-    /* or 36px */
+    /* identical to box height, or 36px */
     
     color: #000000;
 
@@ -31,9 +31,12 @@ color: #000000;
 
 .image{
    
-position: absolute;
-width: 1403.46px;
-height: 680.02px;
+    height: 680.0178833007812px;
+    width: 105%;
+    left: 850px;
+    top: 133.98208618164062px;
+    border-radius: [object Object]px;
+    
 
 
 }
@@ -41,3 +44,6 @@ height: 680.02px;
 .background{
   
 }
+
+
+
