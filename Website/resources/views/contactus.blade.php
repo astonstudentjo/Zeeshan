@@ -116,5 +116,3 @@ header section ends -->
 </html>
 
 @endsection
-
-

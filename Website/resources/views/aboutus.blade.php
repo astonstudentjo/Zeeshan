@@ -6,12 +6,17 @@
     <head>
         <meta charset="utf-8">
         <title>About Us</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ticket Selling Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/aboutus.css') }}">
-</head>
 
     <style media="screen">
 
-        ul {
+        /* ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -19,10 +24,10 @@
 
         li {
         display: inline;
-        }
+        } */
 </style>
-</head>
 
+</head>
 <!-- header section starts
 <header>
 
@@ -39,44 +44,68 @@
 </header>
  header section ends -->
 
-<hr>
+
 <!-- about section starts  -->
 
-<img class="image" src="./images/background.png" alt="image">
-<section>
+<body>
+    
+  <div>
+        <img class="image" src="./images/background.png" alt="background image"> 
+   
+  </div> 
 
+        <section>    
+        <h2 class="heading">Who we are: </h1>  
         <div class="info">
-            <h3 class="heading">Who we are</h3>
             <p>Welcome to our E-ticketing platform! We are a team of dedicated professionals</p>
             <p> who are passionate about providing a convenient and hassle-free ticket purchasing experience to our valued customers.</p>
             <p>Due to Covid, live music revenues collapsed by about 90%, leaving musicians and those working in venues or recording studios 
                badly affected because many were ineligible for the furlough scheme. Our aim is to bring attention back to the music industry and create events bigger and better than ever before. </p>
             <p>We want to be versatile by bringing a range of different genres and musicians onto the stage at our events to reach out to all our customers who will have different preferences when it comes
                to music. So not only are we giving you guys the chance to see some amazing artists such as Chris brown and Adele but we are giving more recognition to smaller artists who need a platform to expand and grow. </p>
-              
-             
-            <h> our team </h>
-            <div class="profile">
-        <div>
-        <img src="./images/profile.png" alt="profile">
-        <p>Humera Muhammad</p>
-        <p>200060828@aston.ac.uk</p>
-        </div>
-        <div>
-        <img src="./images/profile.png" alt="profile">
-        <p> Jenson</p>
-        <p>@aston.ac.uk</p>
-        </div>
-        <div>
-        <img src="./images/profile.png" alt="profile">
-        <p> Faryak</p>
-        <p>@aston.ac.uk</p>
-        </div>
     </div>
+    </section>
+
+    <section>
         <div class="info">
-            <h4 class="heading">Our mission:</h4>
-
-
+    <div>
+        <h3 class="heading"> Our team </h>
+    </div>
+    </section>
+    <section class="container">
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img1.jpg" alt="" />-->
+        </div>
+        <h2>Someone Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img2.jpg" alt="" />-->
+        </div>
+        <h2>Someone Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img3.jpg" alt="" />-->
+        </div>
+        <h2>Someone Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Someone Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+      </div>
+    </section>
+    <section>
+        <div class="info">
+        <h4 class="heading">Our mission:</h4>
+   
             <p>We take pride in our work, and our goal is to deliver exceptional customer service to each and 
                 every one of our customers. We are committed to making the process of buying e-tickets online as simple and effortless as possible,
                  while ensuring that all transactions are safe and secure.</p>
@@ -87,19 +116,16 @@
             <p> Thank you for choosing us as your go-to platform for all your e-ticketing needs. We look forward to continuing to serve you and
                  providing you with the best possible experience!</p>
         </div>
-        </div>
-    </div>
     </section>
+    </body>
 
 <!-- about section ends -->
-@include ('layouts.footer')
-<hr>
+
+
 <!-- footer section starts-->
 
-
+@include ('layouts.footer')
 <!-- footer section ends -->
-
-
 
 
 </html>
