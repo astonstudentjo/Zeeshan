@@ -9,6 +9,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
 use App\Http\Controllers\ConfirmationController;
 use App\Http\Controllers\OrdersController;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -106,3 +107,5 @@ Route::middleware(['CustomerAuthentication'])->group(function(){
 
 
 });
+
+

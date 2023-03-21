@@ -25,8 +25,8 @@
             <div class="box">
                 <h3>Subscribe to our news letter</h3>
                 <br>
-                <form method = "post">
-                    <input type = "email" placeholder="Enter email address">
+                <form >
+                    <input type = "email" placeholder="Enter email address" required>
                     <input type = "submit" value = "Follow me">
                 </form>
             </div>
