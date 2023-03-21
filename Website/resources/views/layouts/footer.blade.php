@@ -19,27 +19,23 @@
                 <a href="/products">Products</a>
                 <a href="/aboutus">About Us</a>
                 <a href="/contactus">Contact Us</a>
+                <a href = "/basket">Basket</a>
             </div>
 
             <div class="box">
-                <h3>extra links</h3>
-                <a href="#">my account</a>
-                <a href="#">my favorite</a>
-            </div>
-
-            <div class="box">
-                <h3>locations</h3>
-                <a href="#">England</a>
-                <a href="#">USA</a>
-                <a href="#">Japan</a>
-                <a href="#">France</a>
+                <h3>Subscribe to our news letter</h3>
+                <br>
+                <form method = "post">
+                    <input type = "email" placeholder="Enter email address">
+                    <input type = "submit" value = "Follow me">
+                </form>
             </div>
 
             <div class="box">
                 <h3>contact info</h3>
-                <a href="#">+123-456-7890</a>
-                <a href="#">example@gmail.com</a>
-                <a href="#">city, country - 400104</a>
+                <a href="#">+0121 204 3000</a>
+                <a href="#">EventTick@aston.ac.uk</a>
+                <a href="#">Birmingham, United Kingdom</a>
                 <img src="images/payment.png" alt="">
             </div>
 
