@@ -1,24 +1,22 @@
 body{
     background-color: rgba(0, 0, 0, .1);;
-    min-width: 100%;
     text-align: center;
 }
 
 
 .heading {
+    display:inline-block;
     text-align: center;
-    font-size: 4rem;
     color: rgb(255, 51, 153, .05);
-    padding: 1rem;
-    margin: 2rem 0;
+   
+  
     background: rgba(255, 51, 153, .05);
     color: #25459b;
 }
 .row {
     background-color: rgb(255, 51, 153, .05);;
     text-align: center;
-    margin-left: 33%;
-    margin-right: 33%;
+  
 }
 .box{
     background-color: white;
@@ -40,8 +38,6 @@ body{
 .box a {
     font-style: normal;
     font-weight: bolder;
-    font-size: 10px;
-    line-height: 21px;
     color: #000;
     text-decoration: none;
     margin: 0 10px;
@@ -55,45 +51,25 @@ body{
     background-color: rgba(255, 51, 153, .05);
 }
 
-section {
-    padding: 2rem 9%;
-}
+
 
 .profile {
 
     position: absolute;
-    width: 487px;
-    height: 105px;
-    left: 473px;
-    top: 1307px;
-
+   
 }
 
 .socials{
-    position: absolute;
-width: 455px;
-height: 128px;
-
+position: absolute;
 font-family: 'Grenze';
 font-style: normal;
-font-weight: 400;
-font-size: 64px;
-line-height: 95px;
 
 color: #000000;
 }
 
 .text{
-    position: absolute;
-width: 1019px;
-height: 146px;
-
+position: absolute;
 font-family: 'Actor';
 font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 130%;
-/* or 42px */
-
 color: #0C0000;
 }

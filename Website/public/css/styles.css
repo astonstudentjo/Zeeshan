@@ -21,7 +21,7 @@ margin-right: auto;
 max-width: 90%;
 background-color: rgb(255, 51, 153, .05);
 filter: brightness(100%);
-width: max-content;
+
 }
 html {
     font-size: 62.5%;
