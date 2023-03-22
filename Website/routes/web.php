@@ -100,7 +100,7 @@ Route::post('/signup', [RegistrationController::class, 'create']);
 
 //Routes that only signed in customers should be able to access
 Route::middleware(['CustomerAuthentication'])->group(function(){
-    Route::post('/signout', [SignoutController::class, 'signout']);
+    Route::get('/signout', [SignoutController::class, 'signout']);
 
 
 

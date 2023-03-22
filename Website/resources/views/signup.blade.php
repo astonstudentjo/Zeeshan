@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.main')
 @section('body')
 
 <span class="image-container">
@@ -67,10 +67,6 @@
 
 
     </div>
-
-
-
-    @include ('layouts.footer')
 
 </div>
 @endsection

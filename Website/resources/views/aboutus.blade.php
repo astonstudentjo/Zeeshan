@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@extends('layouts.header')
+@extends('layouts.main')
 @section('body')
 
 <html>
@@ -92,7 +92,6 @@
     </section>
 
 <!-- about section ends -->
-@include ('layouts.footer')
 <hr>
 <!-- footer section starts-->
 

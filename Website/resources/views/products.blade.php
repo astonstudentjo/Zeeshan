@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@extends('layouts.header')
+@extends('layouts.main')
 @section('body')
 <html lang="en">
 
@@ -130,6 +130,5 @@
     <!-- prodcuts section ends -->
 
 </body>
-@include ('layouts.footer')
 </html>
 @endsection

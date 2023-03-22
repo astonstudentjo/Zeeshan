@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@extends('layouts.header')
+@extends('layouts.main')
 @section('body')
 
 
@@ -103,7 +103,6 @@ header section ends -->
    
 
 </section>
-@include ('layouts.footer')
 <!-- contact section ends -->
 
 <hr>
