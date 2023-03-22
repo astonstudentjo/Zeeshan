@@ -7,8 +7,10 @@
     <head>
         <meta charset="utf-8">
         <title>Contact Us</title>
+        <script src="https://kit.fontawesome.com/b356ad9dc8.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/contactus.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     </head>
 
     <style media="screen">
@@ -50,26 +52,35 @@ header section ends -->
 
     <h1 class="heading"> Contact us </h1>
 
+    <div class="main">
+        <!-- Facebook Icon -->
+        <div class="icon fb">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span>Facebook</span>
+        </div>
+
+        <!-- Twitter Icon -->
+        <div class="icon twt">
+            <i class="fa-brands fa-twitter"></i>
+            <span>Twitter</span>
+        </div>
+
+        <!-- Linkedin Icon -->
+        <div class="icon lnk">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span>Linkedin</span>
+        </div>
+
+        <!-- YouTube Icon -->
+        <div class="icon yt">
+            <i class="fa-brands fa-youtube"></i>
+            <span>YouTube</span>
+        </div>
+    </div>
     <div>
-    <h class="heading"> Social media:</h>
-        <div>
-        <img src="./images/instagram.png">
-        <p class="socials"> @Eventick</p>
-        </div>
-        <div>
-        <img src="./images/facebook.png">
-        <p class="socials"> @Eventick</p>
-        </div>
-        <div>
-        <img src="./images/linkden.png">
-        <p class="socials"> @Eventick</p>
-        </div>
-        <div>
-        <img src="./images/twitter.png">
-        <p class="socials"> @Eventick</p>
-        </div>
         <p class="text">If you have any queries or issues please drop us an email or give us a call using the following information:</p>
     </div>
+</div>
 <div> 
     <div>
     <img src="./images/phone.png" alt="phone">
