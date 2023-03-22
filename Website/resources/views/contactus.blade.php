@@ -48,7 +48,7 @@ header section ends -->
 <!--The contact section has a form with fields for name, email, number, and message. 
     It also includes an image on the right side. -->
 
-<section class="contact" id="contact">
+<section class="" id="contact">
 
     <h1 class="heading"> Contact us </h1>
 
@@ -78,7 +78,7 @@ header section ends -->
         </div>
     </div>
     <div>
-        <p class="text">If you have any queries or issues please drop us an email or give us a call using the following information:</p>
+        <p class="text">If you have any queries or issues please drop us an email or leave us a message using the following information:</p>
     </div>
 </div>
 <div> 
@@ -90,6 +90,11 @@ header section ends -->
     <img src="./images/email.png" alt="email">
     <p>support@eventick.ac.uk</p>
     </div>
+</div>
+<div>
+<p class="text">
+Leave your information below and we'll get back to you as soon as possible!
+</p>
 </div>
     <div class="row">
 
