@@ -51,41 +51,39 @@
     @yield('body')
 </body>
 
-<footer>
-<section class="footer">
 
-<div class="box-container">
+<div class = "footer-box">
+    <div class = "footer-area">
+        <div class = "footer-component 1">
+            <h3>Quick Links</h3>
+            <a href="/">Home</a>
+            <a href="/products">Products</a>
+            <a href="/aboutus">About Us</a>
+            <a href="/contactus">Contact Us</a>
+            <a href = "/basket">Basket</a>
+        </div>
 
-    <div class="box">
-        <h3>quick links</h3>
-        <a href="/">Home</a>
-        <a href="/products">Products</a>
-        <a href="/aboutus">About Us</a>
-        <a href="/contactus">Contact Us</a>
-        <a href = "/basket">Basket</a>
-    </div>
+        <div class = "footer-component 2">
+            <h3>Contact Info</h3>
+            <a>+0121 204 3000</a>
+            <a>EventTick@aston.ac.uk</a>
+            <a>Birmingham, United Kingdom</a>
+        </div>
 
-    <div class="box">
-        <h3>Subscribe to our news letter</h3>
-        <br>
-        <form class = "newsletter-form">
-            <input type = "email" placeholder="Enter email address" required>
-            <input type = "submit" value = "Follow me">
-        </form>
-    </div>
-
-    <div class="box">
-        <h3>contact info</h3>
-        <a href="#">+0121 204 3000</a>
-        <a href="#">EventTick@aston.ac.uk</a>
-        <a href="#">Birmingham, United Kingdom</a>
-        <img src="images/payment.png" alt="">
+        <div class = "footer-component-newsletter">
+            <h3>Subscribe to our newsletter</h3>
+            <form class = "newsletter-form">
+            <input type = "email" id = "footer-newsletter-email"placeholder="Enter email address" required>
+            <input type = "submit" id = "footer-newsletter-btn">
+            </form>
+        </div>
     </div>
 
 </div>
 
-<div class="credit"> <span> </span> </div>
 
-</section>
-</footer>
+
+
+
+
 </html>

@@ -19,6 +19,8 @@ html {
     overflow-x: hidden;
 }
 
+ 
+
 
 /* main container */
 
@@ -78,65 +80,94 @@ html {
 
 
 
-/**
-Footer CSS
 
-*/
 
-.heading {
-    text-align: center;
-    font-size: 4rem;
-    padding: 1rem;
-    margin: 2rem 0;
+
+.footer-box{
+    background-color: black;
+    padding-bottom: 4rem;
+    padding-top : 10rem;
+
+}
+
+.footer-area{
+    width: 80%;
+    height: 20vh;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    
+}
+
+.footer-component{
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+    
+
+}
+
+.footer-component h3{
+    margin-bottom: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+
+
+
+}
+
+.footer-component a{
+    color:white;
+    text-decoration: none;
+    margin-bottom: 0.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+
+
+
+}
+
+.footer-component a:hover{
     color: #25459b;
 }
-.row {
-    text-align: center;
-    margin-left: 33%;
-    margin-right: 33%;
-}
-.box{
-    background-color: white;
-    text-emphasis-color: black;
-    width: 100%;
-    padding-bottom: 1.25rem;
-    margin-top: 1.5rem;
-}
-.btn {
-    display: inline-block;
-    margin-top: 1rem;
-    border-radius: 5rem;
-    background: #333;
-    color: #fff;    
-    padding: .9rem 3.5rem;
-    cursor: pointer;
-    font-size: 1.7rem;
-}
-.box a {
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 10px;
-    line-height: 21px;
-    color: #000;
-    text-decoration: none;
-    margin: 0 10px;
-}
+
+.footer-component-newsletter h3{
+    margin-bottom: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
 
 
-.footer .box-container{
-    text-align: center;
-    display: flex;
-    width: 100%;
 }
 
+.newsletter-form #footer-newsletter-email{
+    width: 275px;
+    height: 30px;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 1rem;
+    padding-left: 10px;
 
-.box{
-    background-color: white;
-    text-emphasis-color: black;
-    width: 100%;
-    padding-bottom: 1.25rem;
-    margin-top: 1.5rem;
 }
-section {
-    padding: 2rem 9%;
+
+#footer-newsletter-email::placeholder{
+    color: #a1a5ab;
 }
+
+.newsletter-form #footer-newsletter-btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 1rem;
+    background-color:grey;
+    color: white;
+    
+
+
+
+}
+
+#footer-newsletter-btn:hover{
+    background-color: #25459b;
+}
+
