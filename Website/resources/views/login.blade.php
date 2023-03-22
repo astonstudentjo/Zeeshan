@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@extends('layouts.header')
+@extends('layouts.main')
 @section('body')
 
 
@@ -14,12 +14,10 @@
 </head>
 <!-- placement for the image-->
 
-<div class="image-container">
-    <img src="{{ asset('images/welcomeback.jpg') }}" alt="image" width="300" height="204">
-</div>
+
 <br>
 <div>
-    <form action="/login" method="post">
+    <form class = "login-form" action="/login" method="post">
 
 
         <div>
@@ -76,6 +74,5 @@
 
 </div>
 
-@include ('layouts.footer')
 </html>
 @endsection

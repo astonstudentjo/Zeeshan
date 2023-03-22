@@ -18,8 +18,8 @@ body {
    
   }
   /* Set form styles */
-  form {
-    width: 300px;
+  .login-form {
+    width: 100%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;

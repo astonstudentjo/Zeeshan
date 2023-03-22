@@ -1,10 +1,7 @@
-@extends('layouts.header')
+@extends('layouts.main')
 @section('body')
 
-<span class="image-container">
-    <img src="{{ asset('images/welcome.jpg') }}" alt="image" width="550" height="115">
 
-</span>
 <div>
 
     <span class="Title">
@@ -67,10 +64,6 @@
 
 
     </div>
-
-
-
-    @include ('layouts.footer')
 
 </div>
 @endsection

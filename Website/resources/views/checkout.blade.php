@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.main')
 
 
 @section('body')
@@ -37,5 +37,4 @@
     <button type="submit">Place Order</button>
 </form>
 
-@include ('layouts.footer')
 @endsection

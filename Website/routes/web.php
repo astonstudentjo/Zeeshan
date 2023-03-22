@@ -9,6 +9,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
 use App\Http\Controllers\ConfirmationController;
 use App\Http\Controllers\OrdersController;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,10 +100,12 @@ Route::post('/signup', [RegistrationController::class, 'create']);
 
 //Routes that only signed in customers should be able to access
 Route::middleware(['CustomerAuthentication'])->group(function(){
-    Route::post('/signout', [SignoutController::class, 'signout']);
+    Route::get('/signout', [SignoutController::class, 'signout']);
 
 
 
 
 
 });
+
+
