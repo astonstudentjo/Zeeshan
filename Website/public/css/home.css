@@ -3,16 +3,7 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
-    max-width: 100%;
 }
 .categories {
 font-size: 20px;
@@ -54,7 +45,7 @@ font-size: 20px;
     
     font-size: 55px;
     font-weight: bolder;
-    color: #25459b;
+    color: black;
     margin-left: 1%;
     
 }
@@ -63,13 +54,13 @@ font-size: 20px;
     
     font-size: 30px;
     font-weight: bolder;
-    color: #25459b;
+    color: black;
     margin-left: 1%;
     
 }
 .display span
 {
-    color: #25459b; 
+    color: black; 
     font-size: 25px;
 }
 .content
@@ -117,5 +108,5 @@ text-align: center;
     padding: 1rem;
     margin: 2rem 0;
     background: rgba(255, 51, 153, .05);
-    color: #25459b;
+    color: black;
 }

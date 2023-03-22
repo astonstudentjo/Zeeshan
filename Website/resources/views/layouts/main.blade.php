@@ -46,10 +46,11 @@
 
 
 </div>
-
+<div class = "body">
 <body>
     @yield('body')
 </body>
+</div>
 
 
 <div class = "footer-box">
