@@ -10,7 +10,7 @@
 </head>
 
 
-<div class="container">
+<div class="header-container">
     <div class="left-header">
         <h2>EventTick</h2>
         <a href="/">Home</a>

@@ -24,11 +24,11 @@ html {
 
 /* main container */
 
-.container {
+.header-container {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: white;
+    background-color: #3b3b3a;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -45,18 +45,18 @@ html {
 .left-header h2 {
     font-size: 2.5rem;
     font-weight: bolder;
-    color: #25459b;
+    color: white;
     margin-left: 1%;
 }
 
 .left-header a {
     font-size: 1.5rem;
-    color: #25459b;
+    color: white;
     padding-left: 20px;
 }
 
 .left-header a:hover {
-    color: #ff3399;
+    color: #a26bc9;
 }
 
 .right-header {
@@ -66,14 +66,15 @@ html {
     /* width: 30%; */
 }
 
+/*#25459b*/
 .right-header a {
     font-size: 1.5rem;
-    color: #25459b;
+    color: white;
     padding-left: 20px;
 }
 
 .right-header a:hover {
-    color: #ff3399;
+    color: #a26bc9;
 }
 
 .right-header button {}
@@ -84,7 +85,7 @@ html {
 
 
 .footer-box{
-    background-color: black;
+    background-color: #3b3b3a;
     padding-bottom: 4rem;
     padding-top : 10rem;
 
@@ -130,7 +131,7 @@ html {
 }
 
 .footer-component a:hover{
-    color: #25459b;
+    color: #a26bc9;
 }
 
 .footer-component-newsletter h3{
@@ -159,7 +160,7 @@ html {
     height: 30px;
     border-radius: 5px 5px 5px 5px;
     font-size: 1rem;
-    background-color:grey;
+    background-color:#ada239;
     color: white;
     
 
