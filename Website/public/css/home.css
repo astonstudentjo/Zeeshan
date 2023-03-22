@@ -33,6 +33,7 @@ font-size: 20px;
     display: flex;
     min-height: 50rem;
     align-items: center;
+    text-align: center;
 }
 .display p
 {
@@ -43,10 +44,9 @@ font-size: 20px;
 .display h2{
    
     
-    font-size: 55px;
+    font-size: 40px;
     font-weight: bolder;
     color: black;
-    margin-left: 1%;
     
 }
 .display h3{
@@ -55,7 +55,6 @@ font-size: 20px;
     font-size: 30px;
     font-weight: bolder;
     color: black;
-    margin-left: 1%;
     
 }
 .display span
@@ -65,7 +64,6 @@ font-size: 20px;
 }
 .content
 {
- 
     min-width: 33%;
     max-width: 33%;
     padding-left: 1%;
