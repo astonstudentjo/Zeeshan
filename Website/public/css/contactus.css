@@ -1,151 +1,95 @@
-body {
-    background-color: rgba(0, 0, 0, .1);
-    ;
-    text-align: center;
+.contactus-container {
+    background-color: lightgrey;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
 }
 
-.heading {
-    display: inline-block;
-    text-align: center;
-    font-size: 4rem;
-    /* color: rgb(255, 51, 153, .05); */
-    padding: 1rem;
-    margin: 2rem 0;
-    /* background: rgba(255, 51, 153, .05); */
-    color: #25459b;
-}
-
-.row {
-    /* background-color: rgb(255, 51, 153, .05); */
-    text-align: center;
-}
-
-.box {
-    background-color: white;
-    text-emphasis-color: black;
-    width: 50%;
-    padding-bottom: 1.25rem;
-    margin-top: 1.5rem;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 1rem;
-    border-radius: 5rem;
-    background: #333;
-    color: #fff;
-    padding: .9rem 3.5rem;
-    cursor: pointer;
-    font-size: 1.7rem;
-}
-
-.box a {
-    font-style: normal;
-    font-weight: bolder;
-    color: #000;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer .box-container {
-    text-align: center;
+.contactus-area{
+    width: 70%;
     display: flex;
-    width: 100%;
-    background-color: rgba(255, 51, 153, .05);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    vertical-align: middle;
+
+    
 }
 
-section {
-    padding: 2rem 9%;
-}
 
-.profile {
-    position: absolute;
-}
-
-.text {
-    position: absolute;
-    font-family: 'Actor';
-    font-style: normal;
-    color: #0C0000;
-    font-size: 2rem;
-}
-
-.main {
+.contactus-details{
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    background: rgb(240, 240, 240);
 }
 
-.icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    background: #fff;
-    margin: 20px;
-    text-align: center;
-    font-size: 50px;
-    line-height: 100px;
-    font-family: sans-serif;
-    overflow: hidden;
-    box-shadow: 5px 10px 20px rgba(150, 150, 150, .3);
-    transition: all .3s ease-out;
-}
 
-.icon:hover {
-    width: 400px;
-    cursor: pointer;
+.contactus-form{
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    color: #fff;
-}
+    flex-direction: column;
+    border-radius: 5px 5px 5px 5px;
+    padding-top: 10px;
 
-.icon:hover i {
-    color: #fff;
-}
-
-.icon .fa-facebook-f {
-    color: #1A6ED8;
-}
-
-.fb:hover {
-    background: #1A6ED8;
-}
-
-.icon .fa-twitter {
-    color: #1DA1F2;
-}
-
-.twt:hover {
-    background: #1DA1F2;
-}
-
-.icon .fa-linkedin-in {
-    color: #0077B5;
-}
-
-.lnk:hover {
-    background: #0077B5;
-}
-
-.git:hover {
-    background: #000;
-}
-
-.icon .fa-youtube {
-    color: #FE0000;
-}
-
-.yt:hover {
-    background: #FE0000;
 }
 
 
-/* responsive */
+#contactus-name, #contactus-email, #contactus-subject{
+    padding-top: 5px;
 
-@media only screen and (min-width: 320px) and (max-width: 991px) {
-    .main {
-        flex-direction: column;
-    }
+    border-radius: 5px 5px 5px 5px;
+
+    margin: 10px;
+
+    width: 600px;
+
+    height: 30px;
+
+    font-size: 2rem;
+
+    padding-left: 10px;
+
+
+
+}
+
+#contactus-message{
+
+    padding-top: 5px;
+
+    border-radius: 5px 5px 5px 5px;
+
+    margin: 10px;
+
+    width: 600px;
+
+    height: 100px;
+
+    font-size: 2rem;
+
+    padding-left: 10px;
+
+}
+
+#contactus-btn{
+    border-radius: 5px 5px 5px 5px;
+    width: 600px;
+    height: 40px;
+    margin: 10px;
+    background-color: #ada239;
+    color: white;
+
+
+}
+
+#contactus-btn:hover{
+    background-color: #25459b;
+
+}
+#form-header{
+    padding-bottom: 10px;
+
+}
+
+
+#form-text{
+    font-size: 10px;
 }
