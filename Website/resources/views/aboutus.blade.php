@@ -28,31 +28,8 @@
 </style>
 
 </head>
-<!-- header section starts
-<header>
-
-<ul>
-    <li><a href="#" class="logo">Website.</a></li>
-    <li><a href="#wishlist">Wish List</a></li>
-    <li><a href="#contact"><a href="../HTML/contactus.html">Contact Us</a></li>
-    <li><a href="#about"><a href="../HTML/aboutus.html">About Us</a></li>
-    <li><a href="#ticket"><a href="../HTML/productspage.html">Ticket</a></li>
-    <li><a href="#login"><a href="../HTML/login.html">Log in</a></li>
-    <li><a href="#register"><a href="../HTML/Registration.html">Register</a></li>
-</ul>
-
-</header>
- header section ends -->
-
-
-<!-- about section starts  -->
-
 <body>
-  <section>
-        <img class="image" src="./images/background.png" alt="background image"> 
-      </section>
       </div> 
-
         <section class = info>    
         <h2 class="heading">Who we are: </h1>  
         <div class="info">
