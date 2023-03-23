@@ -42,7 +42,7 @@
         $totalPrice += $orderItem->price;
         ?>
         <tr>
-            <td><img src="{{ asset('images/' . $orderItem->product->img) }}" alt="product image" width="100" height="100"></td>
+            <td><img src="{{ asset('productImages/' . $orderItem->product->img) }}" alt="product image" width="100" height="100"></td>
             <td>{{ $orderItem->product->name }}</td>
             <td>£{{ $orderItem->product->price }}</td>
             <td>{{ $orderItem->quantity }}</td>
