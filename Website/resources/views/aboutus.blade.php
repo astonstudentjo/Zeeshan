@@ -65,7 +65,9 @@
                to music. So not only are we giving you guys the chance to see some amazing artists such as Chris brown and Adele but we are giving more recognition to smaller artists who need a platform to expand and grow. </p>
     </div>
     </section>
-
+        <section class = "Social Media">
+        <a class="twitter-timeline" href="https://twitter.com/event_tick?ref_src=twsrc%5Etfw">Tweets by event_tick</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </section>
     <section>
         <div class="info">
     <div>
