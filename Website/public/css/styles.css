@@ -94,7 +94,7 @@ html {
 .body {
     min-height: 100%;
     margin: 0;
-    /* padding-bottom: 80px;  removed the 80px of ramdonness */
+    padding-bottom: 80px;
 }
 
 .footer-box {
