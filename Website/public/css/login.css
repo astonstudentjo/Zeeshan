@@ -4,6 +4,8 @@
 body {
     background-color: #f2f2f2;
     color: #0022BA;
+    text-align: center;
+    align-content: center;
   }
   
   /* Set font styles */
@@ -19,7 +21,7 @@ body {
   }
   /* Set form styles */
   .login-form {
-    width: 100%;
+    width: 40%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
