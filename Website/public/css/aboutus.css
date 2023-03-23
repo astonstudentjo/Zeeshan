@@ -19,6 +19,11 @@
     color: rgb(136, 67, 136);
 }
 
+.Social_Media{
+padding-left: 10%;
+padding-right: 10%;
+align-items: center;
+}
 .btn {
     display: inline-block;
     margin-top: 1rem;
@@ -29,7 +34,15 @@
     cursor: pointer;
     font-size: 1.7rem;
 }
-
+.info{
+    width: 70%;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+   border-style: hidden;
+}
 .btn:hover {
     background: var(--pink);
 }
@@ -82,7 +95,7 @@
 
 .container .card {
     display: flex;
-    flex: 0 0 50%;
+    flex: 0 0 33%;
     flex-direction: column;
     align-items: center;
     padding: 30px;
