@@ -120,7 +120,7 @@
           <!--<img src="images/img4.jpg" alt="" />-->
         </div>
         <h2>Humera Muhammad</h2>
-        <p>Wroked on Front end</p>
+        <p>Worked on Front end</p>
       </div>
       <div class="card">
         <div class="image">
