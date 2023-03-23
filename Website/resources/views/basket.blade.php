@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+@extends('layouts.main')
 @section('body')
 
 
