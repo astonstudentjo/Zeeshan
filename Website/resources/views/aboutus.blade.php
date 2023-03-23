@@ -28,33 +28,9 @@
 </style>
 
 </head>
-<!-- header section starts
-<header>
-
-<ul>
-    <li><a href="#" class="logo">Website.</a></li>
-    <li><a href="#wishlist">Wish List</a></li>
-    <li><a href="#contact"><a href="../HTML/contactus.html">Contact Us</a></li>
-    <li><a href="#about"><a href="../HTML/aboutus.html">About Us</a></li>
-    <li><a href="#ticket"><a href="../HTML/productspage.html">Ticket</a></li>
-    <li><a href="#login"><a href="../HTML/login.html">Log in</a></li>
-    <li><a href="#register"><a href="../HTML/Registration.html">Register</a></li>
-</ul>
-
-</header>
- header section ends -->
-
-
-<!-- about section starts  -->
-
 <body>
-    
-  <div>
-        <img class="image" src="./images/background.png" alt="background image"> 
-   
-  </div> 
-
-        <section>    
+      </div> 
+        <section class = info>    
         <h2 class="heading">Who we are: </h1>  
         <div class="info">
             <p>Welcome to our E-ticketing platform! We are a team of dedicated professionals</p>
@@ -65,11 +41,10 @@
                to music. So not only are we giving you guys the chance to see some amazing artists such as Chris brown and Adele but we are giving more recognition to smaller artists who need a platform to expand and grow. </p>
     </div>
     </section>
-        <section class = "Social Media">
+        <section class = "Social_Media">
         <a class="twitter-timeline" href="https://twitter.com/event_tick?ref_src=twsrc%5Etfw">Tweets by event_tick</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </section>
     <section>
-        <div class="info">
     <div>
         <h3 class="heading"> Our team </h>
     </div>
@@ -79,35 +54,63 @@
         <div class="image">
           <!--<img src="images/img1.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Haseeb Ahmed</h2>
+        <p>Worked on java Back End</p>
       </div>
       <div class="card">
         <div class="image">
           <!--<img src="images/img2.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Muniib Ali</h2>
+        <p>Worked on Laravel back end and java back end</p>
       </div>
       <div class="card">
         <div class="image">
           <!--<img src="images/img3.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Damien Eshimu</h2>
+        <p>Worked on documentation</p>
       </div>
       <div class="card">
         <div class="image">
           <!--<img src="images/img4.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Jenson James-Ross</h2>
+        <p>Worked on Admin and Front end</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Faryal Mansoor</h2>
+        <p>Worked on Admin and Front end</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Zeeshan Mohammaed</h2>
+        <p>Worked on database, laravel and version Control</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Humera Muhammad</h2>
+        <p>Worked on Front end</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Sharana Sivathasan</h2>
+        <p></p>
       </div>
     </section>
     <section>
-        <div class="info">
+        
         <h4 class="heading">Our mission:</h4>
-   
+        <div class="info">
             <p>We take pride in our work, and our goal is to deliver exceptional customer service to each and 
                 every one of our customers. We are committed to making the process of buying e-tickets online as simple and effortless as possible,
                  while ensuring that all transactions are safe and secure.</p>
@@ -118,6 +121,7 @@
             <p> Thank you for choosing us as your go-to platform for all your e-ticketing needs. We look forward to continuing to serve you and
                  providing you with the best possible experience!</p>
         </div>
+      </div>
     </section>
     </body>
 
