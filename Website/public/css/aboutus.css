@@ -120,4 +120,14 @@
         color: #333;
         text-align: center;
       }
+.info {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+word-wrap: normal;
+width: 75%;
+}
+.info p{
+  text-align: center;
+}
 
