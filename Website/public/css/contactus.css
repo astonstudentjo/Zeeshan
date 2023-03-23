@@ -4,92 +4,73 @@
     padding-top: 2rem;
 }
 
-.contactus-area{
+.contactus-area {
     width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
     vertical-align: middle;
-
-    
 }
 
-
-.contactus-details{
+.contactus-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-
-.contactus-form{
+.contactus-form {
     display: flex;
     flex-direction: column;
     border-radius: 5px 5px 5px 5px;
     padding-top: 10px;
-
 }
 
-
-#contactus-name, #contactus-email, #contactus-subject{
+#contactus-name,
+#contactus-email,
+#contactus-subject {
     padding-top: 5px;
-
     border-radius: 5px 5px 5px 5px;
-
     margin: 10px;
-
     width: 600px;
-
     height: 30px;
-
     font-size: 2rem;
-
     padding-left: 10px;
-
-
-
 }
 
-#contactus-message{
-
+#contactus-message {
     padding-top: 5px;
-
     border-radius: 5px 5px 5px 5px;
-
     margin: 10px;
-
     width: 600px;
-
     height: 100px;
-
     font-size: 2rem;
-
     padding-left: 10px;
-
 }
 
-#contactus-btn{
+#contactus-btn {
     border-radius: 5px 5px 5px 5px;
     width: 600px;
     height: 40px;
     margin: 10px;
     background-color: #ada239;
     color: white;
-
-
 }
 
-#contactus-btn:hover{
+#contactus-btn:hover {
     background-color: #25459b;
-
 }
-#form-header{
+
+#form-header {
     padding-bottom: 10px;
-
 }
 
-
-#form-text{
+#form-text {
     font-size: 10px;
 }
+
+.padder {
+    padding-bottom: 40%;
+}
+
+.body {}
