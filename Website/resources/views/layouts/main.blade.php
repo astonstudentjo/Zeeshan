@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+    <!-- boxicons icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css">
 
 
 
@@ -25,7 +27,13 @@
         @guest
 
         <div class="right-header">
-            <a href="/basket">Basket</a>
+            <a href="/basket"> <i class='bx bxs-cart'></i>
+                @if (Session::has('basketQuantities'))
+                Items: {{ array_sum(Session::get('basketQuantities')) }}
+                @else
+                (EMPTY)
+                @endif
+            </a>
             <a href="/signup">Sign Up</a>
             <a href="/login">Login</a>
         </div>
@@ -38,7 +46,14 @@
 
         <div class="right-header">
             <a>{{auth()->user()->name}}</a>
-            <a href="/basket">Basket</a>
+            <a href="/basket"> <i class='bx bxs-cart'></i>
+
+                @if (Session::has('basketQuantities'))
+                Items: {{ array_sum(Session::get('basketQuantities')) }}
+                @else
+                (EMPTY)
+                @endif
+            </a>
             <a href="/orders">Orders</a>
             <a href="/signout">Signout</a>
 
