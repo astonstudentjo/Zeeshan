@@ -79,29 +79,57 @@
         <div class="image">
           <!--<img src="images/img1.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Haseeb Ahmed</h2>
+        <p>Worked on java Back End</p>
       </div>
       <div class="card">
         <div class="image">
           <!--<img src="images/img2.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Muniib Ali</h2>
+        <p>Worked on Laravel back end and java back end</p>
       </div>
       <div class="card">
         <div class="image">
           <!--<img src="images/img3.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Damien Eshimu</h2>
+        <p>Worked on documentation</p>
       </div>
       <div class="card">
         <div class="image">
           <!--<img src="images/img4.jpg" alt="" />-->
         </div>
-        <h2>Someone Name</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        <h2>Jenson James-Ross</h2>
+        <p>Wroked on Admin and Front end</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Faryal Mansoor</h2>
+        <p>Wroked on Admin and Front end</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Zeeshan Mohammaed</h2>
+        <p>Wroked on database, laravel and version Control</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Humera Muhammad</h2>
+        <p>Wroked on Front end</p>
+      </div>
+      <div class="card">
+        <div class="image">
+          <!--<img src="images/img4.jpg" alt="" />-->
+        </div>
+        <h2>Sharana Sivathasan</h2>
+        <p></p>
       </div>
     </section>
     <section>
