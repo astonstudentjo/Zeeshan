@@ -32,14 +32,12 @@
       </div> 
         <section class = info>    
         <h2 class="heading">Who we are: </h1>  
-        <div class="info">
             <p>Welcome to our E-ticketing platform! We are a team of dedicated professionals</p>
             <p> who are passionate about providing a convenient and hassle-free ticket purchasing experience to our valued customers.</p>
             <p>Due to Covid, live music revenues collapsed by about 90%, leaving musicians and those working in venues or recording studios 
                badly affected because many were ineligible for the furlough scheme. Our aim is to bring attention back to the music industry and create events bigger and better than ever before. </p>
             <p>We want to be versatile by bringing a range of different genres and musicians onto the stage at our events to reach out to all our customers who will have different preferences when it comes
                to music. So not only are we giving you guys the chance to see some amazing artists such as Chris brown and Adele but we are giving more recognition to smaller artists who need a platform to expand and grow. </p>
-    </div>
     </section>
         <section class = "Social_Media">
         <a class="twitter-timeline" href="https://twitter.com/event_tick?ref_src=twsrc%5Etfw">Tweets by event_tick</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
