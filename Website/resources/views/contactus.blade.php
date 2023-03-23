@@ -13,119 +13,70 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     </head>
 
-    <style media="screen">
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+    <div class = "contactus-container">
+        <div class = "contactus-left">
+            <div class = "contactus-address-details">
 
-li {
-  display: inline;
-}
-</style>
-</head>
+                <div class = "image-icon">
+                <img src="{{ asset('images/phone-icon.png') }}" width="30" height="30">
+                </div>
+                
+                <div class = "icon-text">
+                <h4>Address</h4>
+                <p>Aston St, Birmingham B4 7ET</p>
+                </div>
 
-<!-- header section starts
-<header>
 
-<ul>
-    <li><a href="#" class="logo">Website.</a></li>
-    <li><a href="#wishlist">Wish List</a></li>
-    <li><a href="#contact"><a href="../HTML/contactus.html">Contact Us</a></li>
-    <li><a href="#about"><a href="../HTML/aboutus.html">About Us</a></li>
-    <li><a href="#ticket"><a href="../HTML/productspage.html">Ticket</a></li>
-    <li><a href="#login"><a href="../HTML/login.html">Log in</a></li>
-    <li><a href="#register"><a href="../HTML/Registration.html">Register</a></li>
-</ul>
 
-</header>
-header section ends -->
+            </div>
+            <div class = "contactus-phone-details">
 
-<hr>
-<!--contact section starts-->
+                <div class = "image-icon">
+                <img src="{{ asset('images/phone-icon.png') }}" width="30" height="30">
+                </div>
 
-<!--The contact section has a form with fields for name, email, number, and message. 
-    It also includes an image on the right side. -->
+                <div class = "icon-text">
+                <h4>Phone</h4>
+                <p>0121 204 3000</p>
+                </div>
 
-<section class="" id="contact">
 
-    <h1 class="heading"> Contact us </h1>
 
-    <div class="main">
-        <!-- Facebook Icon -->
-        <div class="icon fb">
-            <i class="fa-brands fa-facebook-f"></i>
-            <span>Facebook</span>
+            </div>
+            <div class = "contactus-email-details">
+
+                <div class = "image-icon">
+                <img src="{{ asset('images/email-icon.png') }}" width="30" height="30">
+                </div>
+
+                <div class = "icon-text">
+                <h4>Email</h4>
+                <p>EventTick@Aston.ac.uk</p>
+                </div>
+
+
+            </div>
+
         </div>
 
-        <!-- Twitter Icon -->
-        <div class="icon twt">
-            <i class="fa-brands fa-twitter"></i>
-            <span>Twitter</span>
-        </div>
+        <div class = "contactus-right">
+            <h3>Contact US</h3>
+            <p>Have an enquiry that needs to be answered? Please contact us by filling out the form below!</p>
+            <form class="contactus-form">
 
-        <!-- Linkedin Icon -->
-        <div class="icon lnk">
-            <i class="fa-brands fa-linkedin-in"></i>
-            <span>Linkedin</span>
-        </div>
+                    <input type="text" id="contactus-name" placeholder="Name" required>
+                    <input type="email" id="contactus-email" placeholder="Email" required>
+                    <input type="subject" id="contactus-subject" placeholder="EventTick Enquiry" required>
+                    <input type="message" id="contactus-message" placeholder="Message" required>
+                    <input type="submit" id="contactus-btn">
 
-        <!-- YouTube Icon -->
-        <div class="icon yt">
-            <i class="fa-brands fa-youtube"></i>
-            <span>YouTube</span>
+
+            </form>
+
         </div>
     </div>
-    <div>
-        <p class="text">If you have any queries or issues please drop us an email or leave us a message using the following information:</p>
-    </div>
-</div>
-<div> 
-    <div>
-    <img src="./images/phone.png" alt="phone">
-    <p>0121 465 298</p>
-    </div>
-    <div>
-    <img src="./images/email.png" alt="email">
-    <p>support@eventick.ac.uk</p>
-    </div>
-</div>
-<div>
-<p class="text">
-Leave your information below and we'll get back to you as soon as possible!
-</p>
-</div>
-    <div class="row">
-
-        <form action="">
-            <input type="text" placeholder="name" class="box">
-            <br>
-            <input type="email" placeholder="email" class="box">
-            <br>
-            <input type="number" placeholder="number" class="box">
-            <br>
-            <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
-            <br>
-            <input type="submit" value="send message" class="btn">
-        </form>
-
-        <div class="image">
-            <img src="./images/side2.jpg" alt="">
-        </div>
-
-    </div>
-
-   
-
-</section>
-<!-- contact section ends -->
-
-<hr>
-<!-- footer section starts-->
 
 
-<!-- footer section ends -->
 
 
 </html>
