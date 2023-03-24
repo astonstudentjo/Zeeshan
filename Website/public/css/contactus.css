@@ -1,19 +1,25 @@
-.body {
-    min-height: 75vh;
+html {
+    height: 100%;
 }
 
 .contactus-container {
-    padding-bottom: 1rem;
-    padding-top: 2rem;
+    padding-bottom: 10rem;
+    padding-top: 10rem;
+    /* margin-bottom: 10rem; */
+    /* 100% height */
 }
 
 .contactus-area {
     width: 70%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
     vertical-align: middle;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px;
 }
 
 .contactus-details {
@@ -27,6 +33,7 @@
     flex-direction: column;
     border-radius: 5px 5px 5px 5px;
     padding-top: 10px;
+    width: 100%;
 }
 
 #contactus-name,
@@ -35,7 +42,7 @@
     padding-top: 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 10px;
-    width: 600px;
+    width: 98%;
     height: 30px;
     font-size: 2rem;
     padding-left: 10px;
@@ -45,7 +52,7 @@
     padding-top: 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 10px;
-    width: 600px;
+    width: 98%;
     height: 100px;
     font-size: 2rem;
     padding-left: 10px;
@@ -53,7 +60,7 @@
 
 #contactus-btn {
     border-radius: 5px 5px 5px 5px;
-    width: 600px;
+    width: 98%;
     height: 40px;
     margin: 10px;
     background-color: #ada239;
@@ -90,6 +97,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+}
+
+.padding {
+    padding-top: 20%;
 }
 
 .contactus-right {
@@ -99,6 +111,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.contactus-right h3,
+h4,
+p {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.body {
+    min-height: 80vh;
 }
 
 
@@ -133,5 +158,8 @@
     }
     .body {
         min-height: 10vh;
+    }
+    .padding {
+        padding-top: 0%;
     }
 }

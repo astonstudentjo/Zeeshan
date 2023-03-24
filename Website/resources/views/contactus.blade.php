@@ -4,6 +4,7 @@
 
 
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Contact Us</title>
@@ -16,51 +17,31 @@
 <div class="contactus-container">
     <div class="contactus-area">
         <div class="contactus-left">
+            <div class="padding"></div>
             <div class="contactus-details address">
-
-                <div class="image-icon">
-                    <img src="{{ asset('images/phone-icon.png') }}" width="30" height="30">
-                </div>
-
                 <div class="icon-text">
-                    <h4>Address</h4>
+                    <h4><i class='bx bx-map-alt'></i>Address</h4>
                     <p>Aston St, Birmingham B4 7ET</p>
                 </div>
-
-
-
             </div>
             <div class="contactus-details phone">
-
-                <div class="image-icon">
-                    <img src="{{ asset('images/phone-icon.png') }}" width="30" height="30">
-                </div>
-
                 <div class="icon-text">
-                    <h4>Phone</h4>
+                    <h4><i class='bx bx-phone'></i>Phone</h4>
                     <p>0121 204 3000</p>
                 </div>
-
-
-
             </div>
             <div class="contactus-details email">
-
-                <div class="image-icon">
-                    <img src="{{ asset('images/email-icon.png') }}" width="30" height="30">
-                </div>
-
                 <div class="icon-text">
-                    <h4>Email</h4>
+                    <h4><i class='bx bx-envelope' ></i>Email</h4>
                     <p>EventTick@Aston.ac.uk</p>
                 </div>
-
-
             </div>
+            <div class="padding"></div>
 
         </div>
 
         <div class="contactus-right">
+
             <h3 id="form-header">Contact US</h3>
             <p id="form-text">Have an enquiry that needs to be answered? Please contact us by filling out the form below!</p>
             <form class="contactus-form">
