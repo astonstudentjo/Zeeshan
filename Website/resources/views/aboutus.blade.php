@@ -28,7 +28,6 @@
 </style>
 
 </head>
-<body>
       </div> 
         <section class = info>    
         <h2 class="heading">Who we are: </h1>  
@@ -121,7 +120,6 @@
         </div>
       </div>
     </section>
-    </body>
 
 <!-- about section ends -->
 
