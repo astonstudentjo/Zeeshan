@@ -15,7 +15,7 @@
 
 .body {
     min-height: 100%;
-    padding-bottom:5%;
+    /* margin-bottom: 5%; */
     align-items: center;
     text-align: center;
     align-self: center;
@@ -92,8 +92,6 @@ html {
 .right-header a:hover {
     color: #a26bc9;
 }
-
-
 
 .footer-box {
     background-color: #3b3b3a;
