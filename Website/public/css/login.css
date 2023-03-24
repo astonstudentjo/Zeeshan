@@ -10,7 +10,9 @@ body {
   
   /* Set font styles */
   label, input, button {
-    font-family: Arial, sans-serif;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
     
   }
   
@@ -116,6 +118,7 @@ color: #4F4CEE;
 }
 
 .description {
+  padding-top: 20px;
     font-size: 16px; /* Change the font size to 16 pixels */
     color: black; /* Change the text color to black */
   }
@@ -137,3 +140,12 @@ color: #4F4CEE;
     color: black; /* Change the text color to black */
     text-align: center;
   }
+
+  .Title {
+    text-align: center;
+    color: #0b0b0f;
+    /* or any other color you want */
+    font-weight: bold;
+    font-size: 35px;
+}
+  
