@@ -61,8 +61,73 @@
             <a href='/products/category/country'>Country</a>
         </div>
 
-
-
+        </section>
+     <br>   
+    <section class="reviews">
+    <div class="wrapper">
+    <div class="box">
+      <i class="fas fa-quote-left quote"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <div class="content">
+        <div class="info">
+          <div class="name">Aqib jawed</div>
+          <div class="job">Justin Beiber show</div>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="image">
+          <img src="./images/profile.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <i class="fas fa-quote-left quote"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <i class="fas fa-quote-right quote"></i>
+      <div class="content">
+        <div class="info">
+          <div class="name">james Chris</div>
+          <div class="job">Chris Brown Ticket</div>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="image">
+          <img src="./images/profile.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <i class="fas fa-quote-left  quote"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, Lorem aliasry ipsum dolor sits ametans Lorem aliasry ipsum dolor sits ametans consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <div class="content">
+        <div class="info">
+          <div class="name">david</div>
+          <div class="job">Harry Styles Ticket</div>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="image">
+          <img src="./images/profile.png"  alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
 
 
     </section>
