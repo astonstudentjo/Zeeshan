@@ -8,6 +8,9 @@
     <title>Basket</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/basket.css') }}">
 </head>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+
 <h1>My Basket</h1>
 
 @if (count($product) == 0)
@@ -108,40 +111,47 @@
 
 <div class="empty-basket-Padder"></div>
 
+   <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
 <header>
-		<h1>My Basket</h1>
-	</header>
-	<main>
-		<section class="cart-items">
-			<h2>Shopping Cart</h2>
-			<ul>
-				<li>
-					<img src="https://via.placeholder.com/100x100" alt="Product Image">
-					<div class="product-info">
-						<h3>Product Name</h3>
-						<p>Price: $9.99</p>
-						<input type="number" value="1" min="1">
-						<button>Remove</button>
-					</div>
-				</li>
-				<li>
-					<img src="https://via.placeholder.com/100x100" alt="Product Image">
-					<div class="product-info">
-						<h3>Product Name</h3>
-						<p>Price: $14.99</p>
-						<input type="number" value="1" min="1">
-						<button>Remove</button>
-					</div>
-				</li>
-			</ul>
-		</section>
-		<section class="total">
-			<h2>Total</h2>
-			<p>Subtotal: $24.98</p>
-			<p>Shipping: $5.00</p>
-			<p>Total: $29.98</p>
-			<button>Checkout</button>
-		</section>
+    <h1>My Basket</h1>
+</header>
+<main>
+    <section class="cart-items">
+        <h2>Shopping Cart</h2>
+        <ul>
+            <li>
+                <img src="https://via.placeholder.com/100x100" alt="Product Image">
+                <div class="product-info">
+                    <h3>Product Name</h3>
+                    <p>Price: $9.99</p>
+                    <input type="number" value="1" min="1">
+                    <button>Remove</button>
+                </div>
+            </li>
+            <li>
+                <img src="https://via.placeholder.com/100x100" alt="Product Image">
+                <div class="product-info">
+                    <h3>Product Name</h3>
+                    <p>Price: $14.99</p>
+                    <input type="number" value="1" min="1">
+                    <button>Remove</button>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="total">
+        <h2>Total</h2>
+        <p>Subtotal: $24.98</p>
+        <p>Shipping: $5.00</p>
+        <p>Total: $29.98</p>
+        <button>Checkout</button>
+    </section>
+</main>
 
 
-@endsection
+
+
+
+    @endsection

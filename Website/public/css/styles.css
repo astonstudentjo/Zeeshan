@@ -14,7 +14,6 @@
 }
 
 .body {
-    /* margin-bottom: 5%; */
     align-items: center;
     text-align: center;
     align-self: center;
@@ -23,6 +22,7 @@
     max-width: 100%;
     background-color: #eeeeee;
     filter: brightness(100%);
+    min-height: 100vh;
 }
 
 html {
@@ -93,8 +93,10 @@ html {
 
 .footer-box {
     background-color: #3b3b3a;
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
     padding-top: 2rem;
+    position: sticky;
+    top: 100%;
 }
 
 .footer-area {
