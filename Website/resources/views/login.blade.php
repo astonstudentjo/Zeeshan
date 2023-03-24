@@ -19,7 +19,7 @@
 <heading class="Title">Welcome back! </heading>
 <br>
 
-<div>
+<div class = "login">
     <form class = "login-form" action="/login" method="post">
 
     <h> Log in to your account </h>
