@@ -41,38 +41,29 @@
 
         <label for="email"> Email: </label>
         <input type="text" placeholder="Email" name="email">
-        <br><br>
+        
 
         @error('email')
         {{$message}}
-        <br>
         @enderror
+        <br>
+
 
 
         <label for="password"> Password: </label>
         <input type="password" placeholder="Password" name="password">
-        <br><br>
+
 
         @error('password')
         {{$message}}
-        <br>
+ 
         @enderror
-
+        <br>
+        <br>
         <button type="submit">Login to view your account</button>
         <br>
 
-       <div class="description">
-            <p>By continuing past this page, you agree to the <u>Terms of Use</u> Purchase Policy and understand that
-                information will be used as described in our <u>Privacy Policy.</u></p>
-        </div>
-
-        <br>
-        <div class="description2">
-            <p> Need helping logging in, contact us: <br>
-                <br>
-                <u> 0121 204 3000</u> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <u>contactus@eventTick.ac.uk </u>
-            </p>
-        </div> 
+       
     </form>
 <br>
 
