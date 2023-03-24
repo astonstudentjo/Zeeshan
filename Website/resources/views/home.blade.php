@@ -27,7 +27,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}">
     </head>
     <body>
-        <br>
+        <!-- <br> -->
         <section class = "display">
             <div class = "content">
                 <br>
