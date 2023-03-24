@@ -22,30 +22,34 @@
 <div>
     <form class = "login-form" action="/login" method="post">
 
+    <h> Log in to your account </h>
+<p> New to EventTick? <a href="/signup">Register an account</a></p>
+<br>
 
-        <div>
+        <div class = "error">
+
             @csrf
 
             @if(session('status'))
 
             {{session('status')}}
-            <br><br>
+            
 
             @endif
 
 
         </div>
-<h> Log in to your account </h>
-<p> New to EventTick? <a href="/signup">Register an account</a></p>
+
 <br>
 
         <label for="email"> Email: </label>
         <input type="text" placeholder="Email" name="email">
         
-
+        <p class = "error">
         @error('email')
         {{$message}}
         @enderror
+        </p>
         <br>
 
 
@@ -53,11 +57,12 @@
         <label for="password"> Password: </label>
         <input type="password" placeholder="Password" name="password">
 
-
+        <p class = "error">
         @error('password')
         {{$message}}
  
         @enderror
+        </p>
         <br>
         <br>
         <button type="submit">Login to view your account</button>
