@@ -15,37 +15,48 @@
         
             <label for="name"> Full Name: </label>
             <input type="text" placeholder="Full name" name="name">
-            <br><br>
+            
 
+            <p class = "error">
             @csrf
             @error('name')
             {{$message}}
-            <br>
             @enderror
+            </p>
+            <br>
 
             <label for="email"> Email: </label>
             <input type="text" placeholder="Email" name="email">
-            <br><br>
 
+
+            <p class = "error">
             @error('email')
             {{$message}}
-            <br>
+          
             @enderror
+            </p>
+            <br>
+
 
 
             <label for="password"> Password: </label>
             <input type="password" placeholder="Password" name="password">
-            <br><br>
+          
 
+            <p class = "error">
             @error('password')
             {{$message}}
             <br>
             @enderror
+            </p>
+            <br>
 
 
             <label for="password_confirmation"> Password Confirmation: </label>
             <input type="password" placeholder="Password Again" name="password_confirmation">
-            <br><br>
+            <br>
+            <br>
+            <br>
 
             <button type="submit">Sign Up </button>
             <br>

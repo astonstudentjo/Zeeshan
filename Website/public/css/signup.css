@@ -49,6 +49,8 @@ input[type="password"] {
     border: 2px solid #ccc;
     border-radius: 4px;
     border-color: black;
+    font-weight: bold;
+
 
 }
 
@@ -76,6 +78,7 @@ button[type="submit"] {
 }
 
 
+
 /* Set hover style for submit button */
 
 button[type="submit"]:hover {
@@ -83,6 +86,12 @@ button[type="submit"]:hover {
     color: white;
 }
 
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
 .description {
     font-size: 16px;
     /* Change the font size to 16 pixels */
