@@ -35,7 +35,7 @@
                 <h4>£{{$concert->price}}</h4>
                 <form action="/basket" method="POST">
                     @csrf
-                <select name="quantity">
+                <select class = "BasketHandler" name="quantity">
                     <option value=1>1</option>
                     <option value=2>2</option>
                     <option value=3>3</option>

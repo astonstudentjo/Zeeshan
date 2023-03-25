@@ -37,8 +37,13 @@
     min-width: 70%;
 }
 .info {
+    min-width: 30%;
     flex: auto;
     align-self: center;
+    font-size: medium;
+}
+.info p{
+    font-size: 100%;
 }
 .BasketHandler {
     margin-left: 1%;
@@ -49,6 +54,17 @@
     flex: auto;
     display: flex;
     align-self: center;
+}
+.BasketHandler select{
+    flex: content;
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 10rem;
+    background: black;
+    color: white;
+    padding: 0.9rem 3.5rem;
+    cursor: pointer;
+    font-size: 100%;
 }
 .bottom {
     display: flex;
