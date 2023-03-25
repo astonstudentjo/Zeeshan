@@ -13,12 +13,11 @@
 
 
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}">
 </head>
 <div class = "page">
-
-    <div class = heading>
+     <div class = heading>
         <h1>{{$concert->artist}}</h1>
         <h2> {{$concert->name}}</h2>
     </div>
@@ -28,11 +27,11 @@
         </div>
         <div class = "BasketHandler">
         <div class = "info">
-                    <h4> {{$concert->category}}</h4>
+                    <h5> {{$concert->category}}</h5>
                     <p>{{$concert->description}}</p>
                 </div>
             @if ($concert->stock > 0)
-                <h4>£{{$concert->price}}</h4>
+            <h4>£{{$concert->price}}</h4>
                 <form action="/basket" method="POST">
                     @csrf
                 <select class = "BasketHandler" name="quantity">
@@ -47,25 +46,19 @@
                     <option value=9>9</option>
                     <option value=10>10</option>
                 </select>
-            <div class= "btn">
                 <input type="hidden" name="product_id" value="{{$concert->id}}">
-                <button type="submit">Add to Basket</button>
-            </div>
-            
+                <button class = "btn" type="submit">Add to Basket</button>
+                @else
+                <p>Out of stock</p>
+            @endif
         </div>
         </form>
-
-        @else
-        <p>Out of stock</p>
-        @endif
     </div>
 <!-- back -->
 <div class = "back">
-    <div class = "btn">
         <form action="/products" method="GET">
-        <button type="submit">Back</button>
+        <button class = "btn"type="submit">Back</button>
         </form>
-    </div>
 </div>
  
 
