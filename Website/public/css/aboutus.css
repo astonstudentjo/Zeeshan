@@ -23,12 +23,24 @@
 .heading span {
     color: rgb(136, 67, 136);
 }
-
-.Social_Media {
+.Social_Media{
+    display: flex;
     padding-left: 15%;
     padding-right: 15%;
     align-items: center;
 }
+.tweet{
+    padding-right: 5%;
+}
+.Social_Mediainfo{
+    padding-left: 5%;
+    text-align: center;
+}
+.Social_Mediainfo h2{
+    text-align: center;
+}
+
+
 
 .btn {
     display: inline-block;
@@ -49,7 +61,6 @@
     margin-bottom: 5%;
     border-style: hidden;
 }
-
 .btn:hover {
     background: var(--pink);
 }
