@@ -53,8 +53,11 @@
         </div>
         </form>
     </div>
-    <section class = Recomendations>
+    <section class = Recomendations-section>
+        <h2>Recomendations for {{$concert->category}}</h2>
     <!-- get Products from controller, then loop through -->
+    <div class = "Recomendations">
+        
     @foreach(
         $events = app('App\Http\Controllers\ProductController')->showRecomendations($concert);
         $events as $product)
@@ -64,11 +67,10 @@
                     <img src="/productImages/{{ $product->img }}" alt="../images/tickets.png" width="250px">
                     <!-- <img src="/productImages/{{ $product->img }}" alt="../images/tickets.png" width="300px"> -->
                 </div>
-                <div class="content">
+                <div class="info">
                     <h3>{{$product->name}}</h3>
                     <h2>{{$product->artist}}</h2>
-                    <h2>{{$product->category}}</h2>
-                    <div class="price">£{{$product->price}}</div>
+                    <h4>£{{$product->price}}</h4>
 
                     @if ($product->stock <= 0) <h4 style>Out of Stock!</h4>
                         @elseif ($product-> stock< 10) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
@@ -82,8 +84,10 @@
                         @endif
                 </div>
             </div>
+    
     @endforeach
-    </section>
+</div>     
+</section>
 <!-- back -->
 <div class = "back">
         <form action="/products" method="GET">
