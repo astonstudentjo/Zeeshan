@@ -89,8 +89,9 @@
 
                 <div class="footer-component-newsletter">
                     <h3>Subscribe to our newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" id="footer-newsletter-email" placeholder="Enter email address" required>
+                    <form class="newsletter-form" action  = "/newsletter" method = "post">
+                        @csrf
+                        <input type="email" id="footer-newsletter-email" name = "newsletteremail" placeholder="Enter email address" required>
                         <input type="submit" id="footer-newsletter-btn">
                     </form>
                 </div>

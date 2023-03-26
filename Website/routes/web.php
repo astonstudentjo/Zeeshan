@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
 use App\Http\Controllers\ConfirmationController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OrdersController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -41,7 +42,7 @@ Route::get('/products/{id}', [ProductController::class, 'show']);
 
 Route::get('/products/category/{category}', [ProductsController::class, 'showCategory']);
 
-
+Route::post('/newsletter', [NewsletterController::class, 'create']);
 
 Route::get('/products', [ProductsController::class, 'show']);
 
