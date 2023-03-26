@@ -2,7 +2,6 @@
 @extends('layouts.main')
 @section('body')
 
-
 <html>
 
 <head>
@@ -54,12 +53,37 @@
         </div>
         </form>
     </div>
+    <section class = Recomendations>
+    <!-- get Products from controller, then loop through -->
+    @foreach(
+        $events = app('App\Http\Controllers\ProductController')->showRecomendations($concert->category);
+        $events as $product)
+        <div class="box">
+                <div class="image">
+                    <!-- <img src="../images/tickets.png" alt=""> -->
+                    <img src="/productImages/{{ $product->img }}" alt="../images/tickets.png" width="250px">
+                    <!-- <img src="/productImages/{{ $product->img }}" alt="../images/tickets.png" width="300px"> -->
+                </div>
+                <div class="content">
+                    <h3>{{$product->name}}</h3>
+                    <h2>{{$product->artist}}</h2>
+                    <h2>{{$product->category}}</h2>
+                    <div class="price">£{{$product->price}}</div>
 
-    <section class = "recomendations">
-        <div class = "container">
-        </div>
+                    @if ($product->stock <= 0) <h4 style>Out of Stock!</h4>
+                        @elseif ($product-> stock< 10) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
+                            <form action="/products/{{$product->id}}" method="GET">
+                                <button class = "btn"type="submit">View More!</button>
+                            </form>  
+                        @else
+                            <form action="/products/{{$product->id}}" method="GET">
+                                <button class = "btn"type="submit">View More!</button>
+                            </form> 
+                        @endif
+                </div>
+            </div>
+    @endforeach
     </section>
-
 <!-- back -->
 <div class = "back">
         <form action="/products" method="GET">

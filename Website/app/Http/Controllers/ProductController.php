@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
     public function show($id){
         $concert = Products::findOrFail($id);
         return view('product', ['concert' => $concert]);
-        
+    }
+    public function showRecomendations($category)
+    {
+        $products = Products::all()
+            ->where('category', $category);
+        return $products;
     }
 }
