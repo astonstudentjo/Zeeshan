@@ -16,7 +16,8 @@
 
     <div class="header-container">
         <div class="left-header">
-            <a href="/"><h2>EventTick</h2></a>
+            <h2>EventTick</h2>
+            <a href="/">Home</a>
             <a href="/products">Products</a>
             <a href="/aboutus">About Us</a>
             <a href="/contactus">Contact Us</a>
