@@ -65,7 +65,7 @@
 
     <!-- catagory section starts -->
     <section class="Catergory">
-        <h1 class="heading"> Catergories </h1>
+        <h1 class="heading"> Categories </h1>
         <div class="categories">
             <a href='/products/category/price_ascending'>Price-Low to High</a>
             <a href='/products/category/price_descending'>Price-High to Low</a>
@@ -117,8 +117,8 @@
                     <!-- <p> {{$product->description}}</p> -->
                     <div class="price">£{{$product->price}}</div>
 
-                    @if ($product->stock <= 0) <h4 style>Out of Stock!</h4>
-                        @elseif ($product-> stock< 10) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
+                    @if ($product->stock <= 0) <h4 style = "color: red">Out of Stock!</h4>
+                        @elseif ($product-> stock< 10) <h4 style = "color:orange">Only {{$product -> stock}} remaining buy now!</h4>
                             @endif
                 </div>
             </div>
