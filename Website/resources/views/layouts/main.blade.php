@@ -16,7 +16,7 @@
 
     <div class="header-container">
         <div class="left-header">
-            <h2>EventTick</h2>
+            <img class = "logo" src="{{ asset('images/logo.png') }}" width="150" height="30">
             <a href="/">Home</a>
             <a href="/products">Products</a>
             <a href="/aboutus">About Us</a>
