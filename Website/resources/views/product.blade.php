@@ -26,7 +26,6 @@
         </div>
         <div class = "BasketHandler">
         <div class = "info">
-                    <h5> {{$concert->category}}</h5>
                     <p>{{$concert->description}}</p>
                 </div>
             @if ($concert->stock > 0)
@@ -54,7 +53,7 @@
         </form>
     </div>
     <section class = Recomendations-section>
-        <h1>Recomendations for {{$concert->category}}</h1>
+        <h1>Recomendations for  <a href = "/products/category/{{$concert->category}}">{{$concert->category}}</a></h1>
     <!-- get Products from controller, then loop through -->
     <div class = "Recomendations">
         

@@ -25,7 +25,6 @@
 }
 .heading h1{
     font-size: 6rem;
-    text-decoration: underline;
 }
 .heading h2{
     font-size: 3rem;
@@ -123,7 +122,13 @@
     padding-top: 2%;
     padding-bottom: 2%;
     font-size: large;
-    text-decoration: underline;
+}
+.Recomendations-section a{
+    color: black;
+}
+.Recomendations-section a:hover{
+    color: white;
+    transition: none;
 }
 .Recomendations{
     display: flex;
@@ -169,6 +174,11 @@ text-align: center;
     width: 50%;
     align-items: center;
 }
+.Recomendations .box .info h4{
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
+
 
 .Recomendations .box .image{
     display: flex;
