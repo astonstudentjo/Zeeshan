@@ -54,7 +54,7 @@
         </form>
     </div>
     <section class = Recomendations-section>
-        <h2>Recomendations for {{$concert->category}}</h2>
+        <h1>Recomendations for {{$concert->category}}</h1>
     <!-- get Products from controller, then loop through -->
     <div class = "Recomendations">
         
