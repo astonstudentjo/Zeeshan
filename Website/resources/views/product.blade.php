@@ -56,7 +56,7 @@
     <section class = Recomendations>
     <!-- get Products from controller, then loop through -->
     @foreach(
-        $events = app('App\Http\Controllers\ProductController')->showRecomendations($concert->category);
+        $events = app('App\Http\Controllers\ProductController')->showRecomendations($concert);
         $events as $product)
         <div class="box">
                 <div class="image">
