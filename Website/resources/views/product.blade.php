@@ -49,11 +49,17 @@
                 <input type="hidden" name="product_id" value="{{$concert->id}}">
                 <button class = "btn" type="submit">Add to Basket</button>
                 @else
-                <p>Out of stock</p>
+                <h3>Out of stock</h3>
             @endif
         </div>
         </form>
     </div>
+
+    <section class = "recomendations">
+        <div class = "container">
+        </div>
+    </section>
+
 <!-- back -->
 <div class = "back">
         <form action="/products" method="GET">

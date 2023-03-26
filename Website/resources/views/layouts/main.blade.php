@@ -82,9 +82,9 @@
 
                 <div class="footer-component 2">
                     <h3>Contact Info</h3>
-                    <a>+0121 204 3000</a>
-                    <a>EventTick@aston.ac.uk</a>
-                    <a>Birmingham, United Kingdom</a>
+                    <a href = "tel:+0121 204 3000">+0121 204 3000</a>
+                    <a href="mailto:EventTick@aston.ac.uk">EventTick@aston.ac.uk</a>
+                    <a href = "https://goo.gl/maps/7FpErGeDp9EyaoHp6">Birmingham, United Kingdom</a>
                 </div>
 
                 <div class="footer-component-newsletter">
