@@ -54,7 +54,7 @@
         </form>
     </div>
     <section class = Recomendations-section>
-        <h1>Recomendations for {{$concert->category}}</h1>
+        <h1>Recommendations for {{$concert->category}}</h1>
     <!-- get Products from controller, then loop through -->
     <div class = "Recomendations">
         
@@ -72,8 +72,8 @@
                     <h2>{{$product->artist}}</h2>
                     <h4>£{{$product->price}}</h4>
 
-                    @if ($product->stock <= 0) <h4 style>Out of Stock!</h4>
-                        @elseif ($product-> stock< 10) <h4>Only {{$product -> stock}} remaining buy now!!!</h4>
+                    @if ($product->stock <= 0) <h4 style = "color: red">Out of Stock!</h4>
+                        @elseif ($product-> stock< 10) <h4 style = "color: orange">Only {{$product -> stock}} remaining buy now!</h4>
                             <form action="/products/{{$product->id}}" method="GET">
                                 <button class = "btn"type="submit">View More!</button>
                             </form>  
