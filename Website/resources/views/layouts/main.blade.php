@@ -5,12 +5,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 
 <body>
     <div class="header-container">
         <div class="left-header">
-            <h2>EventTick</h2>
+            <img class = "logo" src="{{ asset('images/logo.png') }}" width="150" height="30">       
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('/products') }}">Products</a>
             <a href="{{ url('/aboutus') }}">About Us</a>
@@ -48,6 +50,16 @@
     </div>
 
     <div class="body">
+        @if(session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+        @endif
+        @error('newsletteremail')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @endif
         @yield('body')
     </div>
 
