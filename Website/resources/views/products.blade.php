@@ -132,7 +132,12 @@
             </div>
             @endforeach
 
+            <!-- output the amount of products being shown -->
+
         </div>
+        <br>
+        <p>Showing {{$products->count()}} results</p>
+
     </section>
 
     <!-- prodcuts section ends -->
