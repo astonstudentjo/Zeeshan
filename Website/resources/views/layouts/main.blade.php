@@ -59,7 +59,7 @@
         <div class="alert alert-danger">
             {{ $message }}
         </div>
-        @endif
+        @endif  
         @yield('body')
     </div>
 

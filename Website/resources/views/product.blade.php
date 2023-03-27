@@ -9,8 +9,6 @@
     <title>Product</title>
 
     <style>
-
-
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}">
@@ -26,12 +24,11 @@
         </div>
         <div class="BasketHandler">
             <div class="info">
-                <h5> {{$concert->category}}</h5>
                 <p>{{$concert->description}}</p>
             </div>
             @if ($concert->stock > 0)
             <h4>£{{$concert->price}}</h4>
-            <form action="{{ route('basket.add') }}" method="POST">
+            <form action="/basket" method="POST">
                 @csrf
                 <select class="BasketHandler" name="quantity">
                     <option value=1>1</option>
@@ -53,18 +50,49 @@
         </div>
         </form>
     </div>
+    <section class=Recomendations-section>
+        <h1>Recomendations for <a href="/products/category/{{$concert->category}}">{{$concert->category}}</a></h1>
 
-    <section class="recomendations">
-        <div class="container">
+        <!-- get Products from controller, then loop through -->
+        <div class="Recomendations">
+
+            @foreach(
+            $events = app('App\Http\Controllers\ProductController')->showRecomendations($concert);
+            $events as $product)
+            <div class="box">
+                <div class="image">
+                    <!-- <img src="../images/tickets.png" alt=""> -->
+                    <img src="/productImages/{{ $product->img }}" alt="../images/tickets.png" width="250px">
+                    <!-- <img src="/productImages/{{ $product->img }}" alt="../images/tickets.png" width="300px"> -->
+                </div>
+                <div class="info">
+                    <h3>{{$product->name}}</h3>
+                    <h2>{{$product->artist}}</h2>
+                    <h4>£{{$product->price}}</h4>
+
+                    @if ($product->stock <= 0) <h4 style="color: red">Out of Stock!</h4>
+                        @elseif ($product-> stock< 10) <h4 style="color: orange">Only {{$product -> stock}} remaining buy now!</h4>
+                            <form action="/products/{{$product->id}}" method="GET">
+                                <button class="btn" type="submit">View More!</button>
+                            </form>
+                            @else
+                            <form action="/products/{{$product->id}}" method="GET">
+                                <button class="btn" type="submit">View More!</button>
+                            </form>
+                            @endif
+                </div>
+            </div>
+
+            @endforeach
         </div>
     </section>
-
     <!-- back -->
     <div class="back">
         <form action="/products" method="GET">
             <button class="btn" type="submit">Back</button>
         </form>
     </div>
+
 
 
 
