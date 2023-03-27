@@ -24,11 +24,11 @@
         <div class="display">
             <img src="/productImages/{{$concert->img}}">
         </div>
-        <div class = "BasketHandler">
-        <div class = "info">
-                    <h5> {{$concert->category}}</h5>
-                    <p>{{$concert->description}}</p>
-                </div>
+        <div class="BasketHandler">
+            <div class="info">
+                <h5> {{$concert->category}}</h5>
+                <p>{{$concert->description}}</p>
+            </div>
             @if ($concert->stock > 0)
             <h4>£{{$concert->price}}</h4>
             <form action="{{ route('basket.add') }}" method="POST">
@@ -49,20 +49,20 @@
                 <button class="btn" type="submit">Add to Basket</button>
                 @else
                 <h3>Out of stock</h3>
-            @endif
+                @endif
         </div>
         </form>
     </div>
 
-    <section class = "recomendations">
-        <div class = "container">
+    <section class="recomendations">
+        <div class="container">
         </div>
     </section>
 
-<!-- back -->
-<div class = "back">
+    <!-- back -->
+    <div class="back">
         <form action="/products" method="GET">
-        <button class = "btn"type="submit">Back</button>
+            <button class="btn" type="submit">Back</button>
         </form>
     </div>
 
