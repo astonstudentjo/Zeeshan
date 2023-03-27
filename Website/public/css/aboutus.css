@@ -30,11 +30,14 @@
     align-items: center;
 }
 .tweet{
+    display: flex;
     padding-right: 5%;
+    width: 50%;
 }
 .Social_Mediainfo{
     padding-left: 5%;
     text-align: center;
+    width: 50%;
 }
 .Social_Mediainfo h2{
     text-align: center;
