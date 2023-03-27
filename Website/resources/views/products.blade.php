@@ -61,16 +61,36 @@
             <a href='/products/category/country'>Country</a>
         </div>
     </section>
+    <?php
+    if (isset($_GET['search'])) {
+        $searchQuery = $_GET['search'];
+    } else {
+        $searchQuery = null;
+    }
+
+
+    ?>
+
+
 
     <!-- add a search bar that searches  -->
     <section class="search">
         <div class="searchbar">
-            <form action="/products/search" method="GET">
+            <form action="/products/search/{searchQuery}" method="GET">
+
                 <input type="text" name="search" placeholder="Search for an Event or Artist">
                 <button type="submit">Search</button>
             </form>
         </div>
     </section>
+
+
+
+
+    @if(isset($searchQuery))
+    <p>Search results for: "{{ $searchQuery }}"</p>
+    @endif
+
 
 
 

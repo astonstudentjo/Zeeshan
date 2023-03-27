@@ -44,17 +44,12 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.
 Route::get('/products/category/{category}', [ProductsController::class, 'showCategory'])->name('product.category');
 Route::get('/products', [ProductsController::class, 'show'])->name('products');
 
+
+Route::get('/products/search/{searchQuery}', [ProductsController::class, 'search'])->name('products.search');
+
+
+
 Route::post('/newsletter', [NewsletterController::class, 'create']);
-
-// Route::get('/basket', [BasketController::class, 'show']);
-
-// Route::post('/basket', [BasketController::class, 'addBasket']);
-
-// Route::post('/basket/clear', [BasketController::class, 'clearBasket']);
-
-// Route::post('/basket/update', [BasketController::class, 'update']);
-
-// Route::post('/basket/remove', [BasketController::class, 'remove']);
 
 Route::get('/basket', [BasketController::class, 'show'])->name('basket.show');
 
