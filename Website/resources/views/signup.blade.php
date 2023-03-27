@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
     <div class="signup">
         <form action="{{ route('signup') }}" method="post">
+            <p> Already have an account? <a href="{{ route('login') }}">Login</a></p>
             <label for="name"> Full Name: </label>
             <input type="text" placeholder="Full name" name="name">
             <p class="error">

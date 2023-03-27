@@ -53,6 +53,7 @@ html {
     align-items: center;
     float: left;
     width: 75%;
+
 }
 
 .left-header h2 {
@@ -66,10 +67,13 @@ html {
     font-size: 1.5rem;
     color: white;
     padding-left: 20px;
+
 }
 
 .left-header a:hover {
     color: #a26bc9;
+    text-decoration: none;
+
 }
 
 .right-header {
@@ -90,6 +94,8 @@ html {
 
 .right-header a:hover {
     color: #a26bc9;
+    text-decoration: none;
+
 }
 
 .footer-box {
