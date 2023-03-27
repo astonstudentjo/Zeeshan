@@ -19,58 +19,59 @@
 <heading class="Title">Welcome back! </heading>
 <br>
 
-<div class = "login">
-    <form class = "login-form" action="/login" method="post">
+<div class="login">
+    <form class="login-form" action="/login" method="post">
 
-    <h> Log in to your account </h>
-<p> New to EventTick? <a href="/signup">Register an account</a></p>
-<br>
+        <h> Log in to your account </h>
+        <p> New to EventTick? <a href="/signup">Register an account</a></p>
+        <br>
 
-        <div class = "error">
+        <div class="error">
 
             @csrf
 
             @if(session('status'))
 
             {{session('status')}}
-            
+            <br>
+
 
             @endif
 
 
         </div>
 
-<br>
 
         <label for="email"> Email: </label>
         <input type="text" placeholder="Email" name="email">
-        
-        <p class = "error">
-        @error('email')
-        {{$message}}
-        @enderror
+
+        <p class="error">
+            @error('email')
+            {{$message}}
+            @enderror
         </p>
         <br>
+
 
 
 
         <label for="password"> Password: </label>
         <input type="password" placeholder="Password" name="password">
 
-        <p class = "error">
-        @error('password')
-        {{$message}}
- 
-        @enderror
+        <p class="error">
+            @error('password')
+            {{$message}}
+
+            @enderror
         </p>
         <br>
         <br>
-        <button class = "loginsubmit" type="submit">Login to view your account</button>
+        <button class="loginsubmit" type="submit">Login to view your account</button>
         <br>
 
-       
+
     </form>
-<br>
+    <br>
 
 </div>
 
