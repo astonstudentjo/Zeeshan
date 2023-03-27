@@ -100,15 +100,17 @@
     <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
     <div class="button-update">
-    <button type="submit">Update Basket</button>
+    <button class="button-update" type="submit">Update Basket</button>
 </div>
 </form>
 @endif
+
+<br>
 <br>
 <div class="button-clear">
 <form action="/basket/clear" method="POST">
     @csrf
-    <button type="submit">Clear Basket</button>
+    <button class="button-clear" type="submit">Clear Basket</button>
 </form>
 </div>
 

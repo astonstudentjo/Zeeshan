@@ -170,15 +170,14 @@ main {
     
 
     .button-update{
+        display: inline-block;
+        border-radius: 4rem;
+        background: #333;
         color: #fff;
-        border: none;
-        font-size: 15px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 4px;
+        padding: .6rem 1.5rem;
         cursor: pointer;
-        transition: 0.5s;
-        transition-property: box-shadow;
+        font-size: 1.7rem;
+        text-align: center;
 
     }
 
@@ -188,15 +187,14 @@ main {
     }
 
     .button-clear{
-    color: #fff;
-    border: none;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    cursor: pointer;
-    transition: 0.5s;
-    transition-property: box-shadow;
+        display: inline-block;
+        border-radius: 4rem;
+        background: #333;
+        color: #fff;
+        padding: .6rem 2rem;
+        cursor: pointer;
+        font-size: 1.7rem;
+        text-align: center;
     }
 
     .items{
