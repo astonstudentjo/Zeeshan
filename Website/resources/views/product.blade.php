@@ -54,7 +54,6 @@
     </div>
     <section class = Recomendations-section>
         <h1>Recomendations for  <a href = "/products/category/{{$concert->category}}">{{$concert->category}}</a></h1>
-        <h1>Recommendations for {{$concert->category}}</h1>
 
     <!-- get Products from controller, then loop through -->
     <div class = "Recomendations">
