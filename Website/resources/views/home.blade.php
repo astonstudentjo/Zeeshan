@@ -63,6 +63,73 @@
     </section>
     <br>
     <br>
+    <section class="reviews">
+        <h class="heading">Here are some reviews off our twitter:</h>
+    <div class="wrapper">
+    <div class="box">
+      <i class="fas fa-quote-left quote"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <div class="content">
+        <div class="info">
+          <div class="name">Aqib jawed</div>
+          <div class="job">Ariana Grande Concert</div>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="image">
+          <img src="./images/profile.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <i class="fas fa-quote-left quote"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      
+      <div class="content">
+        <div class="info">
+          <div class="name">james Chris</div>
+          <div class="job">Chris Brown Show</div>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="image">
+          <img src="./images/profile.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <i class="fas fa-quote-left  quote"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <div class="content">
+        <div class="info">
+          <div class="name">david</div>
+          <div class="job">Harry Styles Ticket</div>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="image">
+          <img src="./images/profile.png"  alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+
 </body>
 </html>
 @endsection
