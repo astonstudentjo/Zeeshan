@@ -38,9 +38,11 @@ Route::get('/contactus', function () {
     return view('contactus');
 });
 
+
+
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
 Route::get('/products/category/{category}', [ProductsController::class, 'showCategory'])->name('product.category');
-Route::get('/products', [ProductController::class, 'show'])->name('products');
+Route::get('/products', [ProductsController::class, 'show'])->name('products');
 
 Route::post('/newsletter', [NewsletterController::class, 'create']);
 
