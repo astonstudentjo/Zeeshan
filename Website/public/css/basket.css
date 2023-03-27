@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #25459b;
     color: #fff;
     padding: 20px;
 }
@@ -57,7 +57,7 @@ main {
 
 .cart-items li button {
     margin-left: 20px;
-    background-color: #333;
+    
     color: #fff;
     border: none;
     padding: 10px;
@@ -86,14 +86,82 @@ main {
     padding: 10px;
     cursor: pointer;
 }
+.right-bar {
+	flex: 25%;
+	margin-left: 20px;
+	padding: 20px;
+	
+	border-radius: 5px;
 
 
-/* footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-} */
-
-
-/* why is there a footer here? */
+}
+.right-bar hr {
+	margin-bottom: 25px;
+}
+.right-bar p {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+.right-bar a {
+	background-color: #76bfb6;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 900;
+}
+.right-bar i {
+	margin-right: 15px;
+}
+.right-bar a:hover {
+	background-color: #3972a7;
+}
+.column-labels {
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px;
+      text-indent: -9999px;
+    }
+  
+  
+    .table {
+        border: 1px solid #ddd;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 2%;
+        width: 80%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    table thead {
+        background-color: #25459b;
+        color: #fff;
+    }
+    
+    table td,
+    table th {
+        padding: 12px;
+        border: 2px solid #ddd;
+    }
+    
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    
+    table td:last-child,
+    table th:last-child {
+        border-right: none;
+    }
+    
+    
+    .container {
+        width: 100%;
+        padding-top: 2.5%;
+    }
+    

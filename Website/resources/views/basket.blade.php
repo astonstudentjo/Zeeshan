@@ -6,12 +6,16 @@
 <head>
     <meta charset="utf-8">
     <title>Basket</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/basket.css') }}">
 </head>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
-<h1>My Basket</h1>
+<header>
+    <h1>My Basket</h1>
+</header>
+
 
 @if (count($product) == 0)
 <p>Your basket is empty</p>
@@ -19,15 +23,17 @@
 @else
 <form action="/basket/update" method="POST">
     @csrf
-    <table>
+    <table class="table">
+        <thead>
         <tr>
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
-            <th>Remove</th>
+            <th>delete items</th>
 
         </tr>
+</thead>
         @php
         $total = 0;
         $productQuantities = Session::get('basketQuantities', []);
@@ -39,7 +45,10 @@
         $total += $item->price * $quantity;
         @endphp
         @if ($quantity > 0)
+        
+        <br>
         <tr>
+       
             <td>{{ $item->name }}</td>
             <td>£{{ number_format($item->price, 2) }}</td>
             <td>
@@ -50,6 +59,7 @@
                         @endfor
                 </select>
             </td>
+         
             <td>£{{ number_format($item->price * $quantity, 2) }}</td>
 
             <td hidden>
@@ -77,7 +87,8 @@
             <td>£{{ number_format($total, 2) }}</td>
         </tr>
     </table>
-
+    <br>
+    <div class="total">
     <div>
         <p>Total items: {{ $totalItems }}</p>
     </div>
@@ -96,17 +107,18 @@
 
 
 <br>
-<div>
+<div class="right-bar">
     <form action="/checkout" method="GET">
-        <button type="submit">Checkout</button>
+ <button type="submit"><i class="fa fa-shopping-cart"></i>Checkout</a></button>
     </form>
 </div>
 
 <br>
-<div>
+<div class="total">
     <form action="/products" method="GET">
         <button type="submit">Continue Shopping</button>
     </form>
+</div>
 </div>
 
 <div class="empty-basket-Padder"></div>
