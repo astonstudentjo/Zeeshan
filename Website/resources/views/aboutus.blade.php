@@ -33,8 +33,8 @@
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <div class = "Social_Mediainfo">
-      <h2> Why Follow Us</h2>
-      <p> blah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah lah blah blah </p>
+      <h2 class="heading"> Why Follow Us</h2>
+      <p> We are actively sharing news about EventTick on our social media. By following us, you will be the first to know of our new courses and the improvements and updates made to our service – without forgetting the great promotions! Social media is a wonderful channel for communication! We’ll gladly answer all your questions and doubts regarding WordDive, and we are truly thankful for any kind of feedback and suggestions. Don’t hesitate to join the conversation! </p>
   </div>
 </section>
 <section>
