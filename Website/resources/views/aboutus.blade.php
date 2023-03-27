@@ -29,8 +29,7 @@
 </section>
 <section class="Social_Media">
   <div class = "tweet">
-  <a class="twitter-timeline" data-width="498" data-height="500" data-theme="light" href="https://twitter.com/event_tick?ref_src=twsrc%5Etfw">Tweets by event_tick</a>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" data-width= calc(width) data-height= "500" href="https://twitter.com/event_tick?ref_src=twsrc%5Etfw">Tweets by event_tick</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <div class = "Social_Mediainfo">
       <h2> Why Follow Us</h2>
