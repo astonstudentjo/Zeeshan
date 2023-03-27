@@ -10,6 +10,8 @@
     <title>Ticket Selling Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/products.css') }}">
+
+
 </head>
 
 <body>
@@ -30,8 +32,6 @@
 
 
     <section class="icons-container">
-
-
         <div class="icons">
             <img src="{{ asset('images/icon-2.png') }}" alt="">
             <div class="info">
@@ -62,7 +62,6 @@
     </section>
 
     <!-- icons section ends -->
-
     <!-- catagory section starts -->
     <section class="Catergory">
         <h1 class="heading"> Catergories </h1>
@@ -75,14 +74,17 @@
             <a href='/products/category/rock'>Rock</a>
             <a href='/products/category/country'>Country</a>
         </div>
-
-
-
-
-
     </section>
 
-
+    <!-- add a search bar that searches  -->
+    <section class="search">
+        <div class="searchbar">
+            <form action="/products/search" method="GET">
+                <input type="text" name="search" placeholder="Search for an Event or Artist">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
 
 
 
