@@ -37,6 +37,7 @@
 .Social_Mediainfo{
     padding-left: 5%;
     text-align: center;
+    display: flex;
     width: 50%;
 }
 .Social_Mediainfo h2{
