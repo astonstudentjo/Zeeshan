@@ -35,7 +35,7 @@
 
         @auth
         <div class="right-header">
-            <a>{{auth()->user()->name}}</a>
+            <span class = "auth-name"> {{auth()->user()->name}} </span>
             <a href="{{ url('/basket') }}"> <i class='bx bxs-cart'></i>
                 @if (Session::has('basketQuantities'))
                 Items: {{ array_sum(Session::get('basketQuantities')) }}

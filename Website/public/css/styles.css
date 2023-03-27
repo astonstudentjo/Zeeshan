@@ -48,11 +48,13 @@ html {
 
 /* left side of the container */
 
+
 .left-header {
     display: flex;
     align-items: center;
     float: left;
     width: 75%;
+
 
 }
 
@@ -77,9 +79,12 @@ html {
 }
 
 .right-header {
+
+    display: flex;
+
     align-items: center;
     float: right;
-    margin-top: 0.5%;
+
     /* width: 30%; */
 }
 
@@ -90,6 +95,13 @@ html {
     font-size: 1.5rem;
     color: white;
     padding-left: 20px;
+}
+
+.auth-name{
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 20px;
+
 }
 
 .right-header a:hover {
