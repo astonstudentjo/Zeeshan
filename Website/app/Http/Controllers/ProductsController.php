@@ -39,5 +39,23 @@ class ProductsController extends Controller
 
 
 
+    // search function1111
+
+    public function search($searchQuery){
+        $searchQuery = $_GET['search'];
+        $products = Products::query()
+            ->where('name', 'LIKE', "%{$searchQuery}%")
+            ->orWhere('category', 'LIKE', "%{$searchQuery}%")
+            ->orWhere('artist', 'LIKE', "%{$searchQuery}%")
+            ->get();
+        return view('products', ['products' => $products]);
+    }
+    
+    
+    
+    
+
+
+
 
 }

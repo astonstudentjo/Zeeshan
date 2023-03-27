@@ -10,28 +10,14 @@
     <title>Ticket Selling Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/products.css') }}">
+
+
 </head>
 
 <body>
 
-    
-
-    <!-- home section ends -->
-
-    <!-- <section class="filters">
-<div class="bar">
-          
-    <p> Search Event </p>
-    <p> place </p>
-    <p> Time</p>
-
-</div>
-</section> -->
-
 
     <section class="icons-container">
-
-
         <div class="icons">
             <img src="{{ asset('images/icon-2.png') }}" alt="">
             <div class="info">
@@ -62,7 +48,6 @@
     </section>
 
     <!-- icons section ends -->
-
     <!-- catagory section starts -->
     <section class="Catergory">
         <h1 class="heading"> Categories </h1>
@@ -75,13 +60,36 @@
             <a href='/products/category/rock'>Rock</a>
             <a href='/products/category/country'>Country</a>
         </div>
+    </section>
+    <?php
+    if (isset($_GET['search'])) {
+        $searchQuery = $_GET['search'];
+    } else {
+        $searchQuery = null;
+    }
+
+
+    ?>
 
 
 
+    <!-- add a search bar that searches  -->
+    <section class="search">
+        <div class="searchbar">
+            <form action="/products/search/{searchQuery}" method="GET">
 
-
+                <input type="text" name="search" placeholder="Search for an Event or Artist">
+                <button type="submit">Search</button>
+            </form>
+        </div>
     </section>
 
+
+
+
+    @if(isset($searchQuery))
+    <p>Search results for: "{{ $searchQuery }}"</p>
+    @endif
 
 
 
@@ -117,18 +125,24 @@
                     <!-- <p> {{$product->description}}</p> -->
                     <div class="price">£{{$product->price}}</div>
 
-                    @if ($product->stock <= 0) <h4 style = "color: red">Out of Stock!</h4>
-                        @elseif ($product-> stock< 10) <h4 style = "color:orange">Only {{$product -> stock}} remaining buy now!</h4>
+                    @if ($product->stock <= 0) <h4 style="color: red">Out of Stock!</h4>
+                        @elseif ($product-> stock< 10) <h4 style="color:orange">Only {{$product -> stock}} remaining buy now!</h4>
                             @endif
                 </div>
             </div>
             @endforeach
 
+            <!-- output the amount of products being shown -->
+
         </div>
+        <br>
+        <p>Showing {{$products->count()}} results</p>
+
     </section>
 
     <!-- prodcuts section ends -->
 
 </body>
+
 </html>
 @endsection

@@ -19,12 +19,12 @@
 <heading class="Title">Welcome back! </heading>
 <br>
 
-<div class="login">
-    <form class="login-form" action="/login" method="post">
+<div class = "login">
+    <form class = "login-form" action="{{ route('login') }}" method="post">
 
-        <h> Log in to your account </h>
-        <p> New to EventTick? <a href="/signup">Register an account</a></p>
-        <br>
+    <h> Log in to your account </h>
+<p> New to EventTick? <a href="{{ route('signup') }}">Register an account</a></p>
+<br>
 
         <div class="error">
 

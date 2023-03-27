@@ -48,11 +48,14 @@ html {
 
 /* left side of the container */
 
+
 .left-header {
     display: flex;
     align-items: center;
     float: left;
     width: 75%;
+
+
 }
 
 .left-header h2 {
@@ -66,16 +69,22 @@ html {
     font-size: 1.5rem;
     color: white;
     padding-left: 20px;
+
 }
 
 .left-header a:hover {
     color: #a26bc9;
+    text-decoration: none;
+
 }
 
 .right-header {
+
+    display: flex;
+
     align-items: center;
     float: right;
-    margin-top: 0.5%;
+
     /* width: 30%; */
 }
 
@@ -88,8 +97,17 @@ html {
     padding-left: 20px;
 }
 
+.auth-name{
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 20px;
+
+}
+
 .right-header a:hover {
     color: #a26bc9;
+    text-decoration: none;
+
 }
 
 .footer-box {
@@ -134,6 +152,7 @@ html {
 
 .footer-component a:hover {
     color: #a26bc9;
+    text-decoration: none;
 }
 
 .footer-component-newsletter h3 {

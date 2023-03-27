@@ -1,57 +1,40 @@
 @extends('layouts.main')
 @section('body')
-
-
 <div>
-
     <span class="Title">
         <p> Register an account!</p>
     </span>
-
     <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
     <div class="signup">
-        <form action="/signup" method="post">
-
-        
+        <form action="{{ route('signup') }}" method="post">
+            <p> Already have an account? <a href="{{ route('login') }}">Login</a></p>
             <label for="name"> Full Name: </label>
             <input type="text" placeholder="Full name" name="name">
-            
-
-            <p class = "error">
-            @csrf
-            @error('name')
-            {{$message}}
-            @enderror
+            <p class="error">
+                @csrf
+                @error('name')
+                {{$message}}
+                @enderror
             </p>
             <br>
-
             <label for="email"> Email: </label>
             <input type="text" placeholder="Email" name="email">
+            <p class="error">
+                @error('email')
+                {{$message}}
 
-
-            <p class = "error">
-            @error('email')
-            {{$message}}
-          
-            @enderror
+                @enderror
             </p>
             <br>
-
-
-
             <label for="password"> Password: </label>
             <input type="password" placeholder="Password" name="password">
-          
-
-            <p class = "error">
-            @error('password')
-            {{$message}}
-            <br>
-            @enderror
+            <p class="error">
+                @error('password')
+                {{$message}}
+                <br>
+                @enderror
             </p>
             <br>
-
-
             <label for="password_confirmation"> Password Confirmation: </label>
             <input type="password" placeholder="Password Again" name="password_confirmation">
             <br>
@@ -72,9 +55,6 @@
                     </p>
                 </span> -->
         </form>
-
-
     </div>
-
 </div>
 @endsection

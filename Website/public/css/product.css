@@ -16,20 +16,21 @@
     margin-right: 15%;
 }
 
-.heading{
-    display:inline-block;
+.heading {
+    display: inline-block;
     min-height: max-content;
     margin-top: 1%;
     padding-bottom: 1%;
     width: 100%;
 }
-.heading h1{
+
+.heading h1 {
     font-size: 6rem;
 }
-.heading h2{
+
+.heading h2 {
     font-size: 3rem;
 }
-
 
 .btn {
     flex: content;
@@ -52,7 +53,7 @@
     padding-right: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
-    margin-bottom:0;
+    margin-bottom: 0;
     border-radius: 3%;
 }
 
@@ -60,19 +61,22 @@
     flex: auto;
     min-width: 70%;
 }
-.display img{
+
+.display img {
     border-radius: 1.5%;
 }
+
 .info {
-    
     min-width: 30%;
     flex: auto;
     align-self: center;
     font-size: medium;
 }
-.info p{
+
+.info p {
     font-size: 100%;
 }
+
 .BasketHandler {
     margin-left: 1%;
     margin-right: 1%;
@@ -82,18 +86,20 @@
     flex: auto;
     display: flex;
     align-self: center;
-    
 }
-.BasketHandler h4{
+
+.BasketHandler h4 {
     font-size: large;
 }
-.BasketHandler h3{
+
+.BasketHandler h3 {
     padding-top: 5%;
     color: black;
     text-decoration: underline;
     font-size: large;
 }
-.BasketHandler select{
+
+.BasketHandler select {
     flex: content;
     display: inline-block;
     margin-top: 1rem;
@@ -104,6 +110,7 @@
     cursor: pointer;
     font-size: 100%;
 }
+
 .bottom {
     display: flex;
 }
