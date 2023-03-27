@@ -16,20 +16,6 @@
 
 <body>
 
-    
-
-    <!-- home section ends -->
-
-    <!-- <section class="filters">
-<div class="bar">
-          
-    <p> Search Event </p>
-    <p> place </p>
-    <p> Time</p>
-
-</div>
-</section> -->
-
 
     <section class="icons-container">
         <div class="icons">
@@ -119,8 +105,8 @@
                     <!-- <p> {{$product->description}}</p> -->
                     <div class="price">£{{$product->price}}</div>
 
-                    @if ($product->stock <= 0) <h4 style = "color: red">Out of Stock!</h4>
-                        @elseif ($product-> stock< 10) <h4 style = "color:orange">Only {{$product -> stock}} remaining buy now!</h4>
+                    @if ($product->stock <= 0) <h4 style="color: red">Out of Stock!</h4>
+                        @elseif ($product-> stock< 10) <h4 style="color:orange">Only {{$product -> stock}} remaining buy now!</h4>
                             @endif
                 </div>
             </div>
@@ -132,5 +118,6 @@
     <!-- prodcuts section ends -->
 
 </body>
+
 </html>
 @endsection
