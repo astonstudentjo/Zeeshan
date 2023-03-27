@@ -11,14 +11,15 @@
 </head>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-
+<br>
 <header>
     <h1>My Basket</h1>
 </header>
 
+<br>
 
 @if (count($product) == 0)
-<p>Your basket is empty</p>
+<p class="empty">Your basket is empty</p>
 
 @else
 <form action="/basket/update" method="POST">
@@ -26,6 +27,7 @@
     <table class="table">
         <thead>
         <tr>
+            
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -48,7 +50,7 @@
         
         <br>
         <tr>
-       
+      
             <td>{{ $item->name }}</td>
             <td>£{{ number_format($item->price, 2) }}</td>
             <td>
@@ -61,7 +63,7 @@
             </td>
          
             <td>£{{ number_format($item->price * $quantity, 2) }}</td>
-
+</div>
             <td hidden>
                 <form action="/basket/remove" method="POST" hidden>
                     @csrf
@@ -88,78 +90,48 @@
         </tr>
     </table>
     <br>
-    <div class="total">
+    <div class="">
     <div>
-        <p>Total items: {{ $totalItems }}</p>
+        <p class="items">Total items: {{ $totalItems }}</p>
     </div>
 
     @if (session('error'))
+  
     <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
+    <div class="button-update">
     <button type="submit">Update Basket</button>
+</div>
 </form>
 @endif
-
+<br>
+<div class="button-clear">
 <form action="/basket/clear" method="POST">
     @csrf
     <button type="submit">Clear Basket</button>
 </form>
+</div>
 
-
-<br>
 <div class="right-bar">
     <form action="/checkout" method="GET">
  <button type="submit"><i class="fa fa-shopping-cart"></i>Checkout</a></button>
     </form>
 </div>
-
+</div>
 <br>
 <div class="total">
     <form action="/products" method="GET">
         <button type="submit">Continue Shopping</button>
     </form>
 </div>
-</div>
 
-<div class="empty-basket-Padder"></div>
+
+
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
 
-<header>
-    <h1>My Basket</h1>
-</header>
-<main>
-    <section class="cart-items">
-        <h2>Shopping Cart</h2>
-        <ul>
-            <li>
-                <img src="https://via.placeholder.com/100x100" alt="Product Image">
-                <div class="product-info">
-                    <h3>Product Name</h3>
-                    <p>Price: $9.99</p>
-                    <input type="number" value="1" min="1">
-                    <button>Remove</button>
-                </div>
-            </li>
-            <li>
-                <img src="https://via.placeholder.com/100x100" alt="Product Image">
-                <div class="product-info">
-                    <h3>Product Name</h3>
-                    <p>Price: $14.99</p>
-                    <input type="number" value="1" min="1">
-                    <button>Remove</button>
-                </div>
-            </li>
-        </ul>
-    </section>
-    <section class="total">
-        <h2>Total</h2>
-        <p>Subtotal: $24.98</p>
-        <p>Shipping: $5.00</p>
-        <p>Total: $29.98</p>
-        <button>Checkout</button>
-    </section>
+
 </main>
 
 

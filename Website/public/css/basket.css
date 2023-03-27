@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #25459b;
+    background-color: black;
     color: #fff;
     padding: 20px;
 }
@@ -69,6 +69,9 @@ main {
     background-color: #f2f2f2;
     padding: 20px;
     text-align: right;
+    font-size: 15px;
+    font-weight: 600;
+
 }
 
 .total h2 {
@@ -88,11 +91,10 @@ main {
 }
 .right-bar {
 	flex: 25%;
-	margin-left: 20px;
 	padding: 20px;
-	
 	border-radius: 5px;
-
+    font-size: 15px;
+    font-weight: 600;
 
 }
 .right-bar hr {
@@ -105,10 +107,9 @@ main {
 	font-size: 20px;
 }
 .right-bar a {
-	background-color: #76bfb6;
+
 	color: #fff;
 	text-decoration: none;
-	display: block;
 	text-align: center;
 	height: 40px;
 	line-height: 40px;
@@ -126,9 +127,8 @@ main {
       border-bottom: 1px;
       text-indent: -9999px;
     }
-  
-  
-    .table {
+    
+.table {
         border: 1px solid #ddd;
         margin-left: 10%;
         margin-right: 10%;
@@ -139,7 +139,7 @@ main {
     }
     
     table thead {
-        background-color: #25459b;
+        background-color: black;
         color: #fff;
     }
     
@@ -165,3 +165,38 @@ main {
         padding-top: 2.5%;
     }
     
+
+    .button-update{
+        color: #fff;
+        border: none;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        cursor: pointer;
+        transition: 0.5s;
+        transition-property: box-shadow;
+
+    }
+
+    .empty{
+        font-size: 40px;
+        color:red;
+    }
+
+    .button-clear{
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    }
+
+    .items{
+    font-size: 15px;
+    font-weight: 600;
+    }
