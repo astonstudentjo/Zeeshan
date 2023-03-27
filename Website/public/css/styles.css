@@ -134,6 +134,7 @@ html {
 
 .footer-component a:hover {
     color: #a26bc9;
+    text-decoration: none;
 }
 
 .footer-component-newsletter h3 {
