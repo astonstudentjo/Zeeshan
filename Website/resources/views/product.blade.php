@@ -2,7 +2,6 @@
 @extends('layouts.main')
 @section('body')
 
-
 <html>
 
 <head>
@@ -25,11 +24,11 @@
         <div class="display">
             <img src="/productImages/{{$concert->img}}">
         </div>
-        <div class="BasketHandler">
-            <div class="info">
-                <h5>{{$concert->category}}</h5>
-                <p>{{$concert->description}}</p>
-            </div>
+        <div class = "BasketHandler">
+        <div class = "info">
+                    <h5> {{$concert->category}}</h5>
+                    <p>{{$concert->description}}</p>
+                </div>
             @if ($concert->stock > 0)
             <h4>£{{$concert->price}}</h4>
             <form action="{{ route('basket.add') }}" method="POST">
@@ -55,17 +54,15 @@
         </form>
     </div>
 
-    
-
-    <section class="recomendations">
-        <div class="container">
+    <section class = "recomendations">
+        <div class = "container">
         </div>
     </section>
 
-    <!-- back -->
-    <div class="back">
-        <form action="{{ route('products') }}" method="GET">
-            <button class="btn" type="submit">Back</button>
+<!-- back -->
+<div class = "back">
+        <form action="/products" method="GET">
+        <button class = "btn"type="submit">Back</button>
         </form>
     </div>
 

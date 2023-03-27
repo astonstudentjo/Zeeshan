@@ -74,6 +74,8 @@ button[type="submit"] {
     /* Brand/Primary/Default */
     border: 2px solid black;
     /* Card/Hover */
+    font-weight: bold;
+
 
 }
 

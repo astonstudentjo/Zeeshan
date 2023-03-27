@@ -13,6 +13,7 @@
     max-width: 100%;
 }
 
+
 .body {
     align-items: center;
     text-align: center;
@@ -107,6 +108,8 @@ html {
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding-top: 4rem;
+
 }
 
 .footer-component {

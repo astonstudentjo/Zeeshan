@@ -13,10 +13,11 @@ body {
   }
   
   /* Set font styles */
-  label, input, button {
+  label{
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    
     
   }
 
@@ -51,6 +52,9 @@ body {
     border-radius: 4px;
    border-color: black;
    font-size: 12px;
+   display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
    
    
   }
@@ -71,6 +75,9 @@ padding: 12px 20px;
 border-radius: 4px;
 width: 100%;
 border: none;
+display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 
 /* White */
 
@@ -95,6 +102,9 @@ color: white;
   button[type="submit"]:hover {
     background-color: #25459b;
     color: white;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
   }
   
   /* Set error message styles */
