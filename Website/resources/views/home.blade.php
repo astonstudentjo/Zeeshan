@@ -113,7 +113,7 @@
       <div class="content">
         <div class="info">
           <div class="name">david</div>
-          <div class="job">Harry Styles Ticket</div>
+          <div class="job">Harry Styles Tour</div>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
