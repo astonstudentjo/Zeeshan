@@ -28,13 +28,13 @@
       to music. So not only are we giving you guys the chance to see some amazing artists such as Chris brown and Adele but we are giving more recognition to smaller artists who need a platform to expand and grow. </p>
 </section>
 <section class="Social_Media">
-  <div class = "tweet">
-    <a class="twitter-timeline" data-width= "10000" data-height= "500" href="https://twitter.com/event_tick?ref_src=twsrc%5Etfw">Tweets by event_tick</a>
+  <div class="tweet">
+    <a class="twitter-timeline" data-width="10000" data-height="500" href="https://twitter.com/event_tick?ref_src=twsrc%5Etfw">Tweets by event_tick</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
-  <div class = "Social_Mediainfo">
-      <h2 class="heading"> Why Follow Us</h2>
-      <p> We are actively sharing news about EventTick on our social media. By following us, you will be the first to know of our new courses and the improvements and updates made to our service – without forgetting the great promotions! Social media is a wonderful channel for communication! We’ll gladly answer all your questions and doubts regarding WordDive, and we are truly thankful for any kind of feedback and suggestions. Don’t hesitate to join the conversation! </p>
+  <div class="Social_Mediainfo">
+    <h2 class="heading"> Why Follow Us</h2>
+    <p>We follow all the artists and let you know of all the great shows coming up whether were hosting them or not and we will keep you up to date on the music scene and of course the latest discounts were offering.</p>
   </div>
 </section>
 <section>
@@ -45,59 +45,42 @@
 <section class="container">
   <div class="card">
     <div class="image">
-      <!--<img src="images/img1.jpg" alt="" />-->
+      <img src="images/suit.png" alt="" />
     </div>
-    <h2>Haseeb Ahmed</h2>
+    <h2>John Cena</h2>
     <p>Worked on java Back End</p>
   </div>
   <div class="card">
     <div class="image">
-      <!--<img src="images/img2.jpg" alt="" />-->
+      <img src="images/suit.png" alt="" />
     </div>
-    <h2>Muniib Ali</h2>
+    <h2>Mohammed Ali</h2>
     <p>Worked on Laravel back end and java back end</p>
   </div>
   <div class="card">
     <div class="image">
-      <!--<img src="images/img3.jpg" alt="" />-->
+      <img src="images/suit.png" alt="" />
     </div>
-    <h2>Damien Eshimu</h2>
+    <h2>Will Smith</h2>
     <p>Worked on documentation</p>
+    <p>Keep my wifes name..</p>
+
   </div>
   <div class="card">
     <div class="image">
-      <!--<img src="images/img4.jpg" alt="" />-->
+      <img src="images/suit.png" alt="" />
     </div>
-    <h2>Jenson James-Ross</h2>
+    <h2>Pablo</h2>
     <p>Worked on Admin and Front end</p>
   </div>
   <div class="card">
     <div class="image">
-      <!--<img src="images/img4.jpg" alt="" />-->
+      <img src="images/suit.png" alt="" />
     </div>
-    <h2>Faryal Mansoor</h2>
+    <h2>Greta Thunberg</h2>
     <p>Worked on Admin and Front end</p>
-  </div>
-  <div class="card">
-    <div class="image">
-      <!--<img src="images/img4.jpg" alt="" />-->
-    </div>
-    <h2>Zeeshan Mohammaed</h2>
-    <p>Worked on database, laravel and version Control</p>
-  </div>
-  <div class="card">
-    <div class="image">
-      <!--<img src="images/img4.jpg" alt="" />-->
-    </div>
-    <h2>Humera Muhammad</h2>
-    <p>Worked on Front end</p>
-  </div>
-  <div class="card">
-    <div class="image">
-      <!--<img src="images/img4.jpg" alt="" />-->
-    </div>
-    <h2>Sharana Sivathasan</h2>
-    <p></p>
+    <p>How dare you?!!??!?!?!!?</p>
+
   </div>
 </section>
 <section>

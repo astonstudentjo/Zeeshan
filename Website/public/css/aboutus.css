@@ -23,26 +23,28 @@
 .heading span {
     color: rgb(136, 67, 136);
 }
-.Social_Media{
+
+.Social_Media {
     display: flex;
     padding-left: 15%;
     padding-right: 15%;
     align-items: center;
 }
-.tweet{
+
+.tweet {
     padding-right: 5%;
     width: 50%;
 }
-.Social_Mediainfo{
+
+.Social_Mediainfo {
     padding-left: 5%;
     text-align: center;
     width: 50%;
 }
-.Social_Mediainfo h2{
+
+.Social_Mediainfo h2 {
     text-align: center;
 }
-
-
 
 .btn {
     display: inline-block;
@@ -63,6 +65,7 @@
     margin-bottom: 5%;
     border-style: hidden;
 }
+
 .btn:hover {
     background: var(--pink);
 }
@@ -129,7 +132,7 @@
     height: 150px;
     width: 150px;
     padding: 4px;
-    background: #4070f4;
+    background: #b3b3b3;
     border-radius: 50%;
 }
 
