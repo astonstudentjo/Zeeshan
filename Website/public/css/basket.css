@@ -92,15 +92,30 @@ main {
 }
 
 .right-bar {
-    flex: 25%;
-    padding: 20px;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
+    display: inline-block;
+    border-radius: 4rem;
+    background: #333;
+    color: #fff;
+    padding: .6rem 2rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-top: 3%;
 }
 
 .right-bar hr {
     margin-bottom: 25px;
+}
+
+.right-bar button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-top: 1%;
 }
 
 .right-bar p {
@@ -110,17 +125,10 @@ main {
     font-size: 20px;
 }
 
-.right-bar a {
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    font-weight: 900;
-}
-
 .right-bar i {
     margin-right: 15px;
+    color: #fff;
+    font-size: x-large;
 }
 
 .right-bar a:hover {

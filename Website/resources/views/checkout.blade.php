@@ -15,13 +15,15 @@
 </header>
 
 <table class="table">
-    <tr>
-        <th>image</th>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
     @foreach ($products as $product)
     <tr>
         <td><img src="{{ asset('productImages/' . $product->img) }}" alt="product image" width="100" height="100"></td>
@@ -34,7 +36,6 @@
     @endforeach
     <tr>
         <td colspan="4"></td>
-        <!-- <td>$totalQuantity</td> -->
         <td>£{{ number_format($totalPrice, 2) }}</td>
     </tr>
 </table>
@@ -42,12 +43,13 @@
 @if (session('error'))
 <div class="alert alert-danger">{{ session('error') }}</div>
 @endif
-
-<form action="/checkout" method="POST">
-    @csrf
-    <!-- post the totalprice -->
-    <input type="hidden" name="totalPrice" value="{{ $totalPrice }}">
-    <button type="submit">Place Order</button>
-</form>
+<div class="right-bar">
+    <form action="/checkout" method="POST">
+        @csrf
+        <!-- post the totalprice -->
+        <input type="hidden" name="totalPrice" value="{{ $totalPrice }}">
+        <button type="submit">Place Order</button>
+    </form>
+</div>
 
 @endsection

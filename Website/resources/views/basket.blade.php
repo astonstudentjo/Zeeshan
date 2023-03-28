@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>Basket</title>
-    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/basket.css') }}">
 </head>
 
@@ -100,6 +100,7 @@
         <div class="button-update">
             <button class="button-update" type="submit">Update Basket</button>
         </div>
+
 </form>
 @endif
 
@@ -109,10 +110,13 @@
         <button class="button-clear" type="submit">Clear Basket</button>
     </form>
 </div>
-
+<br>
 <div class="right-bar">
     <form action="/checkout" method="GET">
-        <button type="submit"><i class="fa fa-shopping-cart"></i>Checkout</a></button>
+        <button type="submit">
+            <i class="fa fa-shopping-cart"></i>
+            Checkout
+        </button>
     </form>
 </div>
 </div>
