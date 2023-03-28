@@ -22,29 +22,27 @@
 
 </head>
 <body>
-    <!-- <br> -->
     <section class="display">
         <div class="content">
             <br>
             <h3>Buy Tickets</h3>
             <span>Concerts & music events</span>
             <p>Attention all music lovers! Get ready to experience the thrill of live music!</p>
-            <br>
-            <a href="{{ url('/products') }}" class="btn">Buy now</a>
+            <a href="{{ url('/products') }}" class="btn" style="margin-top: 5%;">Buy now</a>
         </div>
 
         <div class="content">
-            <h2>EventTick</h2>
+            <!-- <h2>EventTick</h2> -->
+            <img src="{{ asset('images/logo-white.png') }}" alt="EventTick" width="100%" height="100%">
         </div>
 
         <div class="content">
             <br>
             <br>
             <h3>Learn About Us!</h3>
-            <span></span>
-            <p>See our Vision</p>
-            <br>
+            <span>See our Vision</span>
             <p>Learn more about our vision for the future of live music post pandemic and how we plan to keep the music industry going strong!</p>
+            
             <a href="{{ url('/aboutus') }}" class="btn">About Us</a>
         </div>
     </section>
@@ -61,6 +59,27 @@
     </section>
     <br>
     <br>
+
+    <?php
+    if (isset($_GET['search'])) {
+        $searchQuery = $_GET['search'];
+    } else {
+        $searchQuery = null;
+    }
+    ?>
+
+    <!-- add a search bar that searches  -->
+    <section class="search">
+        <div class="searchbar">
+            <form action="/products/search/{searchQuery}" method="GET">
+
+                <input type="text" name="search" placeholder="Search for an Event or Artist">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+
     <section class="reviews">
         <h class="heading">Community Reviews:</h>
     <div class="wrapper">

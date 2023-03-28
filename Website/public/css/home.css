@@ -39,19 +39,19 @@
 
 .display p {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 400;
     color: #fff;
 }
 
 .display h2 {
     font-size: 40px;
-    font-weight: bolder;
+    font-weight: 600;
     color: #fff;
 }
 
 .display h3 {
     font-size: 30px;
-    font-weight: bolder;
+    font-weight: 600;
     color: #fff;
 }
 
@@ -83,7 +83,7 @@
 
 .categories a {
     font-style: normal;
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 25px;
     line-height: 21px;
     color: #000;
@@ -149,12 +149,11 @@
 .box .info .name {
     font-weight: 600;
     font-size: 17px;
-
 }
 
 .box .info .ticket {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     color: #25459b;
     margin-left: 120px;
     margin-top: 0px;
@@ -183,7 +182,7 @@
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #fff;
-    margin-right:120px;
+    margin-right: 120px;
 }
 
 .box:hover .content .image img {
@@ -205,4 +204,39 @@
 
 .body {
     min-height: 0vh;
+}
+
+
+/* search css */
+
+.search input {
+    /* make a cool search bar input */
+    width: 65%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: #000;
+    padding: 0 1rem;
+    text-align: center;
+    background-color: #fff;
+    border: #000;
+    border-radius: 0.5rem;
+    outline: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.search button {
+    /* make a cool search bar button */
+    width: 5%;
+    height: 80%;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #242565;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-left: 10px;
 }
