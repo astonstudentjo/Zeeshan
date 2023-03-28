@@ -13,7 +13,6 @@
     max-width: 100%;
 }
 
-
 .body {
     align-items: center;
     text-align: center;
@@ -48,14 +47,11 @@ html {
 
 /* left side of the container */
 
-
 .left-header {
     display: flex;
     align-items: center;
     float: left;
     width: 75%;
-
-
 }
 
 .left-header h2 {
@@ -69,22 +65,17 @@ html {
     font-size: 1.5rem;
     color: white;
     padding-left: 20px;
-
 }
 
 .left-header a:hover {
     color: #a26bc9;
     text-decoration: none;
-
 }
 
 .right-header {
-
     display: flex;
-
     align-items: center;
     float: right;
-
     /* width: 30%; */
 }
 
@@ -97,17 +88,15 @@ html {
     padding-left: 20px;
 }
 
-.auth-name{
+.auth-name {
     font-size: 1.5rem;
     color: white;
     padding-left: 20px;
-
 }
 
 .right-header a:hover {
     color: #a26bc9;
     text-decoration: none;
-
 }
 
 .footer-box {
@@ -127,7 +116,6 @@ html {
     flex-wrap: wrap;
     margin: 0 auto;
     padding-top: 4rem;
-
 }
 
 .footer-component {
@@ -184,4 +172,9 @@ html {
 
 #footer-newsletter-btn:hover {
     background-color: #25459b;
+}
+
+.alert {
+    /* padding: 0; */
+    margin: 0;
 }
