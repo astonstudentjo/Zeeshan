@@ -81,6 +81,7 @@ class BasketController extends Controller
     public function clearBasket()
     {
         Session::start();
+        Session::forget('basketQuantities');
         Session::forget('basket');
         // log to conesole
         Log::info('Basket cleared');
