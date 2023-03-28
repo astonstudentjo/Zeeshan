@@ -44,12 +44,13 @@
 
             <h3 id="form-header">Contact US</h3>
             <p id="form-text">Have an enquiry that needs to be answered? Please contact us by filling out the form below!</p>
-            <form class="contactus-form">
+            <form class="contactus-form" action = "/contactus"  method = "post" >
+                @csrf
 
-                <input type="text" id="contactus-name" placeholder="Name" required>
-                <input type="email" id="contactus-email" placeholder="Email" required>
-                <input type="subject" id="contactus-subject" placeholder="EventTick Enquiry" required>
-                <input type="message" id="contactus-message" placeholder="Message" required>
+                <input type="text" id="contactus-name" name = "name" placeholder="Name" required>
+                <input type="email" id="contactus-email" name = "email" placeholder="Email" required>
+                <input type="text" id="contactus-subject" name = "subject" placeholder="Subject" required>
+                <input type="text" id="contactus-message" name = "message" placeholder="Message" required>
                 <input type="submit" id="contactus-btn">
 
 
