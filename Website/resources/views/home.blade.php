@@ -52,8 +52,6 @@
     <section class="category">
         <h1 class="heading">Categories</h1>
         <div class="categories">
-            <a href="{{ url('/products/category/price_ascending') }}">Price-Low to High</a>
-            <a href="{{ url('/products/category/price_descending') }}">Price-High to Low</a>
             <a href="{{ url('/products/category/pop') }}">Pop</a>
             <a href="{{ url('/products/category/metal') }}">Metal</a>
             <a href="{{ url('/products/category/rap') }}">Rap</a>
@@ -64,11 +62,12 @@
     <br>
     <br>
     <section class="reviews">
-        <h class="heading">Here are some reviews off our twitter:</h>
+        <h class="heading">Community Reviews:</h>
     <div class="wrapper">
     <div class="box">
       <i class="fas fa-quote-left quote"></i>
       <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <i class="fas fa-quote-right quote"></i>
       <div class="content">
         <div class="info">
           <div class="name">Aqib jawed</div>
@@ -89,6 +88,7 @@
     <div class="box">
       <i class="fas fa-quote-left quote"></i>
       <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <i class="fas fa-quote-right quote"></i>
       
       <div class="content">
         <div class="info">
@@ -110,10 +110,11 @@
     <div class="box">
       <i class="fas fa-quote-left  quote"></i>
       <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <i class="fas fa-quote-right quote"></i>
       <div class="content">
         <div class="info">
-          <div class="name">david</div>
-          <div class="job">Harry Styles Ticket</div>
+          <div class="name">Mark Tom</div>
+          <div class="job">Harry Styles Tour</div>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>

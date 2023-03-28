@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SignoutController;
 use App\Http\Controllers\ConfirmationController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OrdersController;
 use Illuminate\Support\Facades\Redirect;
@@ -37,6 +38,10 @@ Route::get('/aboutus', function () {
 Route::get('/contactus', function () {
     return view('contactus');
 });
+
+Route::post('/contactus', [ContactController::class, 'create']);
+
+
 
 
 
