@@ -103,7 +103,10 @@
 
 </form>
 @endif
+@if (count($product) == 0)
 
+
+@else
 <div class="button-clear">
     <form action="/basket/clear" method="POST">
         @csrf
@@ -119,6 +122,7 @@
         </button>
     </form>
 </div>
+@endif
 </div>
 <div class="total">
     <form action="/products" method="GET">
