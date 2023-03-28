@@ -108,9 +108,11 @@ html {
     width: 50%;
     height: 100%;
     display: flex;
+    padding-top: 2.5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .contactus-right h3,
