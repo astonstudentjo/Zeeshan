@@ -6,17 +6,15 @@
 <head>
     <meta charset="utf-8">
     <title>Basket</title>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/basket.css') }}">
 </head>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-<br>
 <header>
     <h1>My Basket</h1>
 </header>
 
-<br>
 
 @if (count($product) == 0)
 <p class="empty">Your basket is empty</p>
@@ -26,16 +24,16 @@
     @csrf
     <table class="table">
         <thead>
-        <tr>
-            
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-            <th>delete items</th>
+            <tr>
+                <th>image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>delete items</th>
 
-        </tr>
-</thead>
+            </tr>
+        </thead>
         @php
         $total = 0;
         $productQuantities = Session::get('basketQuantities', []);
@@ -47,23 +45,19 @@
         $total += $item->price * $quantity;
         @endphp
         @if ($quantity > 0)
-        
-        <br>
+
         <tr>
-      
+            <td><img src="{{ asset('productImages/' . $item->img) }}" alt="product image" width="100" height="100"></td>
             <td>{{ $item->name }}</td>
             <td>£{{ number_format($item->price, 2) }}</td>
             <td>
-                <!-- auto update without pressing submit button -->
-
                 <select name="quantity[{{ $itemId }}]">
-                    @for ($i = 1; $i <= 10; $i++) <option value="{{ $i }}" {{ $i == $quantity ? 'selected' : '' }}>{{ $i }}</option>
-                        @endfor
+                    @for ($i = 1; $i <= 10; $i++) <option value="{{ $i }}" {{ $i == $quantity ? 'selected' : '' }}>{{ $i }}</option>@endfor
                 </select>
             </td>
-         
+
             <td>£{{ number_format($item->price * $quantity, 2) }}</td>
-</div>
+            </div>
             <td hidden>
                 <form action="/basket/remove" method="POST" hidden>
                     @csrf
@@ -85,49 +79,48 @@
         @endforeach
 
         <tr>
-            <td colspan="3"></td>
+            <td colspan="4"></td>
             <td>£{{ number_format($total, 2) }}</td>
+            <td colspan="5"></td>
+
+
+
         </tr>
     </table>
     <br>
     <div class="">
-    <div>
-        <p class="items">Total items: {{ $totalItems }}</p>
-    </div>
+        <div>
+            <p class="items">Total items: {{ $totalItems }}</p>
+        </div>
 
-    @if (session('error'))
-  
-    <div class="alert alert-danger">{{ session('error') }}</div>
-    @endif
-    <div class="button-update">
-    <button class="button-update" type="submit">Update Basket</button>
-</div>
+        @if (session('error'))
+
+        <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+        <div class="button-update">
+            <button class="button-update" type="submit">Update Basket</button>
+        </div>
 </form>
 @endif
 
-<br>
-<br>
 <div class="button-clear">
-<form action="/basket/clear" method="POST">
-    @csrf
-    <button class="button-clear" type="submit">Clear Basket</button>
-</form>
+    <form action="/basket/clear" method="POST">
+        @csrf
+        <button class="button-clear" type="submit">Clear Basket</button>
+    </form>
 </div>
 
 <div class="right-bar">
     <form action="/checkout" method="GET">
- <button type="submit"><i class="fa fa-shopping-cart"></i>Checkout</a></button>
+        <button type="submit"><i class="fa fa-shopping-cart"></i>Checkout</a></button>
     </form>
 </div>
 </div>
-<br>
 <div class="total">
     <form action="/products" method="GET">
         <button type="submit">Continue Shopping</button>
     </form>
 </div>
-
-
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->

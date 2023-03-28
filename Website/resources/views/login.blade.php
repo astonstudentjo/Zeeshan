@@ -13,13 +13,16 @@
 
 </head>
 <!-- placement for the image-->
-
-
+<div class="padding"></div>
 <br>
-<heading class="Title">Welcome back! </heading>
+
 <br>
 
 <div class = "login">
+
+<span class="Title">
+        <p> Login here!</p>
+    </span>
     <form class = "login-form" action="{{ route('login') }}" method="post">
 
     <h> Log in to your account </h>

@@ -1,6 +1,9 @@
 @extends('layouts.main')
 @section('body')
 <div>
+
+<div class="padding"></div>
+
     <span class="Title">
         <p> Register an account!</p>
     </span>

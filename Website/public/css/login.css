@@ -1,173 +1,164 @@
 /* CSS for Login Page */
 
+
 /* Set background color */
+
 body {
     background-color: #f2f2f2;
     color: black;
-  
     text-align: center;
     align-content: center;
     font-family: Arial, sans-serif;
-    
+}
 
-  }
-  
-  /* Set font styles */
-  label{
+
+/* Set font styles */
+
+label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    
-    
-  }
+}
 
- 
-
-  
-  
-  .image-container {
+.image-container {
     display: flex;
     justify-content: center;
-   
-  }
-  /* Set form styles */
-  .login-form {
+}
+
+
+/* Set form styles */
+
+.login-form {
     width: 25%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #b7b4b4;
+}
 
-  
-  }
-  
-  /* Set input styles */
-  input[type="text"], input[type="password"] {
+
+/* Set input styles */
+
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-   border-color: black;
-   font-size: 12px;
-   display: block;
+    border-color: black;
+    font-size: 12px;
+    display: block;
     font-weight: bold;
     margin-bottom: 5px;
-   
-   
-  }
-  
-  /* Set button styles */
-  button[type="submit"] {
-   /* Frame 1373 */
+}
 
-box-sizing: border-box;
 
-/* Auto layout */
+/* Set button styles */
 
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 12px 20px;
-border-radius: 4px;
-width: 100%;
-border: none;
-display: block;
+button[type="submit"] {
+    /* Frame 1373 */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    /* White */
+    background: #ada239;
+    /* Brand/Primary/Default */
+    border: 2px solid black;
+    /* Card/Hover */
+    /*setting the font*/
+    /* Login to view your account! */
+    /* Brand/Primary/Default */
+    color: white;
+    /*font-family: 'Abel';*/
+}
 
-/* White */
-
-background: #ada239;
-/* Brand/Primary/Default */
-
-border: 2px solid black;
-/* Card/Hover */
-
-
-
-/*setting the font*/
-/* Login to view your account! */
-
-/* Brand/Primary/Default */
-
-color: white;
-/*font-family: 'Abel';*/
-
-  }
-  
-  button[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: #25459b;
     color: white;
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-  }
-  
-  /* Set error message styles */
-  .error {
+}
+
+
+/* Set error message styles */
+
+.error {
     color: red;
     font-size: 14px;
     margin-bottom: 10px;
-  }
+}
 
 label .email {
     /* Email: */
-   
-
-
-position: absolute;
-width: 242px;
-height: 46px;
-left: 429px;
-top: 691px;
-
-font-family: 'Abel';
-font-style: normal;
-font-weight: 400;
-font-size: 64px;
-line-height: 82px;
-display: flex;
-align-items: center;
-
-/* Brand/Primary/Default */
-
-color: black;
-
+    position: absolute;
+    width: 242px;
+    height: 46px;
+    left: 429px;
+    top: 691px;
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 82px;
+    display: flex;
+    align-items: center;
+    /* Brand/Primary/Default */
+    color: black;
 }
 
 .description {
-  padding-top: 20px;
-    font-size: 16px; /* Change the font size to 16 pixels */
-    color: black; /* Change the text color to black */
-  }
-  
-  .description p {
-    font-size: 12px; /* Change the font size to 16 pixels */
-    color: black; /* Change the text color to black */
+    padding-top: 20px;
+    font-size: 16px;
+    /* Change the font size to 16 pixels */
+    color: black;
+    /* Change the text color to black */
+}
+
+.description p {
+    font-size: 12px;
+    /* Change the font size to 16 pixels */
+    color: black;
+    /* Change the text color to black */
     text-align: center;
-  }
+}
 
-  .description2{
-    font-size: 16px; /* Change the font size to 16 pixels */
-    color: black; /* Change the text color to black */
-   
-  }
+.description2 {
+    font-size: 16px;
+    /* Change the font size to 16 pixels */
+    color: black;
+    /* Change the text color to black */
+}
 
-  .description2 {
-    font-size: 12px; /* Change the font size to 16 pixels */
-    color: black; /* Change the text color to black */
+.description2 {
+    font-size: 12px;
+    /* Change the font size to 16 pixels */
+    color: black;
+    /* Change the text color to black */
     text-align: center;
-  }
+}
 
-  .Title {
+.Title {
     text-align: center;
     color: #0b0b0f;
     /* or any other color you want */
     font-weight: bold;
     font-size: 35px;
 }
-  
+
+.padding {
+    padding-bottom: 10%;
+}
