@@ -14,6 +14,11 @@
     <h1>Checkout</h1>
 </header>
 
+
+<?php
+$totalQuantity = 0;
+?>
+
 <table class="table">
     <thead>
         <tr>
@@ -32,10 +37,16 @@
         <td>{{ $product->quantity }}</td>
         <td>£{{ number_format($product->price * $product->quantity, 2) }}</td>
     </tr>
+    <?php
+    $totalQuantity += $product->quantity;
+
+    ?>
 
     @endforeach
     <tr>
-        <td colspan="4"></td>
+        <td colspan="2"></td>
+        <td>Total</td>
+        <td>{{$totalQuantity}}</td>
         <td>£{{ number_format($totalPrice, 2) }}</td>
     </tr>
 </table>

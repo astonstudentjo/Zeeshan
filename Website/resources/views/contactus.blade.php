@@ -50,7 +50,9 @@
                 <input type="text" id="contactus-name" name = "contactName" placeholder="Name" required>
                 <input type="email" id="contactus-email" name = "contactEmail" placeholder="Email" required>
                 <input type="text" id="contactus-subject" name = "contactSubject" placeholder="Subject" required>
-                <input type="text" id="contactus-message" name = "contactMessage" placeholder="Message" required>
+                <!-- <input type="text" id="contactus-message" name = "contactMessage" placeholder="Message" required> -->
+                <textarea id="contactus-message" name = "contactMessage" placeholder="Message" required></textarea>
+
                 <input type="submit" id="contactus-btn">
 
 

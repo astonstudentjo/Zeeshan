@@ -83,7 +83,8 @@
         @endforeach
 
         <tr>
-            <td colspan="4"></td>
+            <td colspan="3"></td>
+            <td>Sub-Total (£) </td>
             <td>£{{ number_format($total, 2) }}</td>
             <td colspan="5"></td>
 
