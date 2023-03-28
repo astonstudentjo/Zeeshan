@@ -17,7 +17,12 @@
 
 
 @if (count($product) == 0)
-<p class="empty">Your basket is empty</p>
+<!-- <p class="empty">Your basket is empty</p> -->
+<!-- image -->
+<div class="empty-basket">
+    <img src="{{ asset('images/empty_cart.png') }}" alt="empty basket" width="300" height="300">
+</div>
+
 
 @else
 <form action="/basket/update" method="POST">

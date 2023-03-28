@@ -71,5 +71,5 @@ a:hover {
 
 .padder {
     /* only add padding when the height of the page is low */
-    padding-bottom: 42%;
+    /* padding-bottom: 30%; */
 }
