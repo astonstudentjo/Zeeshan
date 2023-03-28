@@ -47,10 +47,10 @@
             <form class="contactus-form" action = "/contactus"  method = "post" >
                 @csrf
 
-                <input type="text" id="contactus-name" name = "name" placeholder="Name" required>
-                <input type="email" id="contactus-email" name = "email" placeholder="Email" required>
-                <input type="text" id="contactus-subject" name = "subject" placeholder="Subject" required>
-                <input type="text" id="contactus-message" name = "message" placeholder="Message" required>
+                <input type="text" id="contactus-name" name = "contactName" placeholder="Name" required>
+                <input type="email" id="contactus-email" name = "contactEmail" placeholder="Email" required>
+                <input type="text" id="contactus-subject" name = "contactSubject" placeholder="Subject" required>
+                <input type="text" id="contactus-message" name = "contactMessage" placeholder="Message" required>
                 <input type="submit" id="contactus-btn">
 
 

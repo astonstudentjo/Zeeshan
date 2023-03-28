@@ -11,17 +11,22 @@ class ContactController extends Controller
     public function create(Request $request){
 
         $this->validate($request,[
-            'name' => ['required' , 'max:100', 'unique:newsletter,email,exists,0'],
-            'email' => ['required', 'max:100'],
-            'subject' => ['required', 'max: 100'],
-            'message' => ['required', 'max: 250']          
+            'contactName' => ['required' , 'max:100'],
+            'contactEmail' => ['required', 'max:100'],
+            'contactSubject' => ['required', 'max: 100'],
+            'contactMessage' => ['required', 'max: 250']          
+        ], [
+            'contactName.max' => 'You exceeded the word limit for name',
+            'contactEmail.size' => 'You exceeded the word limit for email',
+            'contactSubject.size' => 'You exceeded the word limit for subject',
+            'contactMessage.size' => 'You exceeded the word limit for message'
         ]);
 
         Contact::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'message' => $request->message
+            'name' => $request->contactName,
+            'email' => $request->contactEmail,
+            'subject' => $request->contactSubject,
+            'message' => $request->contactMessage
 
 
         ]);

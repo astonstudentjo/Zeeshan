@@ -59,7 +59,27 @@
         <div class="alert alert-danger">
             {{ $message }}
         </div>
-        @endif  
+        @endif
+        @error('contactName')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @endif    
+        @error('contactEmail')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @endif    
+        @error('contactMessage')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @endif    
+        @error('contactSubject')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @endif    
         @yield('body')
     </div>
 
