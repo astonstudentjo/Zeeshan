@@ -263,3 +263,26 @@ table th:last-child {
 a {
     color: #333;
 }
+
+.empty-basket img {
+    width: 50%;
+    height: 50%;
+    margin-top: 5%;
+}
+
+.empty-basket h3 {
+    color: #cdcdcd;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+.remove-btn {
+    display: inline-block;
+    border-radius: 4rem;
+    background: indianred;
+    color: #fff;
+    padding: .6rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    text-align: center;
+}

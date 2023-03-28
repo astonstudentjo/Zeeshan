@@ -17,10 +17,9 @@
 
 
 @if (count($product) == 0)
-<!-- <p class="empty">Your basket is empty</p> -->
-<!-- image -->
 <div class="empty-basket">
-    <img src="{{ asset('images/empty_cart.png') }}" alt="empty basket" width="300" height="300">
+    <img src="{{ asset('images/empty_cart.png') }}" alt="empty basket">
+    <h3 class="empty-basket-txt">Your basket is empty</h3>
 </div>
 
 
@@ -30,12 +29,12 @@
     <table class="table">
         <thead>
             <tr>
-                <th>image</th>
+                <th>Image</th>
                 <th>Product</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
-                <th>delete items</th>
+                <th>Delete Items</th>
 
             </tr>
         </thead>
@@ -76,7 +75,7 @@
                 <form action="/basket/remove" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $itemId }}">
-                    <button type="submit">Remove</button>
+                    <button class="remove-btn" type="submit">Remove</button>
                 </form>
             </td>
         </tr>
