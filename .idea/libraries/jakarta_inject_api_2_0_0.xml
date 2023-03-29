@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jakarta.inject-api-2.0.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jakarta/inject/jakarta.inject-api/2.0.0/jakarta.inject-api-2.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

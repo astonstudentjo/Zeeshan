@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="spring-boot-starter-thymeleaf-3.0.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-thymeleaf/3.0.4/spring-boot-starter-thymeleaf-3.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-thymeleaf/3.0.4/spring-boot-starter-thymeleaf-3.0.4.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-thymeleaf/3.0.4/spring-boot-starter-thymeleaf-3.0.4.jar!/" />
+    </SOURCES>
+    <jarDirectory url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-thymeleaf/3.0.4/spring-boot-starter-thymeleaf-3.0.4.jar!/" recursive="false" />
+  </library>
+</component>

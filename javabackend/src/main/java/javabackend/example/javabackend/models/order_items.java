@@ -8,6 +8,8 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "order_items")
 public class order_items {
+    private String name;
+    //models.products.getname();
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
@@ -25,8 +27,12 @@ public class order_items {
     @Column(name = "price")
     private float price;
 
-
-
+    public order_items(int i, int i1, String s, int i2) {
+        this.id = i;
+        this.product_id =i1;
+        this.name = s;
+        this.price = i2;
+    }
 
 
     public Integer getId() {

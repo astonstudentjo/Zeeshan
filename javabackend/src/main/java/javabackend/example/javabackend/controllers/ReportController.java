@@ -1,6 +1,5 @@
 package javabackend.example.javabackend.controllers;
 
-import jakarta.servlet.http.HttpServletRequest;
 import javabackend.example.javabackend.Service.ProductsService;
 import javabackend.example.javabackend.models.Products;
 import javabackend.example.javabackend.models.order_items;
@@ -8,10 +7,9 @@ import javabackend.example.javabackend.models.orders;
 import javabackend.example.javabackend.models.users;
 import javabackend.example.javabackend.repositories.ProductsRepository;
 import javabackend.example.javabackend.repositories.UsersRepository;
-import javabackend.example.javabackend.repositories.ordersRepository;
+import javabackend.example.javabackend.repositories.OrdersRepository;
 import javabackend.example.javabackend.repositories.ordersItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,18 +34,18 @@ public class ReportController {
     private final UsersRepository UsersRepository;
     @Autowired
 
-    private final ordersRepository orderRepository;
+    private final OrdersRepository orderRepository;
     @Autowired
 
     private final ordersItemRepository orderItemRepository;
 
     @Autowired
-    private ordersRepository ordersRepository;
+    private OrdersRepository ordersRepository;
 
 
 
     @Autowired
-    public ReportController(ProductsRepository productsRepository, ProductsService productsService, UsersRepository usersRepository, ordersRepository orderRepository, ordersItemRepository orderItemRepository){
+    public ReportController(ProductsRepository productsRepository, ProductsService productsService, UsersRepository usersRepository, OrdersRepository orderRepository, ordersItemRepository orderItemRepository){
         super();
         this.productsRepository = productsRepository;
         this.productsService = productsService;

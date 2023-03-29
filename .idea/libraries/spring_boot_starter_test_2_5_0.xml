@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="spring-boot-starter-test-2.5.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.5.0/spring-boot-starter-test-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.5.0/spring-boot-starter-test-2.5.0.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.5.0/spring-boot-starter-test-2.5.0.jar!/" />
+    </SOURCES>
+    <jarDirectory url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.5.0/spring-boot-starter-test-2.5.0.jar!/" recursive="false" />
+  </library>
+</component>

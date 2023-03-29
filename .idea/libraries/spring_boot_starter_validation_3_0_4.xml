@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spring-boot-starter-validation-3.0.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/3.0.4/spring-boot-starter-validation-3.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-validation/3.0.4/spring-boot-starter-validation-3.0.4.jar!/" recursive="false" />
+  </library>
+</component>

@@ -1,25 +1,24 @@
 package javabackend.example.javabackend.controllers;
 
 import javabackend.example.javabackend.Service.OrdersService;
-import javabackend.example.javabackend.Service.ProductsService;
+import javabackend.example.javabackend.models.orders;
+import javabackend.example.javabackend.repositories.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import javabackend.example.javabackend.repositories.*;
-import javabackend.example.javabackend.models.*;
 
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
-import javabackend.example.javabackend.Service.OrdersService;
-
-import org.springframework.ui.Model;
 
 @Controller
 public class OrderController {
 
     @Autowired
-    private ordersRepository ordersRepository;
+    public OrdersRepository ordersRepository;
+
+
 
 
     private OrdersService ordersService;
@@ -29,7 +28,9 @@ public class OrderController {
         this.ordersService = ordersService;
     }
 
-
+    public void GetOrdersRepository() {
+        this.ordersRepository = ordersRepository; // using this for tests
+    }
 
     @GetMapping("/Orders")
     public String getOrders(Model model) {

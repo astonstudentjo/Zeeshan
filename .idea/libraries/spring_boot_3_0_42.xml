@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-boot-3.0.42">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.0.4/spring-boot-3.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

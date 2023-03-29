@@ -25,5 +25,28 @@
     </orderEntry>
     <orderEntry type="library" name="1.4" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="junit-jupiter-params-5.9.2" level="project" />
+    <orderEntry type="library" name="spring-expression" level="project" />
+    <orderEntry type="library" name="openjdk" level="project" />
+    <orderEntry type="module-library" scope="TEST">
+      <library name="testng">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/testng-7.1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jcommander-1.72.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/guice-4.1.0-no_aop.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/javax.inject-1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/aopalliance-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/guava-19.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/snakeyaml-1.21.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="TEST" name="mockito-core-4.8.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Event-Tick" level="application" />
+    <orderEntry type="library" scope="TEST" name="assertj-core-3.23.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="spring-web-6.0.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="spring-webmvc-6.0.6" level="project" />
   </component>
 </module>

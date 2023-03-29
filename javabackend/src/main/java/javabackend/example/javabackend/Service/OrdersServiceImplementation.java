@@ -5,16 +5,14 @@ import javabackend.example.javabackend.models.orders;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import javabackend.example.javabackend.models.orders;
-import javabackend.example.javabackend.repositories.ordersRepository;
 
 
 @Service
 public class OrdersServiceImplementation implements OrdersService{
 
-    private ordersRepository OrdersRepository;
+    private javabackend.example.javabackend.repositories.OrdersRepository OrdersRepository;
 
-    public OrdersServiceImplementation(ordersRepository ordersRepository){
+    public OrdersServiceImplementation(javabackend.example.javabackend.repositories.OrdersRepository ordersRepository){
         super();
         this.OrdersRepository = ordersRepository;
     }

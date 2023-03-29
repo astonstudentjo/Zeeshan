@@ -4,12 +4,9 @@ import javabackend.example.javabackend.Service.ProductsService;
 import javabackend.example.javabackend.models.*;
 
 import javabackend.example.javabackend.repositories.*;
-import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -18,7 +15,6 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 
 
-import javax.swing.text.Document;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -38,12 +34,12 @@ public class ReportPDFController {
     private final ProductsRepository productsRepository;
     private final ProductsService productsService;
     private final UsersRepository UsersRepository;
-    private final ordersRepository orderRepository;
+    private final OrdersRepository orderRepository;
     private final ordersItemRepository orderItemRepository;
 
 
     @Autowired
-    public ReportPDFController(ProductsRepository productsRepository, ProductsService productsService, UsersRepository usersRepository, ordersRepository orderRepository, ordersItemRepository orderItemRepository) {
+    public ReportPDFController(ProductsRepository productsRepository, ProductsService productsService, UsersRepository usersRepository, OrdersRepository orderRepository, ordersItemRepository orderItemRepository) {
         super();
         this.productsRepository = productsRepository;
         this.productsService = productsService;
