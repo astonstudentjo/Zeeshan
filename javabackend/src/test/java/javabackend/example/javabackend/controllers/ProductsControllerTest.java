@@ -1,19 +1,18 @@
 package javabackend.example.javabackend.controllers;
 
-import javabackend.example.javabackend.Service.ProductsService;
-import javabackend.example.javabackend.models.Products;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import javabackend.example.javabackend.Service.ProductsService;
+import javabackend.example.javabackend.controllers.ProductsController;
+import javabackend.example.javabackend.models.Products;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 class ProductsControllerTest {
 
