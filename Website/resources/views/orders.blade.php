@@ -13,11 +13,14 @@
 
 
 <!-- show them a list of all places orders and when they click on the order they can see all the items they have ordered -->
-
+<header>
+    <h1>Orders</h1>
+</header>
+<!-- if there are no orders dont show -->
+@if (count($orders) > 0)
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Orders</h1>
             <table class="table">
                 <thead>
                     <tr>
@@ -43,6 +46,18 @@
         </div>
     </div>
 </div>
+@else
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="{{ asset('images/no-orders.png') }}" alt="empty" class="empty">
+            <h2>You have no orders</h2>
+            <br>
+            <a href="{{ route('products') }}" class="btn btn-primary">Return to products</a>
+        </div>
+    </div>
+</div>
+@endif
 
 
 <div class="padder"></div>
