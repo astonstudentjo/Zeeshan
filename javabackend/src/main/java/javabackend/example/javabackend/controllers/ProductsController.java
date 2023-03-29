@@ -132,5 +132,42 @@ public class ProductsController {
         model.addAttribute("products", listOfProducts);
         return "Products-page";
     }
+
+    @PostMapping("/products/filter/specified")
+    public String filterProducts(Model model, @Param("filter") String filter){
+        List<Products> listOfProducts = productsService.getAllProducts();
+
+        if(filter.equals("rap")){
+            listOfProducts.removeIf(product -> !product.getCategory().equals(filter));
+            model.addAttribute("products", listOfProducts);
+            return "Products-page";
+        }
+        if(filter.equals("pop")){
+            listOfProducts.removeIf(product -> !product.getCategory().equals(filter));
+            model.addAttribute("products", listOfProducts);
+            return "Products-page";
+        }
+        if(filter.equals("country")){
+            listOfProducts.removeIf(product -> !product.getCategory().equals(filter));
+            model.addAttribute("products", listOfProducts);
+            return "Products-page";
+        }
+        if(filter.equals("metal")){
+            listOfProducts.removeIf(product -> !product.getCategory().equals(filter));
+            model.addAttribute("products", listOfProducts);
+            return "Products-page";
+        }
+
+        if(filter.equals("rock")){
+            listOfProducts.removeIf(product -> !product.getCategory().equals(filter));
+            model.addAttribute("products", listOfProducts);
+            return "Products-page";
+        }
+
+        listOfProducts.removeIf(product -> product.getCategory().equals(filter));
+        model.addAttribute("products", listOfProducts);
+        return "Products-page";
+
+    }
     
 }

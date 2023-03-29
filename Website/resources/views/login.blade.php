@@ -13,20 +13,31 @@
 
 </head>
 <!-- placement for the image-->
-
+<div class="padding"></div>
+<br>
 
 <br>
-<div>
-    <form class = "login-form" action="/login" method="post">
 
+<div class = "login">
 
-        <div>
+<span class="Title">
+        <p> Login here!</p>
+    </span>
+    <form class = "login-form" action="{{ route('login') }}" method="post">
+
+    <h> Log in to your account </h>
+<p> New to EventTick? <a href="{{ route('signup') }}">Register an account</a></p>
+<br>
+
+        <div class="error">
+
             @csrf
 
             @if(session('status'))
 
             {{session('status')}}
-            <br><br>
+            <br>
+
 
             @endif
 
@@ -34,45 +45,39 @@
         </div>
 
 
-
         <label for="email"> Email: </label>
         <input type="text" placeholder="Email" name="email">
-        <br><br>
 
-        @error('email')
-        {{$message}}
+        <p class="error">
+            @error('email')
+            {{$message}}
+            @enderror
+        </p>
         <br>
-        @enderror
+
+
 
 
         <label for="password"> Password: </label>
         <input type="password" placeholder="Password" name="password">
-        <br><br>
 
-        @error('password')
-        {{$message}}
+        <p class="error">
+            @error('password')
+            {{$message}}
+
+            @enderror
+        </p>
         <br>
-        @enderror
-
-        <button type="submit">Login to view your account</button>
+        <br>
+        <button class="loginsubmit" type="submit">Login to view your account</button>
         <br>
 
-        <!-- <div class="description">
-            <p>By continuing past this page, you agree to the <u>Terms of Use</u> Purchase Policy and understand that
-                information will be used as described in our <u>Privacy Policy.</u></p>
-        </div>
 
-        <br>
-        <div class="description2">
-            <p> Need helping logging in, contact us: <br>
-                <br>
-                <u> +44 7508156819</u> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <u>200060828@aston.ac.uk </u>
-            </p>
-        </div> -->
     </form>
-
+    <br>
 
 </div>
+
 
 </html>
 @endsection

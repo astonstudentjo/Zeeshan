@@ -8,7 +8,6 @@
     outline: none;
     border: none;
     text-decoration: none;
-    text-transform: capitalize;
     transition: .2s linear;
     max-width: 100%;
 }
@@ -22,7 +21,7 @@
     max-width: 100%;
     background-color: #eeeeee;
     filter: brightness(100%);
-    height: 100%;
+    min-height: 100vh;
 }
 
 html {
@@ -69,12 +68,13 @@ html {
 
 .left-header a:hover {
     color: #a26bc9;
+    text-decoration: none;
 }
 
 .right-header {
+    display: flex;
     align-items: center;
     float: right;
-    margin-top: 0.5%;
     /* width: 30%; */
 }
 
@@ -87,20 +87,23 @@ html {
     padding-left: 20px;
 }
 
-.right-header a:hover {
-    color: #a26bc9;
+.auth-name {
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 20px;
 }
 
-.body {
-    min-height: 100%;
-    margin: 0;
-    padding-bottom: 80px;
+.right-header a:hover {
+    color: #a26bc9;
+    text-decoration: none;
 }
 
 .footer-box {
     background-color: #3b3b3a;
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
     padding-top: 2rem;
+    position: sticky;
+    top: 100%;
 }
 
 .footer-area {
@@ -111,6 +114,7 @@ html {
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding-top: 4rem;
 }
 
 .footer-component {
@@ -135,6 +139,7 @@ html {
 
 .footer-component a:hover {
     color: #a26bc9;
+    text-decoration: none;
 }
 
 .footer-component-newsletter h3 {
@@ -166,4 +171,9 @@ html {
 
 #footer-newsletter-btn:hover {
     background-color: #25459b;
+}
+
+.alert {
+    /* padding: 0; */
+    margin: 0;
 }

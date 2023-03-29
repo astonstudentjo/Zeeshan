@@ -1,51 +1,48 @@
 @extends('layouts.main')
 @section('body')
-
-
 <div>
+
+<div class="padding"></div>
 
     <span class="Title">
         <p> Register an account!</p>
     </span>
-
     <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
     <div class="signup">
-        <form action="/signup" method="post">
-
-        
+        <form action="{{ route('signup') }}" method="post">
+            <p> Already have an account? <a href="{{ route('login') }}">Login</a></p>
             <label for="name"> Full Name: </label>
             <input type="text" placeholder="Full name" name="name">
-            <br><br>
-
-            @csrf
-            @error('name')
-            {{$message}}
+            <p class="error">
+                @csrf
+                @error('name')
+                {{$message}}
+                @enderror
+            </p>
             <br>
-            @enderror
-
             <label for="email"> Email: </label>
             <input type="text" placeholder="Email" name="email">
-            <br><br>
+            <p class="error">
+                @error('email')
+                {{$message}}
 
-            @error('email')
-            {{$message}}
+                @enderror
+            </p>
             <br>
-            @enderror
-
-
             <label for="password"> Password: </label>
             <input type="password" placeholder="Password" name="password">
-            <br><br>
-
-            @error('password')
-            {{$message}}
+            <p class="error">
+                @error('password')
+                {{$message}}
+                <br>
+                @enderror
+            </p>
             <br>
-            @enderror
-
-
             <label for="password_confirmation"> Password Confirmation: </label>
             <input type="password" placeholder="Password Again" name="password_confirmation">
-            <br><br>
+            <br>
+            <br>
+            <br>
 
             <button type="submit">Sign Up </button>
             <br>
@@ -61,9 +58,6 @@
                     </p>
                 </span> -->
         </form>
-
-
     </div>
-
 </div>
 @endsection

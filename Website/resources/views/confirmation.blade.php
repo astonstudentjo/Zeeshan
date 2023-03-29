@@ -32,6 +32,8 @@
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Total Price</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -39,19 +41,26 @@
         @foreach($confirmation->items as $orderItem)
         <?php 
         $totalQuantity += $orderItem->quantity; 
-        $totalPrice += $orderItem->price;
+        $totalPrice += $orderItem->price * $orderItem->quantity;
+        // $FullPrice += $totalPrice;
+
+
         ?>
         <tr>
-            <td><img src="{{ asset('images/' . $orderItem->product->img) }}" alt="product image" width="100" height="100"></td>
+            <td><img src="{{ asset('productImages/' . $orderItem->product->img) }}" alt="product image" width="100" height="100"></td>
             <td>{{ $orderItem->product->name }}</td>
             <td>£{{ $orderItem->product->price }}</td>
             <td>{{ $orderItem->quantity }}</td>
+            <th>£{{ number_format($orderItem->price * $orderItem->quantity, 2) }}</th>
         </tr>
         @endforeach
         <tr>
             <td>Total:</td>
-            <td>£{{ number_format($totalPrice, 2) }}</td>
+            <td></td>
+            <td></td>
             <td>{{$totalQuantity}}</td>
+            <td>£{{ number_format($totalPrice, 2) }}</td>
+
         </tr>
     </tbody>
 </table>

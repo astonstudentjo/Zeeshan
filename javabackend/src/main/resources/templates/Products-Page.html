@@ -69,6 +69,23 @@
     </form>
   </div>
 
+  <form action="#" th:action="@{/products/filter/specified}" method="post" class="form-inline">
+    <div class="form-group col-md-10">
+        <select class="form-control w-100" id="filter" name="filter" onchange="this.form.submit()">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="all">All</option>
+            <option value="pop">Pop</option>
+            <option value="country">Country</option>
+            <option value="rap">Rap</option>
+            <option value="metal">Metal</option>
+            <option value="rock">Rock</option>
+        </select>
+    </div>
+</form>
+
+<br>
+
+
   <style>
     .btn {
       width: 100%;
