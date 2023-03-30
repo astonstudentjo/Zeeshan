@@ -27,6 +27,11 @@ public class orders {
     @Column(name = "status")
     private String status;
 
+    public orders(int i, String pending) {
+        this.id = i;
+        this.status = pending;
+    }
+
 //    Getters
 
     public Integer getId() {

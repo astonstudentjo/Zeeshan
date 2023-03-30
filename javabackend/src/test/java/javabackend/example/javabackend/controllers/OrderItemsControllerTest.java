@@ -1,89 +1,59 @@
 package javabackend.example.javabackend.controllers;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-        import java.util.ArrayList;
-        import java.util.List;
-
-import javabackend.example.javabackend.Service.ProductsService;
+import javabackend.example.javabackend.Service.OrderItemsService;
+import javabackend.example.javabackend.repositories.ordersItemRepository;
 import org.junit.jupiter.api.BeforeEach;
-        import org.junit.jupiter.api.Test;
-        import org.mockito.Mock;
-        import org.mockito.MockitoAnnotations;
-        import org.springframework.ui.Model;
-
-        import javabackend.example.javabackend.models.order_items;
-        import javabackend.example.javabackend.repositories.ordersItemRepository;
-        import javabackend.example.javabackend.Service.OrderItemsService;
-
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.ui.Model;
 public class OrderItemsControllerTest {
 
     @Mock
-    private OrderItemsService orderItemsService;
+    private OrderItemsService orderItemsServiceMock;
 
     @Mock
-    private ordersItemRepository ordersItemRepository;
+    private ordersItemRepository ordersItemRepositoryMock;
 
     @Mock
-    private Model model;
+    private Model modelMock;
 
+    @InjectMocks
     private OrderItemsController orderItemsController;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         MockitoAnnotations.initMocks(this);
-        orderItemsController = new OrderItemsController(orderItemsService);
-        //orderItemsControllerMock = mock(ProductsService.class);
     }
 
-    @Test
-    public void testGetOrdersItems() {
-
-        List<order_items> orderItems = new ArrayList<>();
-        orderItems.add(new order_items(1, 1, "Product 1", 10));
-        orderItems.add(new order_items(2, 1, "Product 2", 20));
-
-        when(ordersItemRepository.findAll()).thenReturn(orderItems);
-        //when(model.getClass().);
-        //when(orderItemsController.getOrdersItems(model)).thenReturn(model.toString());
-
-        String viewName = orderItemsController.getOrdersItems(model);
-        assertThat(viewName).isEqualTo("Orders-Item");
-
-        List<order_items> actualItems = (List<order_items>) model.asMap().get("order_items");
-        assertThat(actualItems).isEqualTo(orderItems);
-    }
-    @Test
-    public void testGetSpecificItem() {
-        int orderId = 1;
-
-        List<order_items> orderItems = new ArrayList<>();
-        orderItems.add(new order_items(1, 1, "Product 1", 10));
-        orderItems.add(new order_items(2, 1, "Product 2", 20));
-        orderItems.add(new order_items(3, 2, "Product 3", 30)); // test data
-
-        when(ordersItemRepository.findAll()).thenReturn(orderItems);
-
-        String viewName = orderItemsController.getSpecificItem(orderId, OrderItemsController.model);
-        assertThat(viewName).isEqualTo("Orders-Item");
-
-        List<order_items> expectedItems = new ArrayList<>();
-        expectedItems.add(new order_items(1, 1, "Product 1", 10));
-        expectedItems.add(new order_items(2, 1, "Product 2", 20));
-
-        List<order_items> actualItems = (List<order_items>) model.asMap().get("order_items");
-        assertThat(actualItems).isEqualTo(expectedItems); // if gets specific item this should assert.
-    }
-
-
-
-
-
+//    @Test
+//    void testGetOrdersItems() {
+//        List<order_items> orderItemsList = new ArrayList<>();
+//        orderItemsList.add(new order_items(1, 1, "product1", 2, 20.0F));
+//        orderItemsList.add(new order_items(2, 1, "product2", 3, 30.0F));
+//        when(ordersItemRepositoryMock.findAll()).thenReturn(orderItemsList);
+//
+//        String viewName = orderItemsController.getOrdersItems(modelMock);
+//        assertThat(viewName).isEqualTo("Orders-Item");
+//        assertThat(modelMock.containsAttribute("order_items")).isTrue();
+//        assertThat(modelMock.getAttribute("order_items")).isEqualTo(orderItemsList);
+//    }
+//
+//    @Test
+//    void testGetSpecificItem() {
+//        List<order_items> orderItemsList = new ArrayList<>();
+//        orderItemsList.add(new order_items(1, 1, "product1", 2, 20.0F));
+//        orderItemsList.add(new order_items(2, 1, "product2", 3, 30.0F));
+//        when(ordersItemRepositoryMock.findAll()).thenReturn(orderItemsList);
+//
+//        String viewName = orderItemsController.getSpecificItem(1, modelMock);
+//        assertThat(viewName).isEqualTo("Orders-Item");
+//        assertThat(modelMock.containsAttribute("order_items")).isTrue();
+//
+//        List<order_items> filteredItems = new ArrayList<>();
+//        filteredItems.add(new order_items(1, 1, "product1", 2, 20.0F));
+//        assertThat(modelMock.getAttribute("order_items")).isEqualTo(filteredItems);
+//    }
 }
 

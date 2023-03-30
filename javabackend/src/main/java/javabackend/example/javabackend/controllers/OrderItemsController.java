@@ -1,16 +1,13 @@
 package javabackend.example.javabackend.controllers;
 
-import javabackend.example.javabackend.models.orders;
+import javabackend.example.javabackend.Service.OrderItemsService;
+import javabackend.example.javabackend.models.order_items;
+import javabackend.example.javabackend.repositories.ordersItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import javabackend.example.javabackend.models.order_items;
-import javabackend.example.javabackend.Service.OrderItemsService;
-import javabackend.example.javabackend.repositories.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,6 +15,7 @@ import java.util.stream.Collectors;
 @Controller
 public class OrderItemsController {
 
+    public static Model model;
     @Autowired
     private OrderItemsService orderItemsService;
 
@@ -28,8 +26,6 @@ public class OrderItemsController {
 
     @Autowired
     private ordersItemRepository ordersItemRepository;
-
-
 
 
     @GetMapping("/OrderedItems")
@@ -49,11 +45,5 @@ public class OrderItemsController {
         model.addAttribute("order_items", filteredItems);
         return "Orders-Item";
     }
-
-
-
-
-
-
 
 }
