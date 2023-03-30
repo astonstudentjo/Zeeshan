@@ -1,45 +1,47 @@
 package javabackend.example.javabackend.Service;
 
 import javabackend.example.javabackend.models.orders;
-import javabackend.example.javabackend.repositories.OrdersRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+import javabackend.example.javabackend.models.orders;
+import javabackend.example.javabackend.repositories.ordersRepository;
 
 
 @Service
 public class OrdersServiceImplementation implements OrdersService{
 
-    private OrdersRepository ordersRepository;
+    private ordersRepository OrdersRepository;
 
-    public OrdersServiceImplementation(OrdersRepository ordersRepository){
+    public OrdersServiceImplementation(ordersRepository ordersRepository){
         super();
-        this.ordersRepository = ordersRepository;
+        this.OrdersRepository = ordersRepository;
     }
 
 
     @Override
     public List<orders> getAllOrders() {
-        return ordersRepository.findAll();
+        return OrdersRepository.findAll();
     }
 
     @Override
     public orders saveOrder(orders orders) {
-        return ordersRepository.save(orders);
+        return OrdersRepository.save(orders);
     }
 
     @Override
     public void deleteOrdersById(Integer id) {
-        ordersRepository.deleteById(id);
+        OrdersRepository.deleteById(id);
     }
 
     @Override
     public orders getOrdersById(Integer id) {
-        return ordersRepository.findById(id).get();
+        return OrdersRepository.findById(id).get();
     }
 
     @Override
     public orders updateOrders(orders orders) {
-        return ordersRepository.save(orders);
+        return OrdersRepository.save(orders);
     }
 }

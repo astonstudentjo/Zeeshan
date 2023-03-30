@@ -1,24 +1,27 @@
 package javabackend.example.javabackend.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
 import javabackend.example.javabackend.Service.ProductsService;
 import javabackend.example.javabackend.models.Products;
 import javabackend.example.javabackend.models.order_items;
 import javabackend.example.javabackend.models.orders;
 import javabackend.example.javabackend.models.users;
-import javabackend.example.javabackend.repositories.*;
+import javabackend.example.javabackend.repositories.ProductsRepository;
+import javabackend.example.javabackend.repositories.UsersRepository;
+import javabackend.example.javabackend.repositories.ordersRepository;
+import javabackend.example.javabackend.repositories.ordersItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -33,22 +36,23 @@ public class ReportController {
     private final UsersRepository UsersRepository;
     @Autowired
 
-
-    private final OrdersRepository ordersRepository;
+    private final ordersRepository orderRepository;
     @Autowired
 
     private final ordersItemRepository orderItemRepository;
 
+    @Autowired
+    private ordersRepository ordersRepository;
+
 
 
     @Autowired
-    public ReportController(ProductsRepository productsRepository, ProductsService productsService, UsersRepository usersRepository, OrdersRepository orderRepository, ordersItemRepository orderItemRepository, OrdersRepository ordersRepository){
+    public ReportController(ProductsRepository productsRepository, ProductsService productsService, UsersRepository usersRepository, ordersRepository orderRepository, ordersItemRepository orderItemRepository){
         super();
         this.productsRepository = productsRepository;
         this.productsService = productsService;
         this.UsersRepository = usersRepository;
-        this.ordersRepository = ordersRepository;
-        //this.OrderRepository = OrderRepository;
+        this.orderRepository = orderRepository;
         this.orderItemRepository = orderItemRepository;
     }
 
@@ -71,7 +75,7 @@ public class ReportController {
     //      This is for the Users Reports
     @GetMapping("/Report/Users")
     public String generateUsersReport(Model model) {
-        List<orders> orders = ordersRepository.findAll();
+        List<orders> orders = orderRepository.findAll();
         List<order_items> order_items = orderItemRepository.findAll();
         List<users> users = (List<javabackend.example.javabackend.models.users>) UsersRepository.findAll();
 
@@ -108,7 +112,7 @@ public class ReportController {
     // orders report
     @GetMapping("/Report/Orders")
     public String generateOrdersReport(Model model){
-        List<orders> orders = ordersRepository.findAll();
+        List<orders> orders = orderRepository.findAll();
         List<order_items> orderItems = orderItemRepository.findAll();
         List<Products> products = productsRepository.findAll();
 
@@ -182,7 +186,7 @@ public class ReportController {
     public String generateDailySalesReport(Model model) {
         LocalDateTime startDate = LocalDateTime.now().with(LocalTime.MIN);
         LocalDateTime endDate = LocalDateTime.now().with(LocalTime.MAX);
-        List<orders> orders = ordersRepository.findAll();
+        List<orders> orders = orderRepository.findAll();
         List<order_items> order_items = orderItemRepository.findAll();
         List<Products> products = productsRepository.findAll();
 
@@ -252,7 +256,7 @@ public class ReportController {
         LocalDateTime startDate = LocalDateTime.now().minusDays(7);
         LocalDateTime endDate = LocalDateTime.now();
 
-        List<orders> orders = ordersRepository.findAll();
+        List<orders> orders = orderRepository.findAll();
         List<order_items> order_items = orderItemRepository.findAll();
         List<Products> products = productsRepository.findAll();
 
@@ -324,7 +328,7 @@ public class ReportController {
         LocalDateTime startDate = LocalDateTime.now().minusDays(30);
         LocalDateTime endDate = LocalDateTime.now();
 
-        List<orders> orders = ordersRepository.findAll();
+        List<orders> orders = orderRepository.findAll();
         List<order_items> order_items = orderItemRepository.findAll();
         List<Products> products = productsRepository.findAll();
 
@@ -392,7 +396,7 @@ public class ReportController {
     //    this is for Full sales report
     @GetMapping("/Report/Sales")
     public String generateFullSalesReport(Model model) {
-        List<orders> orders = ordersRepository.findAll();
+        List<orders> orders = orderRepository.findAll();
         List<order_items> order_items = orderItemRepository.findAll();
         List<Products> products = productsRepository.findAll();
 

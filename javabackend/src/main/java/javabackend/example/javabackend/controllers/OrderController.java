@@ -1,22 +1,25 @@
 package javabackend.example.javabackend.controllers;
 
 import javabackend.example.javabackend.Service.OrdersService;
-import javabackend.example.javabackend.models.orders;
-import javabackend.example.javabackend.repositories.OrdersRepository;
+import javabackend.example.javabackend.Service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import javabackend.example.javabackend.repositories.*;
+import javabackend.example.javabackend.models.*;
 
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
+import javabackend.example.javabackend.Service.OrdersService;
+
+import org.springframework.ui.Model;
 
 @Controller
 public class OrderController {
 
     @Autowired
-    public OrdersRepository ordersRepository;
+    private ordersRepository ordersRepository;
 
 
     private OrdersService ordersService;
