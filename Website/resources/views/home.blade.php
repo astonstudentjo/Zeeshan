@@ -81,83 +81,106 @@
     </div>
   </section>
 
+  <br>
 
-  <section class="reviews">
-    <h class="heading">Community Reviews:</h>
-    <div class="wrapper">
-      
-    
-    
-    <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>This ticketing service was incredibly easy to use and hassle-free. The platform was user-friendly and the customer support was top-notch. Highly recommend!</p>
-        <i class="fas fa-quote-right quote"></i>
 
-        <div class="content">
-          <div class="info">
-            <div class="name">Aqib jawed</div>
-            <div class="job">Ariana Grande Concert</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="./images/profile.png" alt="">
-          </div>
+  <section class="Community-reviews">
+    <h1 class="heading">Community Reviews</h1>
+    <div class="Reviews">
+      <div class="Review">
+        <div class="ImageArea" style="background-image: url('{{ asset('images/suit.png') }}');"></div>
+        <div class="ImageText">
+          <span class="header_text"><strong>John Doe</strong></span>
+          <p>"Excellent service, highly recommend. Professional, efficient, great customer service. Would use again."</p>
         </div>
+        <br>
+        <!-- add stars rating -->
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+
+      </div>
+
+      <div class="Review">
+        <div class="ImageArea" style="background-image: url('{{ asset('images/suit.png') }}');"></div>
+        <div class="ImageText">
+          <span class="header_text"><strong>James Chris</strong></span>
+            <p>"The concert was fantastic! The artist's performance was electrifying, and the atmosphere was amazing. I had a great time and would definitely go to another one of their shows."</p>
+        </div>
+        <br>
+        <!-- add stars rating -->
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+
       </div>
 
 
-
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-        <i class="fas fa-quote-right quote"></i>
-
-        <div class="content">
-          <div class="info">
-            <div class="name">james Chris</div>
-            <div class="job">Chris Brown Show</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="./images/profile.png" alt="">
-          </div>
+      <div class="Review">
+        <div class="ImageArea" style="background-image: url('{{ asset('images/suit.png') }}');"></div>
+        <div class="ImageText">
+          <span class="header_text"><strong>John Smith</strong></span>
+          <p>"I loved the concert! <br> The songs was engaging and the singers gave great performances."</p>
         </div>
+        <br>
+        <!-- add stars rating -->
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+
       </div>
-      <div class="box">
-        <i class="fas fa-quote-left  quote"></i>
-        <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-        <i class="fas fa-quote-right quote"></i>
-        <div class="content">
-          <div class="info">
-            <div class="name">Mark Tom</div>
-            <div class="job">Harry Styles Tour</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="./images/profile.png" alt="">
-          </div>
+
+
+      <div class="Review">
+        <div class="ImageArea" style="background-image: url('{{ asset('images/suit.png') }}');"></div>
+        <div class="ImageText">
+          <span class="header_text"><strong>Karan Smith</strong></span>
+          <p>"The concert was okay. The artist performed well but the atmosphere was lacking."</p>
         </div>
+        <br>
+        <!-- add stars rating -->
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+
       </div>
     </div>
+
+
+
+    </div>
+
+  </section>
+
+  <section class="padding">
     <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+
+
+
+
+
+
 
 </body>
 
