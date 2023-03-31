@@ -45,11 +45,13 @@ class ProductsControllerTest {
         productsList.add(products);
         when(productsServiceMock.getAllProducts()).thenReturn(productsList);
         assertThat(productsController.listProducts(modelMock)).isEqualTo("Products-Page"); // checks whether the products exist.
+        System.out.println(productsController.listProducts(modelMock));
     }
 
     @Test
     void testCreateProductForm() {
         assertThat(productsController.createProductForm(modelMock)).isEqualTo("Create-product"); // test for the form being present.
+        System.out.println(productsController.createProductForm(modelMock));
     }
 
     @Test
@@ -59,17 +61,20 @@ class ProductsControllerTest {
         when(multipartFileMock.getOriginalFilename()).thenReturn("product.jpg"); // Model, BindingResult, and MultipartFile objects for the test.
         when(productsServiceMock.saveProduct(products)).thenReturn(products);
         assertThat(productsController.saveProduct(products, bindingResultMock, multipartFileMock)).isEqualTo("Create-product"); // checks if the new products are saved.
+        System.out.println(productsController.saveProduct(products, bindingResultMock, multipartFileMock));
     }
 
     @Test
     void testDeleteProduct() {
         assertThat(productsController.deleteProduct(1)).isEqualTo("redirect:/products"); // checks if the products have been saved
+        System.out.println(productsController.deleteProduct(1));
     }
 
     @Test
     void testEditProductForm() {
         when(productsServiceMock.getProductById(1)).thenReturn(products);
         assertThat(productsController.editProductForm(1, modelMock)).isEqualTo("Update-product"); // test to see if the project form has been done.
+        System.out.println(productsController.editProductForm(1, modelMock));
     }
 
     @Test
@@ -79,6 +84,7 @@ class ProductsControllerTest {
         updatedProduct.setStock(10);
         when(productsServiceMock.getProductById(1)).thenReturn(products);
         assertThat(productsController.updateProduct(1, updatedProduct, modelMock)).isEqualTo("redirect:/products"); // tests to see if the products are updated.
+        System.out.println(productsController.updateProduct(1, updatedProduct, modelMock));
     }
 
     @Test
@@ -87,6 +93,7 @@ class ProductsControllerTest {
         productsList.add(products);
         when(productsServiceMock.findByKeyword("Product")).thenReturn(productsList);
         assertThat(productsController.searchForProducts(modelMock, "Product")).isEqualTo("Products-page"); //tests to see if the test search is working.
+        System.out.println(productsController.searchForProducts(modelMock, "Product"));
     }
 
 }
